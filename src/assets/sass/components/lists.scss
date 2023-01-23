@@ -1,0 +1,378 @@
+/**/
+
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+%listChoice{
+    padding:3em 1em;
+    counter-reset: i;
+    &__titre {
+        @extend %titreType1_level2;
+    }
+    &__liste {
+        @include from-desktop{
+            display: flex;
+            justify-content: space-between;
+            gap:25px;
+        }
+        >li {
+            position: relative;
+            display: flex;
+            background: $dark;
+            box-shadow: $shadow1;
+            border-radius: 1.5em;
+            margin-bottom: 2em;
+            cursor:pointer;
+            // >i {}
+        }
+        &.--languette_0,&--languette_0{
+            >li{
+                width: 33%;
+                flex-flow: wrap;
+                box-shadow: $shadow2;
+                padding: 1em;
+                overflow:hidden;
+                &::before,&::after{
+                    position: absolute;
+                    top:0;
+                    bottom:0;
+                    right:0;
+                    width:0;
+                    transition: all .4s;
+                }
+                &::before{
+                    content:"";
+                    background: $ternary;
+                    border-radius: 0 1.5em 1.5em 0;
+                }
+                &::after{
+                    @extend %fawesome;
+                    content: "\f058";
+                    right:-25px;
+                    color:white;
+                    font-size: 25px;
+                    top: calc(50% - 12.5px);
+                    width: 25px;
+                    height: 25px;
+                }
+                &:hover{
+                    &::before{width:75px;}
+                    &::after{right:25px;transform: rotate(2turn);}
+                    >p{width: 80%;}
+                }
+                >h3{width:100%;}
+                >p{
+                    margin: 0.25em 0 0;
+                    width: 100%;
+                    transition: width .4s;
+                    display:flex;
+                    justify-content: space-between;
+                    >span:first-of-type{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        // &:last-of-type{}
+                    }
+                }
+            }
+        }
+        &.--numerotee_0,&--numerotee_0{
+            >li {
+                margin-left: 15px;
+                padding: 2em;
+                &::before {
+                    counter-increment: i;
+                    content: counter(i);
+                    align-self: center;
+                    position: absolute;
+                    left: -15px;
+                    border-radius: 1em;
+                    background: $primary;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                    color: white;
+                    transform: rotateY(0deg);
+                    transition: all .4s;
+                }
+                &:hover::before {
+                    transform: rotateY(180deg);
+                    background: $secondary;
+                }
+            }
+
+        }
+        &.--iconed_0,&--iconed_0{
+            >li {
+                &:nth-of-type(1) {
+                    >h3::before {
+                        content: "\f3cd"
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    >h3::before {
+                        content: "\f0ca"
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    >h3::before {
+                        content: "\f54e"
+                    }
+                }
+
+                >h3 {
+                    &::before {
+                        transition: color .2s;
+                        margin: 0 1em;
+                        font-family: 'Font Awesome 6 Free';
+                    }
+                }
+                &:hover {
+                    >h3 {
+                        &::before {
+                            color: $primary;
+                            // transform: rotation()
+                        }
+                    }
+                }
+            }
+        }
+        &.--hoverable_0,&--hoverable_0{
+            >li{
+                transition: background .4s;
+                &:hover {
+                    background:lighten($primary, 30%);
+                    >h3 {
+                        animation:fonctionnement 2s forwards 1;
+                    }
+                }
+            }
+        }
+    }
+    //bge
+    //bgm
+}
+@mixin listChoice($paramMixin: $listChoice){
+    @extend %listChoice;
+
+    &__titre {
+        @extend %listChoice__titre;
+    }
+    &__liste {
+        @extend %listChoice__liste;
+    }
+    //bge
+    //bgm
+}
+@function listChoice(){
+    
+    @return ();
+}
+$listChoice: listChoice();
+.listChoice{
+    @include listChoice($listChoice);
+    //bge
+    //bgm
+}
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+
+%listCards{
+    padding: 3em 1em;
+    background: $dark1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    &__titre {
+        margin-bottom: 1em;
+        width: 100%;
+    }
+    &__card {
+        // $cardsCoeur:()
+        // @extend .cardsCoeur;
+    }
+}
+@mixin listCards($paramMixin: $listCards){
+    @extend %listCards;
+
+    // >h2,
+    &__titre {
+        @extend %listCards__titre;
+    }
+
+    // >figure,
+    &__card {
+        @extend %listCards__card;
+    }
+}
+@function listCards(){
+    
+    @return ();
+}
+$listCards: listCards();
+.listCards{
+    @include listCards($listCards);
+}
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+
+%carteRestaurant{
+    position: relative;
+    overflow: hidden;
+    // background: url(/assets/images/restaurants/restaurant-1.jpg) no-repeat, $dark;
+
+    @include from-tablette {
+        // background: url(/assets/images/restaurants/restaurant-1.jpg);
+        background-size: contain;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 0 100px 15em white;
+            content: "";
+        }
+    }
+
+    background-size: contain;
+    padding: 270px 0 5em;
+
+    &__titre {
+        @extend %titreType0_level1;
+        background: $dark;
+        border-radius: 1.5em 1.5em 0 0;
+        padding: 1.25em 1em;
+        position: relative;
+
+        >input {
+            display: none;
+        }
+
+        >label {
+            position: absolute;
+            top: .5em;
+            right: 2em;
+            font-size: 1.5em;
+            cursor: pointer;
+
+            &::before {
+                font-weight: 100;
+            }
+
+            &::after {
+                opacity: 0;
+                transition: opacity .4s;
+            }
+
+            &::before,
+            &::after {
+                @extend %fawesome;
+                content: "\f004";
+                position: absolute;
+            }
+
+            &:hover {
+                &::after {
+                    opacity: 1;
+                    color: red;
+                }
+            }
+        }
+
+        >input:checked+label {
+            &::after {
+                opacity: 1;
+                color: red;
+            }
+        }
+    }
+    
+    &__section {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        @include from-tablette {
+            background: rgba(255, 255, 255, .8);
+        }
+
+        padding:1em;
+
+        >h2,
+        &__titre {
+            @extend %bold1;
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 50px;
+                border-bottom: solid #99E2D0;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+            }
+        }
+
+        >ul,
+        &__liste {
+            @extend %listChoice__liste;
+            @extend %listChoice__liste--languette_0;
+        }
+    }
+    
+    &__btn {
+        @extend %button_0;
+        display: block;
+        text-align: center;
+        width: 200px;
+        z-index: 2;
+        position: relative;
+    }
+    //bge
+    //bgm
+}
+@mixin carteRestaurant($paramMixi: $carteRestaurant){
+    @extend %carteRestaurant;
+
+    &__section {
+        @extend %carteRestaurant__section;
+    }
+
+    &__titre {
+        @extend %carteRestaurant__titre;
+    }
+    &__btn {
+        @extend %carteRestaurant__btn;
+    }
+    //bgm
+}
+@function carteRestaurant(){
+    
+    @return ();
+}
+$carteRestaurant: carteRestaurant();
+.carteRestaurant{
+    @include carteRestaurant($carteRestaurant);
+    //bge
+    //bgm
+}
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+
+
+
+
+

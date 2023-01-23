@@ -1,0 +1,31 @@
+/**/
+
+@mixin formBarreLocation(){
+    background:$dark;
+    display: flex;
+    justify-content: center;
+    &:hover{
+        label::before{animation: map 1s alternate 1;}
+    }
+    >label{
+        width: 200px ;
+        font-size: 1.1em;
+        display: flex;
+        &::before{
+            @extend %fawesome;
+            content:"\f3c5";
+            align-self: center;
+            font-weight: 900;
+        }
+        // >i{align-self: center;}
+        >input{
+            width: 100%;
+            border:none;
+            padding:1em;
+            background: transparent;
+            outline: none;
+            &::placeholder{color: lighten($black,40%);font-weight: 700;}
+        }
+    }
+}
+.formBarreLocation{@include formBarreLocation();}

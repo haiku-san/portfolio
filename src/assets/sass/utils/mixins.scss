@@ -1,0 +1,153 @@
+/**/
+
+
+/*********************************************************************************************************/
+/***********ICON******************************************************************************************/
+@mixin icon($content:"..contenu vide..", $where:before){
+    &::#{$where}{
+        content:$content;
+        @extend %fawesome;
+    }
+}
+
+/*********************************************************************************************************/
+/***********GET CHILD RELATIVE TO HIS PARENT**************************************************************/
+@mixin gchild_r($child:'no child entered', $whattodonext_ka){
+    @extend %pr;
+    >#{$child}{
+        @extend %pa;
+    }
+}
+
+
+
+
+
+
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/******************PSEUDO-CLASS**************************************************************************/
+$colour-primary:#333;
+$colour-white:#DDD;
+$colour-invalid:orange;
+$txt-input-palette: (
+    active: (
+        bg: $colour-primary,
+        border: $colour-primary,
+        txt: $colour-white,
+
+    ),
+    focus: (
+        bg: $colour-primary,
+        border: $colour-primary,
+        txt: $colour-white,
+    ),
+    invalid: (
+        bg: $colour-invalid,
+        border: $colour-white,
+        txt: $colour-white,
+    )
+);
+
+@mixin txt-input-palette($palettes) {
+
+    @each $state,
+    $palette in $palettes {
+        &:#{$state} {
+            border: .1rem solid map-get($palette, border);
+            background-color: map-get($palette, bg);
+            color: map-get($palette, txt);
+        }
+    }
+}
+
+
+
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/***************SHADOW************************************************************************************/
+@mixin heading-shadow($colour: $colour-primary, $size: $heading-shadow-size) {
+    @if (lightness($colour) < 25%) {
+        $colour: lighten($colour, 10%);
+    }
+
+    @else {
+        $colour: darken($colour, 10%);
+    }
+
+    text-shadow: $size $size $colour;
+}
+
+
+
+
+
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/******************MEDIA-QUERIES**************************************************************************/
+
+@mixin mobile-only($max: map-get($breakpoints, mobile) + "px") {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin tablette-only($min: map-get($breakpoints, mobile) + 1 + "px", $max: map-get($breakpoints, tablette) + "px") {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin desktop-only($min: map-get($breakpoints, tablette) + 1 + "px", $max: map-get($breakpoints, desktop) + "px") {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin tv-only($min: map-get($breakpoints, desktop) + 1 + "px") {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin mobile-and-tablette($max: map-get($breakpoints, tablette) + "px") {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin tablette-and-desktop($min: map-get($breakpoints, mobile) + 1 + "px", $max: map-get($breakpoint, desktop) + "px") {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin desktop-and-tv($min: map-get($breakpoints, tablette) + 1 + "px") {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin from-desktop($min: map-get($breakpoints, tablette) + 1 + "px") {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin from-tablette($min: map-get($breakpoints, mobile) + 1 + "px") {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin until-desktop($max: map-get($breakpoints, desktop) + "px") {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}

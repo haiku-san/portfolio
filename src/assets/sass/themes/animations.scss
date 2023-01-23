@@ -1,0 +1,46 @@
+/* @keyframes duration | timing-function | delay |
+iteration-count | direction | fill-mode | play-state | name 
+    animation: 3s ease-in 1s 
+    2 reverse both paused slidein;
+*/
+
+
+@keyframes fonctionnement{
+    10%{transform:translateX(-20px)}
+    100%{transform:translateX(40px)}
+}
+
+
+@keyframes map{
+    5%{transform: translateX(-2px) rotateZ(-20deg);}
+    15%{transform: translateX(2px) rotateZ(20deg);}
+    30%{transform: translateX(-4px) rotateZ(-45deg);}
+    45%{transform: translateX(4px) rotateZ(45deg);}
+    60%{transform: translateX(-4px) rotateZ(-45deg);}
+    75%{transform: translateX(4px) rotateZ(45deg);}
+    85%{transform: translateX(-2px) rotateZ(-20deg);}
+    95%{transform: translateX(2px) rotateZ(20deg);}
+    100%{transform: translateX(0px) rotateZ(0deg);}
+}
+
+
+@keyframes button{
+    10%{border-radius: 5em;transform: scale3d(1,1,1);}
+    25%{border-radius: 5em;transform: scale3d(.68,.68,.68)}
+    75%{border-radius: 100%}
+    100%{transform: scale3d(1.2,1.2,1.2);border-radius: 5em }
+}
+
+@keyframes loaderSpinner{
+    0%{z-index: 10;width:100%;height:100%;background:black;}
+    90%{background:purple;}
+    100%{z-index: 10;width:100%;height:100%;background:transparent;}
+}
+
+@keyframes loaderSpinner_{
+    0%{color:$primary;font-size:1em;}
+    50%{color:$secondary;font-size:2em;}
+    100%{color:$ternary;font-size:3em;}
+}
+
+

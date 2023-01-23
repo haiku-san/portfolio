@@ -1,0 +1,63 @@
+/**/
+
+
+
+
+%footerBasic0{
+    padding:2em;
+    background: $black2;
+    color:white;
+
+    &__titreLogo {
+        @extend %titreType0_level2;
+        font-size:1.5em;
+        color:white;
+        margin-bottom:1em;
+    }
+
+    &__titreIcon {
+        display: flex;
+        &::before{@extend %fawesome;display:block;width:25px;}
+        &:nth-of-type(1)::before{content:"\f2e7";}
+        &:nth-of-type(2)::before{content:"\f4c4";}
+    }
+    &__lien {
+        display: block;
+    }
+    &__lien,&__titreIcon {
+        margin-bottom:.75em;font-size:1em;
+    }
+    //bge
+    //bgm
+}
+@mixin footerBasic0($paramMixi: $footerBasic0){
+    @extend %footerBasic0;
+
+    &__titreLogo {
+        @extend %footerBasic0__titreLogo;
+    }
+
+    &__titreIcon {
+        @extend %footerBasic0__titreIcon;
+    }
+
+    &__lien {
+        @extend %footerBasic0__lien;
+    }
+    //bge
+    //bgm
+}
+@function footerBasic0(){
+    
+    @return ();
+}
+$footerBasic0: footerBasic0();
+.footerBasic0{
+    @include footerBasic0($footerBasic0);
+    //bge
+    //bgm
+}
+
+
+
+

@@ -1,0 +1,147 @@
+/**/
+
+
+
+%cardsCoeur{
+    @include from-tablette {
+        width: 45%;
+    }
+
+    position: relative;
+    width: 100%;
+    border-radius:1em;
+    box-shadow: $shadow1;
+
+    &:nth-of-type(1)::before,
+    &:nth-of-type(2)::before {
+        content: "Nouveau";
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        padding: .5em 1em;
+        border-radius: 2px;
+        background: $ternary;
+        color: darken($ternary, 45%);
+        @extend %bolder;
+    }
+
+    // &:hover{figcaption::after{opacity:1;color: red;}}
+    // >a,
+    &__makeClickable {
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+    }
+
+    // >img,
+    &__image {
+        height: 250px;
+        border-radius: 1em 1em 0 0;
+    }
+
+    // >figcaption,
+    &__content {
+        position: relative;
+        padding: 1.5em 1em;
+
+        >h3 {
+            margin-bottom: .25em;
+        }
+
+        >p {
+            margin: 0;
+            @extend %bold0;
+        }
+
+        >i {}
+
+        >input {
+            display: none;
+        }
+
+        >label {
+            position: absolute;
+            z-index: 10;
+            top: .5em;
+            right: 2em;
+            font-size: 1.5em;
+            cursor: copy;
+
+            &::before {
+                font-weight: 100;
+            }
+
+            &::after {
+                opacity: 0;
+                transition: all .4s;
+            }
+
+            &::before,
+            &::after {
+                @extend %fawesome;
+                content: "\f004";
+                position: absolute;
+            }
+
+            &:hover {
+                &::after {
+                    opacity: 1;
+                    color: red;
+                    // animation:remplirBtn;
+                }
+            }
+        }
+
+        >input:checked+label {
+            &::after {
+                opacity: 1;
+                color: purple;
+                animation: map 1s ease 1;
+            }
+        }
+
+        >input:not(:checked)+label {
+            &::before {
+                animation: map .5s ease 1;
+                z-index: 10;
+            }
+        }
+    }
+    //bge
+    //bgm
+}
+@mixin cardsCoeur($paramMixi: $cardsCoeur){
+    @extend %cardsCoeur;
+
+    &__makeClickable {
+        @extend %cardsCoeur__makeClickable;
+    }
+
+    &__image {
+        @extend %cardsCoeur__image;
+    }
+
+    &__content {
+        @extend %cardsCoeur__content;
+    }
+    //bge
+    //bgm
+}
+@function cardsCoeur(){
+    
+    @return ();
+}
+$cardsCoeur: cardsCoeur();
+.cardsCoeur{
+    @include cardsCoeur($cardsCoeur);
+    //bge
+    //bgm
+}
+

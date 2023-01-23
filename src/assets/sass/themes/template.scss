@@ -1,0 +1,38 @@
+/**/
+
+
+$XS: 5px;
+$S: 10px;
+$S_: 15px;
+$M: 20px;
+$L: 30px;
+$XL: 50px;
+$XXL: 60px;
+$_XS: .25em;
+$_S: .5em;
+$_S_: .75em;
+$_M: 1em;
+$_M_: 1.25em;
+$_M__: 1.5em;
+$_L: 2em;
+$_XL: 3em;
+$_XXL: 5em;
+
+$titres: 'typography des titre';
+$contenus: 'typography des contenus';
+
+$primary:#9356DC;
+$secondary:#FF79DA;
+$ternary:#99E2D0;
+
+$color-primary: $black;
+$color-secondary: $dark2;
+
+
+%titreType0_level1{@extend %font__titre;@extend %bold1;font-size:2em;color:$color-primary;}
+%titreType0_level2{@extend %font__titre;@extend %bold1;font-size:1em;color:$color-primary;}
+%titreType1_level1{@extend %font__content;font-size:2em;color:$color-primary;}
+%titreType1_level2{@extend %font__content;font-size:2em;color:$color-primary;}
+%titreType2_level1,%titre_footer1{@extend %font__content;font-size:1em;color:$color-primary;}
+%titreType2_level2,%titre_footer2{@extend %font__content;font-size:1em;color:$color-primary;}
+

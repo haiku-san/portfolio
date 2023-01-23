@@ -1,0 +1,15 @@
+/**/
+
+
+
+.jumbotronCTA{
+    padding:2em 0 4em;
+    text-align: center;
+    background: $dark1;
+    >*{display: block;}
+    >h1{padding:0 18%}
+    >p{padding: 0 5%;font-size: 1.5em;@extend %bold0;}
+    >a{
+        @extend %button_0;
+    }
+}

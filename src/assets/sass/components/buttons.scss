@@ -1,0 +1,57 @@
+/**/
+
+
+%button_0{
+    position: relative;
+    display: inline-block;
+    padding:1.5em;
+    margin:auto;
+    border-radius: 5em;
+    text-decoration: none;
+    color:$dark;
+    z-index: 1;
+    @extend %bold2;
+    background: rgb(255,121,218);
+    background: linear-gradient(175deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+    -moz-box-shadow: 8px 25px 45px -12px rgba(94, 94, 94, 0.62);
+    -webkit-box-shadow: 8px 25px 45px -12px rgba(94, 94, 94, 0.62);
+    -ms-box-shadow: 8px 25px 45px -12px rgba(94, 94, 94, 0.62);
+    box-shadow: $shadow0;
+    transition: filter 1.25s, box-shadow 1s;
+    &:hover{
+    filter: brightness(125%);
+    animation:button 1s forwards 1;
+    box-shadow: $shadow0_;
+    }
+}
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/******************BOUTON À 4 FORMAT**************************************************************************/
+
+.btn {
+    /*
+     <div class="container">
+        <div class="btn">Solid Button</div>
+        <div class="btn btn--outline">Outline Button</div>
+    
+        <div class="btn btn--disabled">Solid Button</div>
+        <div class="btn btn--outline btn--disabled">Outline Button</div>
+    </div>
+    */
+    display: inline-block;
+    margin: 0 auto;
+    background: #15DEA5;
+    padding: 1rem;
+    &--disabled {
+        background: grey;
+    }
+    &--outline {
+        background: transparent;
+        border: 2px solid #15DEA5;
+        &.btn--disabled{
+            border: 2px solid grey;
+        }
+    }
+}
