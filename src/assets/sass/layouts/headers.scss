@@ -1,26 +1,28 @@
 /**/
-
-.header{
-    padding:1em;
-    border-bottom:solid;
+.header {
     display: flex;
     justify-content: space-between;
+    padding: 1.5rem 4rem;
     align-items: center;
-    box-shadow: 0 0 10px 1px #b3b3b3;
-    position: relative;
-    >menu,&__mainMenu{
-      display: flex;
-      gap:1em;
-      >li.active{font-weight:bolder;text-decoration: underline;}
-      a{
-        color:black;
-        text-decoration:none;
-      }
+    background: $colorBg2;
+    section {
+        width: 100%;
     }
-    &__logo{}
-    &__logins{
-        display: flex;
-        gap: 1em;
+    h2,
+    li {
+        @extend %menuTexts;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        white-space: nowrap;
     }
-    // @include headerbarLogo;
+
+    &__middle-section {
+        > ul {
+            display: flex;
+            gap: 4rem;
+        }
+    }
+    &__right-section {
+        text-align: right;
+    }
 }

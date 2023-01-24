@@ -1,13 +1,73 @@
 /**/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Shrikhand&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-%font__content{font-family: 'Roboto', sans-serif;}
-%font__titre{font-family: 'Shrikhand', cursive;}
+%font__content {
+    font-family: 'Source Code Pro', monospace;
+}
 
-%bolder{font-weight:bolder}
-%bold2{font-weight:700;}
-%bold1{font-weight:400;}
-%bold0{font-weight:200;}
+%extraLight {
+    font-weight: 200;
+}
+%light {
+    font-weight: 300;
+}
+%regular {
+    font-weight: 400;
+}
+%medium {
+    font-weight: 500;
+}
+%semiBold {
+    font-weight: 600;
+}
+%bold {
+    font-weight: 700;
+}
+%extraBold {
+    font-weight: 800;
+}
+%black {
+    font-weight: 900;
+}
 
-%fawesome{font-weight: 900;font-family: 'Font Awesome 6 Free';}
+%title1 {
+    @extend %font__content;
+    @extend %medium;
+}
+
+%title2 {
+    @extend %font__content;
+    @extend %light;
+}
+%title3 {
+    @extend %font__content;
+    @extend %regular;
+}
+%title4 {
+    @extend %font__content;
+    @extend %regular;
+}
+%title5 {
+    @extend %font__content;
+    @extend %medium;
+}
+%title5Tags {
+    @extend %font__content;
+    @extend %semiBold;
+}
+%title6 {
+    @extend %font__content;
+    @extend %regular;
+}
+%paragraph1 {
+    @extend %font__content;
+    @extend %light;
+}
+%paragraph2 {
+    @extend %font__content;
+    @extend %light;
+}
+%menuTexts {
+    @extend %font__content;
+    @extend %light;
+}
