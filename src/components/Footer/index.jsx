@@ -4,9 +4,16 @@ function Footer() {
     return (
         <footer className="footer">
             <ul>
-                <li>Github</li>
-                <li>Linkedin</li>
-                <li>Instagram</li>
+                <a href="#">
+                    <li>Github</li>
+                </a>
+                <a href="#">
+                    <li>Linkedin</li>
+                </a>
+
+                <a href="#">
+                    <li>Instagram</li>
+                </a>
             </ul>
         </footer>
     )

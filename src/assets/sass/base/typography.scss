@@ -29,15 +29,22 @@
 %black {
     font-weight: 900;
 }
+@mixin title1 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;
+}
 
 %title1 {
-    @extend %font__content;
-    @extend %medium;
+    @include title1;
+}
+
+@mixin title2 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
 }
 
 %title2 {
-    @extend %font__content;
-    @extend %light;
+    @include title2;
 }
 %title3 {
     @extend %font__content;

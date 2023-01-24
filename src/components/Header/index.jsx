@@ -4,17 +4,27 @@ function Header() {
     return (
         <header className="header">
             <section className="header__left-section">
-                <h2>Brahim Elandaloussi</h2>
+                <a href="#">
+                    <h2>Brahim Elandaloussi</h2>
+                </a>
             </section>
             <section className="header__middle-section">
                 <ul>
-                    <li>Accueil</li>
-                    <li>A propos</li>
-                    <li>Mes projets</li>
+                    <a href="#">
+                        <li>Accueil</li>
+                    </a>
+                    <a href="#">
+                        <li>A propos</li>
+                    </a>
+                    <a href="#">
+                        <li>Mes projets</li>
+                    </a>
                 </ul>
             </section>
             <section className="header__right-section">
-                <h2>Contact</h2>
+                <a href="#">
+                    <h2>Contact</h2>
+                </a>
             </section>
         </header>
     )

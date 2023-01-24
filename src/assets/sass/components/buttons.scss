@@ -1,16 +1,26 @@
 /**/
+
+// *****Buttons sizes*****
+
+%buttonSizeS {
+    font-size: 1.1rem;
+}
+
+// *****Buttons CSS*****
+
 .cta-primary,
 .cta-secondary {
     @extend %title4;
+    @extend %buttonSizeS;
     padding: 1rem 1.5rem;
     border: none;
     opacity: 0.8;
     box-shadow: $shadow2;
-    transition: all ease-in 90ms;
+    transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
     cursor: pointer;
     &:hover {
         opacity: 1;
-        transform: scale(1.02);
+        transform: scale(1.05);
     }
 }
 
