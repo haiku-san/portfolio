@@ -26,9 +26,9 @@ root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route element={<PageLayout />}>
+                {/* <Route element={<PageLayout />}>
                     <Route element={<Home />} path="/" />
-                </Route>
+                </Route> */}
                 <Route element={<ComingSoon />} path="/coming-soon" />
 
                 <Route element={<Navigate to="/coming-soon" />} path="*" />
