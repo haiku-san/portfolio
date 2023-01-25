@@ -7,7 +7,7 @@ function ComingSoon() {
             <h2>
                 Ce site est en cours de création. Pour l'instant vous pouvez
                 accéder à mon Github ainsi que mon Linkedin en cliquant sur les
-                boutons ci-dessous..
+                boutons ci-dessous.
             </h2>
             <div className="cta-section">
                 <a

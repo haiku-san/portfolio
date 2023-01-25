@@ -22,7 +22,11 @@ function Header() {
                 </ul>
             </section>
             <section className="header__right-section">
-                <a href="#">
+                <a
+                    href="mailto:elandaloussi.contact@gmail.com"
+                    target="__blank"
+                    rel="noreferrer noopener"
+                >
                     <h2>Contact</h2>
                 </a>
             </section>
