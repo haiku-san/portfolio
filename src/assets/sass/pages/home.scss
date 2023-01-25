@@ -13,13 +13,16 @@
         justify-content: center;
         gap: 4rem;
     }
-
-    h1 {
-        @extend %title1;
-        font-size: 5rem;
-    }
-    h2 {
-        @extend %title2;
-        font-size: 2rem;
+    .hero-section {
+        > div {
+            h1 {
+                @extend %title1;
+                font-size: 5rem;
+            }
+            h2 {
+                @extend %title2;
+                font-size: 2rem;
+            }
+        }
     }
 }

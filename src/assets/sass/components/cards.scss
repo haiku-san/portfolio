@@ -1,1 +1,102 @@
 /**/
+
+// ***** Informations card *****
+
+.infos-card {
+    display: flex;
+    flex-direction: column;
+    background: $colorBg4;
+    color: $colorAccent1;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: $shadow2;
+    &__header {
+        padding: 0.7rem 0.7rem 0 0.7rem;
+        @extend %title5;
+    }
+    &__menu {
+        margin: 0;
+        > ul {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            > .infos-card__menu-tab {
+                z-index: 10;
+                position: relative;
+                cursor: pointer;
+                padding: 0.5rem 1.5rem;
+                border-radius: 0.5rem 0.5rem 0rem 0rem;
+                filter: opacity(0.9);
+                transition: filter cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms;
+
+                &::before {
+                    z-index: -1;
+                    content: '';
+                    position: absolute;
+                    border-radius: 0.5rem 0.5rem 0rem 0rem;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    background-color: $colorBg3;
+                    filter: opacity(0);
+                    transition: filter cubic-bezier(0.6, -0.28, 0.735, 0.045)
+                        70ms;
+                }
+
+                &:hover {
+                    filter: opacity(1);
+
+                    &::before {
+                        filter: opacity(0.3);
+                    }
+                }
+                &.active {
+                    background-color: $colorBg3;
+                    filter: opacity(1);
+                }
+            }
+        }
+    }
+    &__content {
+        padding: 2rem 2.2rem;
+        background-color: $colorBg3;
+        border-radius: 0 0 0.5rem 0.5rem;
+        h2 {
+            @extend %title3;
+        }
+        p {
+            @extend %paragraph1;
+        }
+        h3 {
+            @extend %title4;
+        }
+        h4 {
+            @extend %title5;
+        }
+        &.skills {
+            display: flex;
+            justify-content: space-around;
+            .skills-section {
+                &__list {
+                    display: flex;
+                    gap: 2rem;
+                    padding: 1rem 0;
+                }
+                &__box {
+                    background-color: $colorBg4;
+                    padding: 1.2rem 1.5rem;
+                }
+            }
+            h3 {
+                @extend %title5;
+                text-align: center;
+            }
+            h4 {
+                @extend %title6;
+            }
+            p {
+                @extend %paragraph2;
+            }
+        }
+    }
+}
