@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
-function InfosCard() {
+function InfosCard({ id }) {
     const [activeTab, setActiveTab] = useState('whoAmI')
 
     return (
-        <article className="infos-card">
+        <article className="infos-card" id={id}>
             <header className="infos-card__header">
                 <menu className="infos-card__menu">
                     <ul>

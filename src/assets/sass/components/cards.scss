@@ -83,3 +83,141 @@
         }
     }
 }
+
+// ***** Project card *****
+
+.project-card {
+    display: flex;
+    box-shadow: $shadow2;
+    border-radius: 1rem;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        background-color: $colorBg3;
+        padding: 2rem;
+        border-radius: 1rem 0 0 1rem;
+        width: 25%;
+        gap: 1rem;
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            h2 {
+                color: $colorBtn1;
+                @extend %title4;
+            }
+            h3 {
+                color: $colorBg5;
+
+                @extend %title6;
+            }
+            p {
+                color: $colorAccent1;
+
+                @extend %paragraph2;
+                margin: 0;
+            }
+        }
+        ul {
+            margin: 0;
+        }
+    }
+    &__tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: $colorBg4;
+            padding: 0.4rem 1rem;
+            border-radius: 0.3rem;
+            height: 1.5rem;
+            img {
+                height: 100%;
+            }
+            p {
+                color: $colorBtn1;
+                @extend %title5Tags;
+            }
+        }
+    }
+
+    &__preview {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        &:hover {
+            .project-card__background {
+                filter: brightness(0.9);
+            }
+            .project-card__buttons {
+                @extend %cta-on-hover;
+            }
+        }
+    }
+    &__buttons {
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
+
+        img {
+            height: 2rem;
+        }
+    }
+    &__background {
+        &::before {
+            content: '';
+            z-index: -10;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $colorAccent3;
+        }
+        &::after {
+            content: '';
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $colorAccent2Gradient;
+            opacity: 0.7;
+        }
+        z-index: 0;
+        position: absolute;
+        overflow: hidden;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 40ms;
+
+        img {
+            position: absolute;
+
+            width: 55%;
+            box-shadow: $shadow4;
+        }
+        img:nth-child(1) {
+            z-index: 1;
+            top: 2rem;
+            left: 3%;
+        }
+        img:nth-child(2) {
+            bottom: 2rem;
+            right: 3%;
+        }
+    }
+}

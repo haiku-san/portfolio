@@ -4,15 +4,19 @@ function Footer() {
     return (
         <footer className="footer">
             <ul>
-                <a href="#">
+                <a
+                    href="https://github.com/haiku-san"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
                     <li>Github</li>
                 </a>
-                <a href="#">
+                <a
+                    href="https://www.linkedin.com/in/brahim-elandaloussi/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
                     <li>Linkedin</li>
-                </a>
-
-                <a href="#">
-                    <li>Instagram</li>
                 </a>
             </ul>
         </footer>
