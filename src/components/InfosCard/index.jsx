@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 
 function InfosCard() {
     const [activeTab, setActiveTab] = useState('whoAmI')
@@ -8,43 +9,71 @@ function InfosCard() {
             <header className="infos-card__header">
                 <menu className="infos-card__menu">
                     <ul>
-                        <li
-                            className={
-                                activeTab === 'whoAmI'
-                                    ? 'infos-card__menu-tab active'
-                                    : 'infos-card__menu-tab'
-                            }
-                            onClick={() => setActiveTab('whoAmI')}
+                        <CSSTransition
+                            in={activeTab === 'whoAmI'}
+                            // unmountOnExit
+                            timeout={50}
+                            classNames="tab-is-active"
                         >
-                            Qui suis-je ?
-                        </li>
-                        <li
-                            className={
-                                activeTab === 'degrees'
-                                    ? 'infos-card__menu-tab active'
-                                    : 'infos-card__menu-tab'
-                            }
-                            onClick={() => setActiveTab('degrees')}
+                            <li
+                                className={
+                                    activeTab === 'whoAmI'
+                                        ? 'infos-card__menu-tab active'
+                                        : 'infos-card__menu-tab'
+                                }
+                                onClick={() => setActiveTab('whoAmI')}
+                            >
+                                Qui suis-je ?
+                            </li>
+                        </CSSTransition>
+                        <CSSTransition
+                            in={activeTab === 'degrees'}
+                            // unmountOnExit
+                            timeout={50}
+                            classNames="tab-is-active"
                         >
-                            Ma formation
-                        </li>
-                        <li
-                            className={
-                                activeTab === 'skills'
-                                    ? 'infos-card__menu-tab active'
-                                    : 'infos-card__menu-tab'
-                            }
-                            onClick={() => setActiveTab('skills')}
+                            <li
+                                className={
+                                    activeTab === 'degrees'
+                                        ? 'infos-card__menu-tab active'
+                                        : 'infos-card__menu-tab'
+                                }
+                                onClick={() => setActiveTab('degrees')}
+                            >
+                                Ma formation
+                            </li>
+                        </CSSTransition>
+                        <CSSTransition
+                            in={activeTab === 'skills'}
+                            // unmountOnExit
+                            timeout={50}
+                            classNames="tab-is-active"
                         >
-                            Mes compétences
-                        </li>
+                            <li
+                                className={
+                                    activeTab === 'skills'
+                                        ? 'infos-card__menu-tab active'
+                                        : 'infos-card__menu-tab'
+                                }
+                                onClick={() => setActiveTab('skills')}
+                            >
+                                Mes compétences
+                            </li>
+                        </CSSTransition>
                     </ul>
                 </menu>
             </header>
-            {activeTab === 'whoAmI' && (
+            <CSSTransition
+                in={activeTab === 'whoAmI'}
+                // unmountOnExit
+                mountOnEnter
+                appear
+                timeout={0}
+                classNames="content-is-active"
+            >
                 <div className="infos-card__content who-am-i">
                     <h2>Brahim Elandaloussi</h2>
-                    <p>
+                    <p className="typewrited-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Donec luctus a felis at sodales. Maecenas sagittis,
                         risus et dapibus consequat, ligula mauris feugiat risus,
@@ -54,8 +83,14 @@ function InfosCard() {
                         ac est.
                     </p>
                 </div>
-            )}
-            {activeTab === 'degrees' && (
+            </CSSTransition>
+            <CSSTransition
+                in={activeTab === 'degrees'}
+                // unmountOnExit
+                mountOnEnter
+                timeout={0}
+                classNames="content-is-active"
+            >
                 <div className="infos-card__content degrees">
                     <h3>2022 - Développeur web - Openclassrooms</h3>
                     <h4>Titre RNCP de niveau 5 (Bac + 2)</h4>
@@ -70,82 +105,89 @@ function InfosCard() {
                         Donec luctus a felis at sodales.{' '}
                     </p>
                 </div>
-            )}
-            {activeTab === 'skills' && (
+            </CSSTransition>
+            <CSSTransition
+                in={activeTab === 'skills'}
+                // unmountOnExit
+                mountOnEnter
+                timeout={0}
+                classNames="content-is-active"
+            >
                 <div className="infos-card__content skills">
-                    <div>
-                        <h3>Hard skills</h3>
-                        <div className="skills-section__list">
-                            <div className="skills-section__box">
-                                <h4>Frontend</h4>
-                                <ul>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                </ul>
-                            </div>
-                            <div className="skills-section__box">
-                                <h4>Backend</h4>
-                                <ul>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                </ul>
-                            </div>
-                            <div className="skills-section__box">
-                                <h4>Général</h4>
-                                <ul>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                </ul>
+                    <div className="infos-card__content-skills">
+                        <div>
+                            <h3>Hard skills</h3>
+                            <div className="skills-section__list">
+                                <div className="skills-section__box">
+                                    <h4>Frontend</h4>
+                                    <ul>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                    </ul>
+                                </div>
+                                <div className="skills-section__box">
+                                    <h4>Backend</h4>
+                                    <ul>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                    </ul>
+                                </div>
+                                <div className="skills-section__box">
+                                    <h4>Général</h4>
+                                    <ul>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div>
-                        <h3>Soft skills</h3>
-                        <div className="skills-section__list">
-                            <div className="skills-section__box">
-                                <h4>Frontend</h4>
-                                <ul>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                </ul>
-                            </div>
-                            <div className="skills-section__box">
-                                <h4>Backend</h4>
-                                <ul>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                </ul>
-                            </div>
-                            <div className="skills-section__box">
-                                <h4>Général</h4>
-                                <ul>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                    <li>Lorem</li>
-                                </ul>
+                        <div>
+                            <h3>Soft skills</h3>
+                            <div className="skills-section__list">
+                                <div className="skills-section__box">
+                                    <h4>Frontend</h4>
+                                    <ul>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                    </ul>
+                                </div>
+                                <div className="skills-section__box">
+                                    <h4>Backend</h4>
+                                    <ul>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                    </ul>
+                                </div>
+                                <div className="skills-section__box">
+                                    <h4>Général</h4>
+                                    <ul>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                        <li>Lorem</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            )}
+            </CSSTransition>
         </article>
     )
 }

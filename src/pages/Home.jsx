@@ -14,7 +14,13 @@ function Home() {
                 <InfosCard />
                 <div className="cta-section">
                     <button className="cta-primary">Voir mes projets</button>
-                    <button className="cta-secondary">Me contacter</button>
+                    <a
+                        href="mailto:elandaloussi.contact@gmail.com"
+                        target="__blank"
+                        rel="noreferrer noopener"
+                    >
+                        <button className="cta-secondary">Me contacter</button>
+                    </a>
                 </div>
             </section>
             <section className="projects-section">
