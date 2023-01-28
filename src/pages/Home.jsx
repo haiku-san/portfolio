@@ -30,9 +30,37 @@ function Home() {
             </section>
             <section className="projects-section">
                 <h2 id="projects-anchor">Mes projets</h2>
-                <ProjectCard />
-                <ProjectCard contentIsOnLeft={false} />
-                <ProjectCard />
+
+                {/* Optimisation du SEO et de l’accessibilité d’un site
+                2022
+              La Panthère */}
+                <ProjectCard
+                    accessibilityTag
+                    SEOTag
+                    optimizationTag
+                    tagsList={['accessibility', 'SEO', 'optimization']}
+                />
+
+                {/* Intégration & animation d’une maquette en HTML & CSS
+                2022
+                Ohmyfood */}
+                <ProjectCard
+                    htmlTag
+                    cssTag
+                    sassTag
+                    responsiveTag
+                    tagsList={['html', 'css', 'sass', 'reponsive']}
+                />
+
+                {/* Intégration d’une maquette en HTML & CSS
+                2022
+                Booki */}
+                <ProjectCard
+                    htmlTag
+                    cssTag
+                    responsiveTag
+                    tagsList={['html', 'css', 'responsive']}
+                />
             </section>
         </div>
     )

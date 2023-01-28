@@ -1,13 +1,28 @@
 import React, { useState } from 'react'
+import Tag from '../Tag/index'
+
+// Importation des icones
+
 import htmlIcon from '../../assets/images/icons/html_icon.png'
 import cssIcon from '../../assets/images/icons/css_icon.png'
 import responsiveIcon from '../../assets/images/icons/responsive_icon.png'
 import githubIcon from '../../assets/images/icons/github_icon.png'
+import sassIcon from '../../assets/images/icons/sass_icon.png'
+import accessibilityIcon from '../../assets/images/icons/accessibility_icon.png'
+import SEOIcon from '../../assets/images/icons/seo_icon.png'
+import optimizationIcon from '../../assets/images/icons/optimization_icon.png'
+import javascriptIcon from '../../assets/images/icons/javascript_icon.png'
+import nodejsIcon from '../../assets/images/icons/nodejs_icon.png'
+import mongoDBIcon from '../../assets/images/icons/mongodb_icon.png'
+import reactIcon from '../../assets/images/icons/react_icon.png'
+import reactRouterIcon from '../../assets/images/icons/react_router_icon.png'
+
+// Importation des previews des projets
 
 import bookiPreview1 from '../../assets/images/projects_previews/booki/bookiPreview1.png'
 import bookiPreview2 from '../../assets/images/projects_previews/booki/bookiPreview2.png'
 
-function ProjectCard({ contentIsOnLeft = true }) {
+function ProjectCard({ contentIsOnLeft = true, tagsList = [] }) {
     return (
         <article className="project-card">
             {contentIsOnLeft && (
@@ -20,19 +35,34 @@ function ProjectCard({ contentIsOnLeft = true }) {
                         <p>Projet personnel</p>
                     </div>
                     <ul className="project-card__tags-list">
-                        <li>
-                            <img src={htmlIcon} alt="icone html" />
-                            <p>HTML</p>
-                        </li>
-                        <li>
-                            <img src={cssIcon} alt="icone css" />
-                            <p>CSS</p>
-                        </li>
-                        <li>
-                            <img src={responsiveIcon} alt="icone responsive" />
+                        {tagsList.includes('html') && <Tag value="html" />}
+                        {tagsList.includes('css') && <Tag value="css" />}
 
-                            <p>Responsive</p>
-                        </li>
+                        {tagsList.includes('sass') && <Tag value="sass" />}
+
+                        {tagsList.includes('SEO') && <Tag value="SEO" />}
+                        {tagsList.includes('responsive') && (
+                            <Tag value="responsive" />
+                        )}
+                        {tagsList.includes('accessibility') && (
+                            <Tag value="accessibility" />
+                        )}
+                        {tagsList.includes('optimization') && (
+                            <Tag value="optimization" />
+                        )}
+                        {tagsList.includes('javascript') && (
+                            <Tag value="javascript" />
+                        )}
+                        {tagsList.includes('node.js') && (
+                            <Tag value="node.js" />
+                        )}
+                        {tagsList.includes('mongoDB') && (
+                            <Tag value="mongoDB" />
+                        )}
+                        {tagsList.includes('react') && <Tag value="react" />}
+                        {tagsList.includes('react router') && (
+                            <Tag value="react router" />
+                        )}
                     </ul>
                 </aside>
             )}
@@ -80,19 +110,34 @@ function ProjectCard({ contentIsOnLeft = true }) {
                         <p>Projet personnel</p>
                     </div>
                     <ul className="project-card__tags-list">
-                        <li>
-                            <img src={htmlIcon} alt="icone html" />
-                            <p>HTML</p>
-                        </li>
-                        <li>
-                            <img src={cssIcon} alt="icone css" />
-                            <p>CSS</p>
-                        </li>
-                        <li>
-                            <img src={responsiveIcon} alt="icone responsive" />
+                        {tagsList.includes('html') && <Tag value="html" />}
+                        {tagsList.includes('css') && <Tag value="css" />}
 
-                            <p>Responsive</p>
-                        </li>
+                        {tagsList.includes('sass') && <Tag value="sass" />}
+
+                        {tagsList.includes('SEO') && <Tag value="SEO" />}
+                        {tagsList.includes('responsive') && (
+                            <Tag value="responsive" />
+                        )}
+                        {tagsList.includes('accessibility') && (
+                            <Tag value="accessibility" />
+                        )}
+                        {tagsList.includes('optimization') && (
+                            <Tag value="optimization" />
+                        )}
+                        {tagsList.includes('javascript') && (
+                            <Tag value="javascript" />
+                        )}
+                        {tagsList.includes('node.js') && (
+                            <Tag value="node.js" />
+                        )}
+                        {tagsList.includes('mongoDB') && (
+                            <Tag value="mongoDB" />
+                        )}
+                        {tagsList.includes('react') && <Tag value="react" />}
+                        {tagsList.includes('react router') && (
+                            <Tag value="react router" />
+                        )}
                     </ul>
                 </aside>
             )}
