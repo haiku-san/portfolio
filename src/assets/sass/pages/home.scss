@@ -1,11 +1,11 @@
 .home-page {
     background: $colorBg2;
 
-    padding: 0 4rem;
     > section {
-        padding: 1.5rem 0;
+        padding: 1.5rem 4rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 3rem;
     }
     .cta-section {
@@ -14,7 +14,11 @@
         gap: 4rem;
     }
     .hero-section {
-        > div {
+        box-shadow: $shadow3;
+        > &__titles {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
             h1 {
                 @extend %title1;
                 font-size: 5rem;
@@ -23,6 +27,16 @@
                 @extend %title2;
                 font-size: 2rem;
             }
+        }
+    }
+    .projects-section {
+        box-shadow: $shadow3;
+
+        padding: 4rem 4rem;
+        > h2 {
+            @extend %title3;
+            font-size: 2rem;
+            text-align: center;
         }
     }
 }

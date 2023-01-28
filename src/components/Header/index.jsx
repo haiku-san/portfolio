@@ -8,7 +8,7 @@ function Header() {
                     <h2>Brahim Elandaloussi</h2>
                 </a>
             </section>
-            <section className="header__middle-section">
+            {/* <section className="header__middle-section">
                 <ul>
                     <a href="#home-anchor">
                         <li>Accueil</li>
@@ -20,7 +20,7 @@ function Header() {
                         <li>Mes projets</li>
                     </a>
                 </ul>
-            </section>
+            </section> */}
             <section className="header__right-section">
                 <a
                     href="mailto:elandaloussi.contact@gmail.com"

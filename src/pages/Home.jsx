@@ -6,7 +6,7 @@ function Home() {
     return (
         <div className="home-page" id="home-anchor">
             <section className="hero-section">
-                <div>
+                <div className="hero-section__titles">
                     <h1>Développeur web frontend</h1>
                     <h2>Basé en Haute-Savoie, France</h2>
                 </div>
@@ -29,9 +29,9 @@ function Home() {
                 </div>
             </section>
             <section className="projects-section">
-                <h3 id="projects-anchor">Mes projets</h3>
+                <h2 id="projects-anchor">Mes projets</h2>
                 <ProjectCard />
-                <ProjectCard />
+                <ProjectCard contentIsOnLeft={false} />
                 <ProjectCard />
             </section>
         </div>
