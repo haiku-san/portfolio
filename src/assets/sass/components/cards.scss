@@ -180,12 +180,14 @@
         align-items: center;
         width: 100%;
 
-        &:hover {
+        &:hover,
+        &:active {
             .project-card__background {
-                filter: brightness(0.9);
+                filter: contrast(0.9) blur(1px);
             }
             .project-card__buttons {
                 @extend %cta-on-hover;
+                transform: scale(1.05);
             }
         }
     }
