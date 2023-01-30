@@ -7,11 +7,11 @@ import ProjectCard from '../components/ProjectCard/index'
 import bookiPreview1 from '../assets/images/projects_previews/booki/bookiPreview1.png'
 import bookiPreview2 from '../assets/images/projects_previews/booki/bookiPreview2.png'
 
-import laPantherePreview1 from '../assets/images/projects_previews/booki/bookiPreview1.png'
-import laPantherePreview2 from '../assets/images/projects_previews/booki/bookiPreview2.png'
+import laPantherePreview1 from '../assets/images/projects_previews/lapanthere/lapantherePreview1.png'
+import laPantherePreview2 from '../assets/images/projects_previews/lapanthere/lapantherePreview2.png'
 
-import ohmyfoodPreview1 from '../assets/images/projects_previews/booki/bookiPreview1.png'
-import ohmyfoodPreview2 from '../assets/images/projects_previews/booki/bookiPreview2.png'
+import ohmyfoodPreview1 from '../assets/images/projects_previews/ohmyfood/ohmyfoodPreview1.png'
+import ohmyfoodPreview2 from '../assets/images/projects_previews/ohmyfood/ohmyfoodPreview2.png'
 
 function Home() {
     return (
@@ -54,7 +54,7 @@ function Home() {
                     optimizationTag
                     tagsList={['accessibility', 'SEO', 'optimization']}
                     previewImages={[laPantherePreview1, laPantherePreview2]}
-                    projectLink={'https://booki.elandaloussi.fr'}
+                    projectLink={'https://lapanthere.elandaloussi.fr'}
                     repoLink="https://github.com/haiku-san/OC-P4"
                 />
 
@@ -71,8 +71,8 @@ function Home() {
                     responsiveTag
                     tagsList={['html', 'css', 'sass', 'reponsive']}
                     contentIsOnLeft={false}
-                    previewImages={[ohmyfoodPreview1, ohmyfoodPreview2]}
-                    projectLink={'https://booki.elandaloussi.fr'}
+                    previewImages={[ohmyfoodPreview2, ohmyfoodPreview1]}
+                    projectLink={'https://ohmyfood.elandaloussi.fr'}
                     repoLink="https://github.com/haiku-san/OC-P3"
                 />
 
