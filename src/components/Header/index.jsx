@@ -1,11 +1,15 @@
 import React from 'react'
 
+// Import du logo
+
+import logo from '../../assets/images/logo/brahim_elandaloussi_logo.png'
+
 function Header() {
     return (
         <header className="header">
             <section className="header__left-section">
                 <a href="#home-anchor">
-                    <h2>Brahim Elandaloussi</h2>
+                    <img src={logo} alt="Logo" className="logo" />
                 </a>
             </section>
             {/* <section className="header__middle-section">
@@ -27,7 +31,7 @@ function Header() {
                     target="__blank"
                     rel="noreferrer noopener"
                 >
-                    <h2>Contact</h2>
+                    <h2 className="cta-tertiary">Contact</h2>
                 </a>
             </section>
         </header>

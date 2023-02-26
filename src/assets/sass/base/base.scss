@@ -1,6 +1,8 @@
 /**/
 :root {
     @extend %font__content;
+    scroll-behavior: smooth;
+    color: $colorPrimary700;
 }
 
 h1,

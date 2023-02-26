@@ -33,21 +33,37 @@
 }
 
 .cta-primary {
-    background: $colorAccent1;
-    color: $colorBg1;
+    background: $colorPrimary500;
+    color: $colorTertiary;
+    &.gradient {
+        background: $colorGradient1;
+    }
 }
 
 .cta-secondary {
-    background: $colorBg1;
-    color: $colorBtn1;
+    background: $white;
+    color: $colorAccent;
+}
+
+.cta-tertiary {
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
 }
 
 .icon-button {
-    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $white;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    padding: 4px;
     border: none;
     cursor: pointer;
     transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
-    filter: opacity(0.7);
+    filter: opacity(0.8);
     &:hover {
         filter: opacity(1);
     }

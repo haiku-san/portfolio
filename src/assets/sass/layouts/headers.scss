@@ -5,9 +5,6 @@
     padding: 1.5rem 4rem;
     align-items: center;
     background: $colorBg2;
-    section {
-        width: 100%;
-    }
     h2,
     li {
         @extend %menuTexts;
@@ -15,7 +12,14 @@
         text-transform: uppercase;
         white-space: nowrap;
     }
+    &__left-section {
+        display: flex;
 
+        .logo {
+            width: 30px;
+            object-fit: contain;
+        }
+    }
     &__middle-section {
         > ul {
             display: flex;

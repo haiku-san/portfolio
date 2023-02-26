@@ -16,8 +16,8 @@ function ProjectCard({
     date = '2023',
     projectName = 'Nom du projet',
     previewImages = [],
-    projectLink = 'https://booki.elandaloussi.fr',
-    repoLink = 'https://github.com/haiku-san/OC-P2',
+    projectLink = null,
+    repoLink = null,
 }) {
     return (
         <article className="project-card">
@@ -34,33 +34,44 @@ function ProjectCard({
                 onClick={() => window.open(`${projectLink}`, '_blank')}
             >
                 <div className="project-card__buttons">
-                    <a
-                        href={projectLink}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                    >
-                        <button className="cta-secondary">
-                            Voir le projet
-                        </button>
-                    </a>
-
-                    <a
-                        href={repoLink}
-                        title="Voir le repository Github"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                    >
-                        <button
-                            className="icon-button"
-                            onClick={() => window.open(`${repoLink}`, '_blank')}
+                    {projectLink && (
+                        <a
+                            href={projectLink}
+                            target="_blank"
+                            rel="noreferrer noopener"
                         >
-                            <img src={githubIcon} alt="github icon" />
-                        </button>
-                    </a>
+                            <button className="cta-primary gradient">
+                                Voir le projet
+                            </button>
+                        </a>
+                    )}
+
+                    {repoLink && (
+                        <a
+                            href={repoLink}
+                            title="Voir le repository Github"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            <button
+                                className="icon-button"
+                                onClick={() =>
+                                    window.open(`${repoLink}`, '_blank')
+                                }
+                            >
+                                <img src={githubIcon} alt="github icon" />
+                            </button>
+                        </a>
+                    )}
                 </div>
                 <div className="project-card__background">
                     {previewImages.map((image, i) => (
-                        <img src={image} alt={`preview ${i}`} key={i} />
+                        <img
+                            src={image}
+                            alt={`preview ${i}`}
+                            key={i}
+                            className="preview-image"
+                        />
                     ))}
                 </div>
             </main>

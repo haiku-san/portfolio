@@ -9,14 +9,14 @@ function Footer() {
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    <li>Github</li>
+                    <li className="cta-tertiary">Github</li>
                 </a>
                 <a
                     href="https://www.linkedin.com/in/brahim-elandaloussi/"
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    <li>Linkedin</li>
+                    <li className="cta-tertiary">Linkedin</li>
                 </a>
             </ul>
         </footer>

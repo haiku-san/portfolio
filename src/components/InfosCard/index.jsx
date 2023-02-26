@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import Tag from '../Tag/index'
 
 function InfosCard({ id }) {
     const [activeTab, setActiveTab] = useState('whoAmI')
@@ -23,7 +24,7 @@ function InfosCard({ id }) {
                                 }
                                 onClick={() => setActiveTab('whoAmI')}
                             >
-                                Qui suis-je ?
+                                <p>Qui suis-je ?</p>
                             </li>
                         </CSSTransition>
                         <CSSTransition
@@ -40,7 +41,7 @@ function InfosCard({ id }) {
                                 }
                                 onClick={() => setActiveTab('degrees')}
                             >
-                                Ma formation
+                                <p>Ma formation</p>
                             </li>
                         </CSSTransition>
                         <CSSTransition
@@ -57,7 +58,7 @@ function InfosCard({ id }) {
                                 }
                                 onClick={() => setActiveTab('skills')}
                             >
-                                Mes compétences
+                                <p>Mes compétences</p>
                             </li>
                         </CSSTransition>
                     </ul>
@@ -74,13 +75,17 @@ function InfosCard({ id }) {
                 <div className="infos-card__content who-am-i">
                     <h2>Brahim Elandaloussi</h2>
                     <p className="typewrited-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec luctus a felis at sodales. Maecenas sagittis,
-                        risus et dapibus consequat, ligula mauris feugiat risus,
-                        quis sollicitudin magna nulla vel lorem. Donec cursus mi
-                        quis metus rhoncus, sit amet dignissim augue dictum. In
-                        turpis erat, vulputate vulputate auctor dictum, cursus
-                        ac est.
+                        Développeur frontend junior, j'ai de solides bases dans
+                        l'utilisation de technologies telles que HTML, CSS,
+                        SASS, Javascript ainsi que React. Fort de mon expérience
+                        accumulée à travers la réalisation de différents projets
+                        professionnels, je suis capable de produire du code sur
+                        mesure adapté à vos besoins.
+                    </p>
+                    <p>
+                        Diplomé d'un BAC+2 en développement web chez
+                        Openclassrooms, j'ai avant tout la soif d'apprendre et
+                        de me perfectionner sur les technologies du web.
                     </p>
                 </div>
             </CSSTransition>
@@ -115,74 +120,38 @@ function InfosCard({ id }) {
             >
                 <div className="infos-card__content skills">
                     <div className="infos-card__content-skills">
-                        <div>
+                        <div className="skills-section">
                             <h3>Hard skills</h3>
                             <div className="skills-section__list">
-                                <div className="skills-section__box">
-                                    <h4>Frontend</h4>
-                                    <ul>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                    </ul>
-                                </div>
-                                <div className="skills-section__box">
-                                    <h4>Backend</h4>
-                                    <ul>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                    </ul>
-                                </div>
-                                <div className="skills-section__box">
-                                    <h4>Général</h4>
-                                    <ul>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                    </ul>
-                                </div>
+                                <Tag value="html" />
+                                <Tag value="css" />
+                                <Tag value="sass" />
+                                <Tag value="SEO" />
+                                <Tag value="responsive" />
+                                <Tag value="accessibility" />
+                                <Tag value="optimization" />
+                                <Tag value="javascript" />
+                                <Tag value="node.js" />
+                                <Tag value="mongodb" />
+                                <Tag value="react" />
+                                <Tag value="react router" />
                             </div>
                         </div>
-                        <div>
+                        <div className="skills-section">
                             <h3>Soft skills</h3>
                             <div className="skills-section__list">
-                                <div className="skills-section__box">
-                                    <h4>Frontend</h4>
-                                    <ul>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                    </ul>
-                                </div>
-                                <div className="skills-section__box">
-                                    <h4>Backend</h4>
-                                    <ul>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                    </ul>
-                                </div>
-                                <div className="skills-section__box">
-                                    <h4>Général</h4>
-                                    <ul>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                        <li>Lorem</li>
-                                    </ul>
-                                </div>
+                                <Tag value="html" />
+                                <Tag value="css" />
+                                <Tag value="sass" />
+                                <Tag value="SEO" />
+                                <Tag value="responsive" />
+                                <Tag value="accessibility" />
+                                <Tag value="optimization" />
+                                <Tag value="javascript" />
+                                <Tag value="node.js" />
+                                <Tag value="mongodb" />
+                                <Tag value="react" />
+                                <Tag value="react router" />
                             </div>
                         </div>
                     </div>

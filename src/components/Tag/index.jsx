@@ -16,82 +16,157 @@ import reactIcon from '../../assets/images/icons/react_icon.png'
 import reactRouterIcon from '../../assets/images/icons/react_router_icon.png'
 
 // value peut prendre comme valeur les strings suivantes :
-// html, css, sass, SEO, responsive, accessibility, optimization, javascript, nodejs, mongodb, react, react router
+// html, css, sass, SEO, responsive, accessibility, optimization, javascript, node.js, mongodb, react, react router
 
 function Tag({ value = 'html' }) {
     return (
-        <div>
+        <div className="skill-tag">
             {value === 'html' && (
-                <li>
-                    <img src={htmlIcon} alt="icone html" />
-                    <p>HTML</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={htmlIcon} alt="icone html" />
+                        <p>HTML</p>
+                    </li>
+                </a>
             )}
             {value === 'css' && (
-                <li>
-                    <img src={cssIcon} alt="icone css" />
-                    <p>CSS</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={cssIcon} alt="icone css" />
+                        <p>CSS</p>
+                    </li>
+                </a>
             )}
             {value === 'sass' && (
-                <li>
-                    <img src={sassIcon} alt="icone sass" />
-                    <p>Sass</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/Sass_(langage)"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={sassIcon} alt="icone sass" />
+                        <p>Sass</p>
+                    </li>
+                </a>
             )}
             {value === 'SEO' && (
-                <li>
-                    <img src={SEOIcon} alt="icone SEO" />
-                    <p>SEO</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_de_recherche"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={SEOIcon} alt="icone SEO" />
+                        <p>SEO</p>
+                    </li>
+                </a>
             )}
             {value === 'responsive' && (
-                <li>
-                    <img src={responsiveIcon} alt="icone responsive" />
-                    <p>Responsive</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/Site_web_r%C3%A9actif"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={responsiveIcon} alt="icone responsive" />
+                        <p>Responsive</p>
+                    </li>
+                </a>
             )}
             {value === 'accessibility' && (
-                <li>
-                    <img src={accessibilityIcon} alt="icone accessibility" />
-                    <p>Accessibility</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/Accessibilit%C3%A9_du_web"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img
+                            src={accessibilityIcon}
+                            alt="icone accessibility"
+                        />
+                        <p>Accessibilité</p>
+                    </li>
+                </a>
             )}
             {value === 'optimization' && (
-                <li>
-                    <img src={optimizationIcon} alt="icone optimisation" />
-                    <p>Optimisation</p>
-                </li>
+                <a
+                    href="https://en.wikipedia.org/wiki/Web_performance"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={optimizationIcon} alt="icone optimisation" />
+                        <p>Optimisation</p>
+                    </li>
+                </a>
             )}
             {value === 'javascript' && (
-                <li>
-                    <img src={javascriptIcon} alt="icone javascript" />
-                    <p>Javascript</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/JavaScript"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={javascriptIcon} alt="icone javascript" />
+                        <p>Javascript</p>
+                    </li>
+                </a>
             )}
             {value === 'node.js' && (
-                <li>
-                    <img src={nodejsIcon} alt="icone nodejs" />
-                    <p>Node.js</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/Node.js"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={nodejsIcon} alt="icone nodejs" />
+                        <p>Node.js</p>
+                    </li>
+                </a>
             )}
             {value === 'mongodb' && (
-                <li>
-                    <img src={mongoDBIcon} alt="icone mongoDB" />
-                    <p>MongoDB</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/MongoDB"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={mongoDBIcon} alt="icone mongoDB" />
+                        <p>MongoDB</p>
+                    </li>
+                </a>
             )}
             {value === 'react' && (
-                <li>
-                    <img src={reactIcon} alt="icone react" />
-                    <p>React</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/React"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={reactIcon} alt="icone react" />
+                        <p>React</p>
+                    </li>
+                </a>
             )}
             {value === 'react router' && (
-                <li>
-                    <img src={reactRouterIcon} alt="icone react router" />
-                    <p>React router</p>
-                </li>
+                <a
+                    href="https://fr.wikipedia.org/wiki/React"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <img src={reactRouterIcon} alt="icone react router" />
+                        <p>React router</p>
+                    </li>
+                </a>
             )}
         </div>
     )
