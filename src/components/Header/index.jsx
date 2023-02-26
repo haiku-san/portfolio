@@ -5,22 +5,31 @@ import React, { useState, useEffect } from 'react'
 import logoLightMode from '../../assets/images/logo/brahim_elandaloussi_logo.png'
 import logoDarkMode from '../../assets/images/logo/brahim_elandaloussi_logo_dark_mode.png'
 
+import sunIcon from '../../assets/images/icons/sun.png'
+import moonIcon from '../../assets/images/icons/moon.png'
+
 function Header() {
-    const [mode, setMode] = useState('light')
+    const [isDarkMode, setIsDarkMode] = useState(false)
+
+    const onSelectMode = (mode) => {
+        setIsDarkMode(mode)
+        if (mode === true) document.body.classList.add('dark-mode')
+        else document.body.classList.remove('dark-mode')
+    }
 
     useEffect(() => {
         // Add listener to update styles
         window
             .matchMedia('(prefers-color-scheme: dark)')
             .addEventListener('change', (e) =>
-                setMode(e.matches ? 'dark' : 'light')
+                onSelectMode(e.matches ? true : false)
             )
 
         // Setup dark/light mode for the first time
-        setMode(
+        onSelectMode(
             window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light'
+                ? true
+                : false
         )
 
         // Remove listener
@@ -35,7 +44,7 @@ function Header() {
             <section className="header__left-section">
                 <a href="#home-anchor">
                     <img
-                        src={mode === 'light' ? logoLightMode : logoDarkMode}
+                        src={isDarkMode ? logoDarkMode : logoLightMode}
                         alt="Logo"
                         className="logo"
                     />
@@ -54,6 +63,7 @@ function Header() {
                     </a>
                 </ul>
             </section> */}
+
             <section className="header__right-section">
                 <a
                     href="mailto:elandaloussi.contact@gmail.com"
@@ -62,6 +72,12 @@ function Header() {
                 >
                     <h2 className="cta-tertiary">Contact</h2>
                 </a>
+                <img
+                    onClick={() => onSelectMode(!isDarkMode)}
+                    src={isDarkMode ? sunIcon : moonIcon}
+                    alt="Dark mode switch button"
+                    className="dark-mode-button"
+                />
             </section>
         </header>
     )

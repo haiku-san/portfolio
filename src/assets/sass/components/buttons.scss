@@ -22,7 +22,7 @@
     box-shadow: $shadow1;
 
     border: none;
-    opacity: 0.9;
+    opacity: 0.95;
     transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
     cursor: pointer;
     &:hover,
@@ -66,5 +66,16 @@
     filter: opacity(0.8);
     &:hover {
         filter: opacity(1);
+    }
+}
+
+.dark-mode-button {
+    height: 1.2rem;
+    cursor: pointer;
+    filter: opacity(0.8) saturate(0.8);
+    transition: all 50ms ease-out;
+    &:hover,
+    &:active {
+        filter: opacity(1) saturate(1);
     }
 }

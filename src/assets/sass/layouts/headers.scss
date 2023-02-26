@@ -29,5 +29,8 @@
     }
     &__right-section {
         text-align: right;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
     }
 }

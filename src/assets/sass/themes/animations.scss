@@ -5,7 +5,6 @@
 // Resetting default behaviors
 
 .infos-card__menu-tab:not(.active) {
-    filter: opacity(0.8);
     transition: all ease-out 200ms;
 
     &::before {
@@ -20,7 +19,6 @@
 }
 
 .infos-card__menu-tab.active {
-    filter: opacity(1);
     &::before {
         filter: opacity(1);
     }
@@ -40,56 +38,42 @@
 // Tabs
 
 .infos-card__menu-tab.tab-is-active-appear {
-    filter: opacity(0.8);
-
     &::before {
         filter: opacity(0);
     }
 }
 
 .infos-card__menu-tab.tab-is-active-enter {
-    filter: opacity(0.8);
-
     &::before {
         filter: opacity(0.2);
     }
 }
 
 .infos-card__menu-tab.tab-is-active-enter-active {
-    filter: opacity(0.9);
-
     &::before {
         filter: opacity(0.5);
     }
 }
 
 .infos-card__menu-tab.tab-is-active-enter-done {
-    filter: opacity(1);
-
     &::before {
         filter: opacity(1);
     }
 }
 
 .infos-card__menu-tab.tab-is-active-exit {
-    filter: opacity(1);
-
     &::before {
         filter: opacity(1);
     }
 }
 
 .infos-card__menu-tab.tab-is-active-exit-active {
-    filter: opacity(0.9);
-
     &::before {
         filter: opacity(0.5);
     }
 }
 
 .infos-card__menu-tab.tab-is-active-exit-done {
-    filter: opacity(0.8);
-
     &::before {
         filter: opacity(0);
     }
