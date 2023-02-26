@@ -99,16 +99,10 @@ function InfosCard({ id }) {
                 <div className="infos-card__content degrees">
                     <h3>2022 - Développeur web - Openclassrooms</h3>
                     <h4>Titre RNCP de niveau 5 (Bac + 2)</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec luctus a felis at sodales.{' '}
-                    </p>
+                    <p></p>
                     <h3>2021 - Licence de droit - Université de Rennes</h3>
                     <h4>Licence (Bac + 3)</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec luctus a felis at sodales.{' '}
-                    </p>
+                    <p></p>
                 </div>
             </CSSTransition>
             <CSSTransition
@@ -140,18 +134,21 @@ function InfosCard({ id }) {
                         <div className="skills-section">
                             <h3>Soft skills</h3>
                             <div className="skills-section__list">
-                                <Tag value="html" />
-                                <Tag value="css" />
-                                <Tag value="sass" />
-                                <Tag value="SEO" />
-                                <Tag value="responsive" />
-                                <Tag value="accessibility" />
-                                <Tag value="optimization" />
-                                <Tag value="javascript" />
-                                <Tag value="node.js" />
-                                <Tag value="mongodb" />
-                                <Tag value="react" />
-                                <Tag value="react router" />
+                                <ul>
+                                    <li className="soft-skill-tag">
+                                        Curiosité
+                                    </li>
+                                    <li className="soft-skill-tag">
+                                        Créativité
+                                    </li>
+                                    <li className="soft-skill-tag">
+                                        Travail d'équipe
+                                    </li>
+                                    <li className="soft-skill-tag">Rigueur</li>
+                                    <li className="soft-skill-tag">
+                                        Adaptabilité
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

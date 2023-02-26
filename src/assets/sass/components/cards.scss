@@ -93,6 +93,29 @@
                     .skill-tag li {
                         background-color: var(--colorSecondary);
                         box-shadow: $shadow3;
+                        white-space: nowrap;
+                    }
+                    ul {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 0.8rem 1rem;
+                        padding: 0;
+                        margin: 0;
+                        .soft-skill-tag {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                            padding: 0.5rem 0.8rem 0.5rem 0.6rem;
+                            border-radius: 0.3rem;
+                            user-select: none;
+                            // background-color: var(--colorSecondary);
+                            background: $colorAccent;
+                            box-shadow: $shadow3;
+                            color: $colorTertiary;
+                            @extend %title5Tags;
+                        }
                     }
                 }
             }

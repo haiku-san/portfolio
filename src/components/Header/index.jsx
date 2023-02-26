@@ -42,13 +42,12 @@ function Header() {
     return (
         <header className="header">
             <section className="header__left-section">
-                <a href="#home-anchor">
-                    <img
-                        src={isDarkMode ? logoDarkMode : logoLightMode}
-                        alt="Logo"
-                        className="logo"
-                    />
-                </a>
+                <img
+                    src={isDarkMode ? logoDarkMode : logoLightMode}
+                    alt="Logo"
+                    className="logo"
+                    onClick={() => window.location.reload()}
+                />
             </section>
             {/* <section className="header__middle-section">
                 <ul>
