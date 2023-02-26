@@ -1,5 +1,5 @@
 .home-page {
-    background: $colorBackground;
+    background: var(--colorBackground);
     > section {
         padding: 1.5rem 7rem;
         display: flex;
@@ -21,7 +21,7 @@
             h1 {
                 @extend %title1;
                 font-size: 5rem;
-                color: $colorPrimary700;
+                color: var(--colorPrimary700);
                 @supports (background-clip: text) {
                     background-image: $colorGradient1;
                     background-clip: text;

@@ -55,6 +55,8 @@ $colorBtn1: #a16a52;
 
 // ******V2 Design colors******
 
+// Light mode
+
 $colorPrimary500: #344a53;
 $colorPrimary600: #00141c;
 $colorPrimary700: #000914;
@@ -67,6 +69,19 @@ $colorAccent: #775562;
 
 $colorBackground: #eaeef0;
 
+// Dark mode
+
+$colorPrimary500DarkMode: #344a53;
+$colorPrimary600DarkMode: #1c2b32;
+$colorPrimary700DarkMode: #0d0d0d;
+
+$colorSecondaryDarkMode: #efc8cb;
+
+$colorTertiaryDarkMode: #333c45;
+
+$colorAccentDarkMode: #775562;
+
+$colorBackgroundDarkMode: #191f24;
 // Gradients
 
 $colorGradient1: linear-gradient(

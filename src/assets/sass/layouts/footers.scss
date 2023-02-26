@@ -1,6 +1,6 @@
 /**/
 .footer {
-    background: $colorBg2;
+    background: var(--colorBackground);
     padding: 4rem 4rem;
     > ul {
         display: flex;

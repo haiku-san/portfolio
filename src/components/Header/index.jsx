@@ -1,15 +1,44 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 // Import du logo
 
-import logo from '../../assets/images/logo/brahim_elandaloussi_logo.png'
+import logoLightMode from '../../assets/images/logo/brahim_elandaloussi_logo.png'
+import logoDarkMode from '../../assets/images/logo/brahim_elandaloussi_logo_dark_mode.png'
 
 function Header() {
+    const [mode, setMode] = useState('light')
+
+    useEffect(() => {
+        // Add listener to update styles
+        window
+            .matchMedia('(prefers-color-scheme: dark)')
+            .addEventListener('change', (e) =>
+                setMode(e.matches ? 'dark' : 'light')
+            )
+
+        // Setup dark/light mode for the first time
+        setMode(
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+        )
+
+        // Remove listener
+        return () => {
+            window
+                .matchMedia('(prefers-color-scheme: dark)')
+                .removeEventListener('change', () => {})
+        }
+    }, [])
     return (
         <header className="header">
             <section className="header__left-section">
                 <a href="#home-anchor">
-                    <img src={logo} alt="Logo" className="logo" />
+                    <img
+                        src={mode === 'light' ? logoLightMode : logoDarkMode}
+                        alt="Logo"
+                        className="logo"
+                    />
                 </a>
             </section>
             {/* <section className="header__middle-section">

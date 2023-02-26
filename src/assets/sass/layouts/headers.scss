@@ -4,7 +4,8 @@
     justify-content: space-between;
     padding: 1.5rem 4rem;
     align-items: center;
-    background: $colorBg2;
+    background: var(--colorBackground);
+
     h2,
     li {
         @extend %menuTexts;
