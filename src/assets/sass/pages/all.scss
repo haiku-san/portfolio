@@ -34,6 +34,12 @@
             &__content {
                 background-color: $colorPrimary700DarkMode;
             }
+            &__mobile-controls {
+                background-color: $colorPrimary700DarkMode;
+                img {
+                    opacity: 0.9;
+                }
+            }
             &__menu > ul > .infos-card__menu-tab {
                 color: $colorTertiary;
                 &.active p {
