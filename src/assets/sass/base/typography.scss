@@ -49,14 +49,23 @@
 %title3 {
     @extend %font__content;
     @extend %regular;
+    @include mobile-and-tablette {
+        font-size: 1.2rem;
+    }
 }
 %title4 {
     @extend %font__content;
     @extend %medium;
+    @include mobile-and-tablette {
+        font-size: 1.1rem;
+    }
 }
 %title5 {
     @extend %font__content;
     @extend %regular;
+    @include mobile-and-tablette {
+        font-size: 1rem;
+    }
 }
 %title5Tags {
     @extend %font__content;
@@ -70,6 +79,9 @@
 %paragraph1 {
     @extend %font__content;
     @extend %light;
+    @include mobile-and-tablette {
+        font-size: 0.8rem;
+    }
 }
 %paragraph2 {
     @extend %font__content;

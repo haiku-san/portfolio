@@ -106,6 +106,7 @@
         border-radius: 0 0 $borderRadius2 $borderRadius2;
         @include mobile-and-tablette {
             border-radius: 0;
+            padding: 1.8rem;
         }
         h2 {
             @extend %title3;
@@ -130,7 +131,7 @@
             @include mobile-and-tablette {
                 flex-direction: column;
                 gap: 2rem;
-                padding: 0 2rem 1rem 2rem;
+                padding: 0 0 1rem 0;
             }
             .skills-section {
                 display: flex;
