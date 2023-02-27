@@ -5,12 +5,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 3rem;
+        gap: 2rem;
+        @include mobile-and-tablette {
+            padding: 1rem 0.5rem;
+        }
     }
     .cta-section {
         display: flex;
         justify-content: center;
         gap: 4rem;
+        @include mobile-and-tablette {
+            flex-direction: column;
+            width: 90%;
+            gap: 2rem;
+            padding: 1rem 0;
+            button {
+                width: 100%;
+                height: 4rem;
+            }
+        }
     }
     .hero-section {
         box-shadow: $shadow3;
@@ -18,6 +31,7 @@
             display: flex;
             flex-direction: column;
             width: 90%;
+            gap: 1rem;
             h1 {
                 @extend %title1;
                 font-size: 5rem;
@@ -27,17 +41,27 @@
                     background-clip: text;
                     color: transparent;
                 }
+                @include mobile-and-tablette {
+                    font-size: 2.5rem;
+                }
             }
             h2 {
                 @extend %title2;
                 font-size: 2rem;
+                @include mobile-and-tablette {
+                    font-size: 1.2rem;
+                }
             }
         }
     }
     .projects-section {
         box-shadow: $shadow3;
         gap: 4rem;
-        padding: 4rem 14rem;
+        padding: 4rem 10rem;
+        @include mobile-and-tablette {
+            padding: 4rem 4rem 2rem 4rem;
+            gap: 3rem;
+        }
         > h2 {
             @extend %title3;
             font-size: 2rem;

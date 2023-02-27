@@ -4,6 +4,9 @@
 
 %buttonSizeS {
     font-size: 1.1rem;
+    @include mobile-only {
+        font-size: 0.8rem;
+    }
 }
 
 // *****Buttons CSS*****
@@ -16,20 +19,7 @@
 
 .cta-primary,
 .cta-secondary {
-    @extend %title4;
-    @extend %buttonSizeS;
-    padding: 1rem 1.5rem;
-    box-shadow: $shadow1;
-
-    border: none;
-    opacity: 0.95;
-    transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
-    cursor: pointer;
-    &:hover,
-    &:active {
-        @extend %cta-on-hover;
-        box-shadow: $shadow2;
-    }
+    @include cta-base;
 }
 
 .cta-primary {
@@ -43,12 +33,37 @@
 .cta-secondary {
     background: $white;
     color: $colorAccent;
+    &.accent {
+        background: $colorPrimary600;
+        color: $colorTertiary;
+    }
 }
 
 .cta-tertiary {
     &:hover,
     &:active {
         text-decoration: underline;
+    }
+}
+
+footer .cta-tertiary {
+    @include mobile-and-tablette {
+        background: $colorPrimary500;
+        color: $colorTertiary;
+        padding: 1rem 1.5rem;
+        box-shadow: $shadow1;
+        font-size: 1.1rem;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 500;
+        border: none;
+        opacity: 0.95;
+        transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
+        cursor: pointer;
+        &:hover,
+        &:active {
+            box-shadow: $shadow2;
+            opacity: 1;
+        }
     }
 }
 
@@ -77,5 +92,8 @@
     &:hover,
     &:active {
         filter: opacity(1) saturate(1);
+    }
+    @include mobile-and-tablette {
+        display: none;
     }
 }

@@ -6,6 +6,8 @@ function ProjectCardContent({
     title = 'Titre',
     date = '2023',
     projectName = 'Nom du projet',
+    projectLink = null,
+    repoLink = null,
 }) {
     return (
         <aside className="project-card__content">
@@ -19,6 +21,14 @@ function ProjectCardContent({
                     <Tag value={tag} key={i} />
                 ))}
             </ul>
+            <div className="project-card__mobile-controls">
+                {projectLink && (
+                    <button className="cta-secondary">Voir le projet</button>
+                )}
+                {repoLink && (
+                    <button className="cta-secondary accent">Github</button>
+                )}
+            </div>
         </aside>
     )
 }

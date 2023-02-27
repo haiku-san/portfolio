@@ -2,8 +2,34 @@ import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import Tag from '../Tag/index'
 
+import arrowDown from '../../assets/images/icons/arrow-down.png'
+
 function InfosCard({ id }) {
     const [activeTab, setActiveTab] = useState('whoAmI')
+
+    function handleRightArrow() {
+        if (activeTab === 'whoAmI') {
+            setActiveTab('degrees')
+        }
+        if (activeTab === 'degrees') {
+            setActiveTab('skills')
+        }
+        if (activeTab === 'skills') {
+            setActiveTab('whoAmI')
+        }
+    }
+
+    function handleLeftArrow() {
+        if (activeTab === 'whoAmI') {
+            setActiveTab('skills')
+        }
+        if (activeTab === 'degrees') {
+            setActiveTab('whoAmI')
+        }
+        if (activeTab === 'skills') {
+            setActiveTab('degrees')
+        }
+    }
 
     return (
         <article className="infos-card" id={id}>
@@ -154,6 +180,17 @@ function InfosCard({ id }) {
                     </div>
                 </div>
             </CSSTransition>
+            <footer className="infos-card__mobile-controls">
+                <img src={arrowDown} alt="" onClick={() => handleLeftArrow()} />{' '}
+                {activeTab === 'whoAmI' && <p>1/3</p>}
+                {activeTab === 'degrees' && <p>2/3</p>}
+                {activeTab === 'skills' && <p>3/3</p>}
+                <img
+                    src={arrowDown}
+                    alt=""
+                    onClick={() => handleRightArrow()}
+                />
+            </footer>
         </article>
     )
 }

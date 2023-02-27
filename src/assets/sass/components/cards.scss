@@ -12,6 +12,33 @@
     &__header {
         padding: 0.7rem 0.7rem 0 0.7rem;
         @extend %title5;
+        @include mobile-and-tablette {
+            padding: 0.7rem;
+        }
+    }
+    &__mobile-controls {
+        display: none;
+        @include mobile-and-tablette {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $white;
+            border-radius: 0 0 $borderRadius2 $borderRadius2;
+            padding: 0 0 2rem 0;
+            cursor: pointer;
+            img {
+                transform: rotate(270deg);
+                height: 1.5rem;
+                width: 1.5rem;
+                object-fit: contain;
+                border-radius: 50%;
+                background-color: $colorBackground;
+                padding: 1rem;
+                &:nth-child(1) {
+                    transform: rotate(90deg);
+                }
+            }
+        }
     }
     &__menu {
         margin: 0;
@@ -19,6 +46,9 @@
             margin: 0;
             display: flex;
             align-items: center;
+            @include mobile-and-tablette {
+                justify-content: center;
+            }
             > .infos-card__menu-tab {
                 color: var(--colorTertiary);
 
@@ -26,7 +56,17 @@
                 position: relative;
                 cursor: pointer;
                 padding: 0.5rem 1.5rem;
-                border-radius: 0.5rem 0.5rem 0rem 0rem;
+                border-radius: $borderRadius1 $borderRadius1 0rem $borderRadius1;
+
+                @include mobile-and-tablette {
+                    border-radius: $borderRadius1;
+                }
+                &:not(.active) {
+                    @include mobile-and-tablette {
+                        display: none;
+                    }
+                }
+
                 p {
                     margin: 0;
                 }
@@ -40,6 +80,9 @@
                     bottom: 0;
                     right: 0;
                     background-color: $white;
+                    @include mobile-and-tablette {
+                        border-radius: $borderRadius1;
+                    }
                 }
                 &.active {
                     p {
@@ -49,6 +92,9 @@
                             background-clip: text;
                             color: transparent;
                         }
+                        @include mobile-and-tablette {
+                            font-size: 1.3rem;
+                        }
                     }
                 }
             }
@@ -57,8 +103,10 @@
     &__content {
         padding: 2rem 2.2rem;
         background-color: $white;
-
-        border-radius: 0 0 0.5rem 0.5rem;
+        border-radius: 0 0 $borderRadius2 $borderRadius2;
+        @include mobile-and-tablette {
+            border-radius: 0;
+        }
         h2 {
             @extend %title3;
         }
@@ -71,15 +119,24 @@
         h4 {
             @extend %title5;
         }
+        &.degrees {
+            line-height: 1.5rem;
+        }
         &-skills {
             display: flex;
             justify-content: space-evenly;
             padding: 0 2rem;
             gap: 3rem;
+            @include mobile-and-tablette {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 0 2rem 1rem 2rem;
+            }
             .skills-section {
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+
                 &__list {
                     display: flex;
                     justify-content: center;
@@ -159,7 +216,20 @@
             border-radius: 0 $borderRadius1 $borderRadius1 0;
         }
     }
-
+    &__mobile-controls {
+        display: flex;
+        gap: 1rem;
+        padding-top: 1rem;
+        button {
+            width: 100%;
+        }
+        @include mobile-only {
+            flex-direction: column;
+        }
+        @include from-desktop {
+            display: none;
+        }
+    }
     &__content {
         display: flex;
         flex-direction: column;
@@ -168,6 +238,9 @@
         padding: 2rem;
         width: 40%;
         gap: 1rem;
+        @include mobile-and-tablette {
+            width: 100%;
+        }
         &-text {
             display: flex;
             flex-direction: column;
@@ -232,6 +305,9 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        @include mobile-and-tablette {
+            display: none;
+        }
         &:hover,
         &:active {
             .project-card__background {

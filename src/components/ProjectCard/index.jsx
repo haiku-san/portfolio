@@ -27,6 +27,8 @@ function ProjectCard({
                     date={date}
                     projectName={projectName}
                     tagsList={tagsList}
+                    projectLink={projectLink}
+                    repoLink={repoLink}
                 />
             )}
             <main
@@ -81,6 +83,8 @@ function ProjectCard({
                     date={date}
                     projectName={projectName}
                     tagsList={tagsList}
+                    projectLink={projectLink}
+                    repoLink={repoLink}
                 />
             )}
         </article>

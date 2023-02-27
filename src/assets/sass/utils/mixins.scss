@@ -70,3 +70,22 @@
         @content;
     }
 }
+
+// *****Buttons*****
+
+@mixin cta-base {
+    @extend %title4;
+    @extend %buttonSizeS;
+    padding: 1rem 1.5rem;
+    box-shadow: $shadow1;
+
+    border: none;
+    opacity: 0.95;
+    transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
+    cursor: pointer;
+    &:hover,
+    &:active {
+        @extend %cta-on-hover;
+        box-shadow: $shadow2;
+    }
+}
