@@ -221,7 +221,9 @@
         display: flex;
         gap: 1rem;
         padding-top: 1rem;
-        button {
+
+        button,
+        a {
             width: 100%;
         }
         @include mobile-only {

@@ -23,10 +23,24 @@ function ProjectCardContent({
             </ul>
             <div className="project-card__mobile-controls">
                 {projectLink && (
-                    <button className="cta-secondary">Voir le projet</button>
+                    <a
+                        href={projectLink}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        <button className="cta-secondary">
+                            Voir le projet
+                        </button>
+                    </a>
                 )}
                 {repoLink && (
-                    <button className="cta-secondary accent">Github</button>
+                    <a
+                        href={repoLink}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        <button className="cta-secondary accent">Github</button>
+                    </a>
                 )}
             </div>
         </aside>
