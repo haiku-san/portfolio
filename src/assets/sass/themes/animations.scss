@@ -1,0 +1,149 @@
+/**/
+
+// ***** Informations card *****
+
+// Resetting default behaviors
+
+.infos-card__menu-tab:not(.active) {
+    transition: all ease-out 200ms;
+
+    &::before {
+        filter: opacity(0);
+        transition: all ease-out 200ms;
+    }
+    &:hover {
+        &::before {
+            filter: opacity(0.3);
+        }
+    }
+}
+
+.infos-card__menu-tab.active {
+    &::before {
+        filter: opacity(1);
+    }
+}
+
+.infos-card__content {
+    display: none;
+    * {
+        filter: opacity(0);
+        transition: all ease-out 200ms;
+    }
+    transition: all ease-out 200ms;
+}
+
+// Setting animations behaviors
+
+// Tabs
+
+.infos-card__menu-tab.tab-is-active-appear {
+    &::before {
+        filter: opacity(0);
+    }
+}
+
+.infos-card__menu-tab.tab-is-active-enter {
+    &::before {
+        filter: opacity(0.2);
+    }
+}
+
+.infos-card__menu-tab.tab-is-active-enter-active {
+    &::before {
+        filter: opacity(0.5);
+    }
+}
+
+.infos-card__menu-tab.tab-is-active-enter-done {
+    &::before {
+        filter: opacity(1);
+    }
+}
+
+.infos-card__menu-tab.tab-is-active-exit {
+    &::before {
+        filter: opacity(1);
+    }
+}
+
+.infos-card__menu-tab.tab-is-active-exit-active {
+    &::before {
+        filter: opacity(0.5);
+    }
+}
+
+.infos-card__menu-tab.tab-is-active-exit-done {
+    &::before {
+        filter: opacity(0);
+    }
+}
+
+// Contents
+
+.infos-card__content.content-is-active-enter {
+    display: block;
+
+    * {
+        filter: opacity(0);
+    }
+}
+
+.infos-card__content.content-is-active-enter-done {
+    display: block;
+
+    * {
+        filter: opacity(1);
+    }
+}
+
+.infos-card__content.content-is-active-exit {
+    display: block;
+
+    * {
+        filter: opacity(1);
+    }
+}
+
+.infos-card__content.content-is-active-exit-active {
+    display: none;
+
+    * {
+        filter: opacity(0);
+    }
+}
+
+// Moving preview animation
+
+@keyframes shaking-left {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-6px) translateX(-4px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+@keyframes shaking-right {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(6px) translateX(4px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+// .project-card__background {
+//     img:nth-child(1) {
+//         animation: shaking-left 6s ease-in-out infinite;
+//     }
+//     img:nth-child(2) {
+//         animation: shaking-right 6s ease-in-out infinite;
+//     }
+// }

@@ -1,0 +1,99 @@
+/**/
+
+// *****Buttons sizes*****
+
+%buttonSizeS {
+    font-size: 1.1rem;
+    @include mobile-only {
+        font-size: 0.8rem;
+    }
+}
+
+// *****Buttons CSS*****
+
+%cta-on-hover {
+    opacity: 1;
+
+    // transform: scale(1.05);
+}
+
+.cta-primary,
+.cta-secondary {
+    @include cta-base;
+}
+
+.cta-primary {
+    background: $colorPrimary500;
+    color: $colorTertiary;
+    &.gradient {
+        background: $colorGradient1;
+    }
+}
+
+.cta-secondary {
+    background: $white;
+    color: $colorAccent;
+    &.accent {
+        background: $colorPrimary600;
+        color: $colorTertiary;
+    }
+}
+
+.cta-tertiary {
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+footer .cta-tertiary {
+    @include mobile-and-tablette {
+        background: $colorPrimary500;
+        color: $colorTertiary;
+        padding: 1rem 1.5rem;
+        box-shadow: $shadow1;
+        font-size: 1.1rem;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 500;
+        border: none;
+        opacity: 0.95;
+        transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
+        cursor: pointer;
+        &:hover,
+        &:active {
+            box-shadow: $shadow2;
+            opacity: 1;
+        }
+    }
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $white;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
+    filter: opacity(0.8);
+    &:hover {
+        filter: opacity(1);
+    }
+}
+
+.dark-mode-button {
+    height: 1.2rem;
+    cursor: pointer;
+    filter: opacity(0.8) saturate(0.8);
+    transition: all 50ms ease-out;
+    &:hover,
+    &:active {
+        filter: opacity(1) saturate(1);
+    }
+    @include mobile-and-tablette {
+        display: none;
+    }
+}

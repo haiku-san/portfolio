@@ -1,0 +1,65 @@
+:root {
+    // Light mode colors
+    color: $colorPrimary700;
+    --colorPrimary500: #{$colorPrimary500};
+    --colorPrimary600: #{$colorPrimary600};
+    --colorPrimary700: #{$colorPrimary700};
+
+    --colorSecondary: #{$colorSecondary};
+
+    --colorTertiary: #{$colorTertiary};
+
+    --colorAccent: #{$colorAccent};
+
+    --colorBackground: #{$colorBackground};
+
+    .dark-mode {
+        color: $colorTertiary;
+
+        --colorPrimary500: #{$colorPrimary500DarkMode};
+        --colorPrimary600: #{$colorPrimary600DarkMode};
+        --colorPrimary700: #{$colorPrimary700DarkMode};
+
+        --colorSecondary: #{$colorSecondaryDarkMode};
+
+        --colorTertiary: #{$colorTertiaryDarkMode};
+
+        --colorAccent: #{$colorAccentDarkMode};
+
+        --colorBackground: #{$colorBackgroundDarkMode};
+        .home-page .hero-section__titles h1 {
+            color: $colorTertiary;
+        }
+        .infos-card {
+            background: var(--colorPrimary600);
+            &__content {
+                background-color: $colorPrimary700DarkMode;
+            }
+            &__mobile-controls {
+                background-color: $colorPrimary700DarkMode;
+                img {
+                    opacity: 0.9;
+                }
+            }
+            &__menu > ul > .infos-card__menu-tab {
+                color: $colorTertiary;
+                &.active p {
+                    color: $colorTertiary;
+                }
+                &::before {
+                    background-color: $colorPrimary700DarkMode;
+                }
+            }
+        }
+        .skill-tag li {
+            background-color: $colorTertiary;
+        }
+        .project-card__content-text {
+            h2,
+            h3,
+            p {
+                color: $colorTertiary;
+            }
+        }
+    }
+}

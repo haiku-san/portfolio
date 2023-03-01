@@ -1,0 +1,21 @@
+/**/
+.footer {
+    background: var(--colorBackground);
+    padding: 4rem 4rem;
+    @include mobile-and-tablette {
+        padding: 2rem;
+    }
+    > ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        @include mobile-and-tablette {
+            flex-direction: column;
+            gap: 2rem;
+            a {
+                width: 90%;
+                text-align: center;
+            }
+        }
+    }
+}
