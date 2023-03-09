@@ -104,6 +104,7 @@
         padding: 2rem 2.2rem;
         background-color: $white;
         border-radius: 0 0 $borderRadius2 $borderRadius2;
+
         @include mobile-and-tablette {
             border-radius: 0;
             padding: 1.8rem;

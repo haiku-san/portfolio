@@ -1,4 +1,7 @@
 :root {
+    strong {
+        color: $colorAccent;
+    }
     // Light mode colors
     color: $colorPrimary700;
     --colorPrimary500: #{$colorPrimary500};
@@ -14,6 +17,9 @@
     --colorBackground: #{$colorBackground};
 
     .dark-mode {
+        strong {
+            color: $colorTertiary;
+        }
         color: $colorTertiary;
 
         --colorPrimary500: #{$colorPrimary500DarkMode};

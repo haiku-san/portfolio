@@ -99,19 +99,41 @@ function InfosCard({ id }) {
                 classNames="content-is-active"
             >
                 <div className="infos-card__content who-am-i">
-                    <h2>Brahim Elandaloussi</h2>
-                    <p className="typewrited-text">
-                        Développeur frontend junior, j'ai de solides bases dans
-                        l'utilisation de technologies telles que HTML, CSS,
-                        SASS, Javascript ainsi que React. Fort de mon expérience
-                        accumulée à travers la réalisation de différents projets
-                        professionnels, je suis capable de produire du code sur
-                        mesure adapté à vos besoins.
+                    <h2>Hey there!</h2>
+                    <p>
+                        Je suis <strong>Brahim</strong>, un{' '}
+                        <strong>développeur frontend</strong> passionné,
+                        toujours à l'affût de nouvelles tendances et idées pour
+                        améliorer mes compétences et mes projets. J'aime créer
+                        des projets <strong>innovants</strong> et laisser libre
+                        cours à ma <strong>curiosité</strong> et ma{' '}
+                        <strong>créativité</strong>.
                     </p>
                     <p>
-                        Diplomé d'un BAC+2 en développement web chez
-                        Openclassrooms, j'ai avant tout la soif d'apprendre et
-                        de me perfectionner sur les technologies du web.
+                        En plus d'être compétent en{' '}
+                        <strong>
+                            HTML, CSS, JavaScript, React, Node.js et Express
+                        </strong>
+                        , j'ai une <strong>formation en droit</strong> et de
+                        solides aptitudes rédactionnelles et relationnelles.
+                        J'ai acquis ces compétences en étudiant à l'université,
+                        mais aussi en travaillant en restauration en parallèle
+                        de ma <strong>formation en développement web</strong>.
+                    </p>{' '}
+                    <p>
+                        Je suis convaincu que la{' '}
+                        <strong>formation continue</strong> est essentielle pour
+                        rester à jour avec les{' '}
+                        <strong>dernières tendances</strong> et les{' '}
+                        <strong>nouvelles technologies</strong> dans le domaine
+                        du web. C'est pourquoi je suis toujours en train d'
+                        apprendre et de me perfectionner.
+                    </p>{' '}
+                    <p>
+                        Si vous voulez en savoir plus sur moi et mes
+                        réalisations, n'hésitez pas à{' '}
+                        <strong>explorer mon portfolio</strong> ou à{' '}
+                        <strong>me contacter</strong> directement.
                     </p>
                 </div>
             </CSSTransition>
