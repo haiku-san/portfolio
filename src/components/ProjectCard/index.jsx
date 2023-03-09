@@ -33,7 +33,9 @@ function ProjectCard({
             )}
             <main
                 className="project-card__preview"
-                onClick={() => window.open(`${projectLink}`, '_blank')}
+                onClick={() =>
+                    projectLink && window.open(`${projectLink}`, '_blank')
+                }
             >
                 <div className="project-card__buttons">
                     {projectLink && (
