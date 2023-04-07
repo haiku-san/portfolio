@@ -13,6 +13,9 @@
         @extend %menuTexts;
         font-size: 1.1rem;
         white-space: nowrap;
+        @include mobile-only {
+            font-size: 0.7rem;
+        }
     }
     &__left-section {
         display: flex;

@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Tag from '../Tag/index'
+import React from 'react'
 
 // Importation des icones
 

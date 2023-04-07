@@ -1,24 +1,28 @@
 .home-page {
+    --home-page-horizontal-padding: 7rem;
     background: var(--colorBackground);
+    @include mobile-and-tablette {
+        --home-page-horizontal-padding: 1rem;
+    }
     > section {
-        padding: 1.5rem 7rem;
+        padding: 1.5rem var(--home-page-horizontal-padding);
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
         @include mobile-and-tablette {
-            padding: 1rem 0.5rem;
+            padding: 1rem var(--home-page-horizontal-padding);
         }
     }
     .cta-section {
         display: flex;
         justify-content: center;
         gap: 4rem;
+        padding: 1rem 0;
         @include mobile-and-tablette {
             flex-direction: column;
-            width: 90%;
+            width: 100%;
             gap: 2rem;
-            padding: 1rem 0;
             button {
                 width: 100%;
                 height: 4rem;
@@ -30,7 +34,6 @@
         > &__titles {
             display: flex;
             flex-direction: column;
-            width: 90%;
             gap: 1rem;
             h1 {
                 @extend %title1;
@@ -57,9 +60,8 @@
     .projects-section {
         box-shadow: $shadow3;
         gap: 4rem;
-        padding: 4rem 10rem;
+        padding: 4rem var(--home-page-horizontal-padding);
         @include mobile-and-tablette {
-            padding: 4rem 2rem 2rem 2rem;
             gap: 3rem;
         }
         > h2 {
