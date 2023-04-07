@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
     BrowserRouter,
@@ -8,9 +8,10 @@ import {
     Outlet,
 } from 'react-router-dom'
 import './assets/sass/index.scss'
-import Home from './pages/Home'
-import Header from './components/Header/index.jsx'
-import Footer from './components/Footer/index.jsx'
+
+const Home = lazy(() => import('./pages/Home'))
+const Header = lazy(() => import('./components/Header/index'))
+const Footer = lazy(() => import('./components/Footer/index.jsx'))
 
 const PageLayout = () => (
     <>
@@ -23,14 +24,16 @@ const PageLayout = () => (
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route element={<PageLayout />}>
-                    <Route element={<Home />} path="/" />
-                </Route>
+        <Suspense fallback="loading...">
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<PageLayout />}>
+                        <Route element={<Home />} path="/" />
+                    </Route>
 
-                <Route element={<Navigate to="/" />} path="*" />
-            </Routes>
-        </BrowserRouter>
+                    <Route element={<Navigate to="/" />} path="*" />
+                </Routes>
+            </BrowserRouter>
+        </Suspense>
     </React.StrictMode>
 )

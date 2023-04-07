@@ -248,7 +248,7 @@
         &-text {
             display: flex;
             flex-direction: column;
-            gap: 0.1rem;
+            gap: 0.3rem;
             h2 {
                 color: var(--colorTertiary);
                 @extend %title4;
@@ -322,12 +322,12 @@
                 @extend %cta-on-hover;
                 transform: scale(1.05);
             }
-            img:nth-child(1).preview-image {
-                animation: shaking-left 3s ease-in-out infinite;
-            }
-            img:nth-child(2).preview-image {
-                animation: shaking-right 3s ease-in-out infinite;
-            }
+            // img:nth-child(1).preview-image {
+            //     animation: shaking-left 3s ease-in-out infinite;
+            // }
+            // img:nth-child(2).preview-image {
+            //     animation: shaking-right 3s ease-in-out infinite;
+            // }
         }
     }
     &__buttons {

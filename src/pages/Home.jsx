@@ -25,6 +25,9 @@ import kasaPreview2 from '../assets/images/projects_previews/optimized/kasaPrevi
 import bestActivitiesPreview1 from '../assets/images/projects_previews/optimized/bestActivitiesPreview1.webp'
 import bestActivitiesPreview2 from '../assets/images/projects_previews/optimized/bestActivitiesPreview2.webp'
 
+import netflixPreview1 from '../assets/images/projects_previews/optimized/netflixPreview1.webp'
+import netflixPreview2 from '../assets/images/projects_previews/optimized/netflixPreview2.webp'
+
 function Home() {
     // const [mode, setMode] = useState('light')
 
@@ -83,6 +86,26 @@ function Home() {
             </section>
             <section className="projects-section">
                 <h2 id="projects-anchor">Mes projets</h2>
+
+                <div className="project-card-container">
+                    {/* Remake du frontend de Netflix
+                                  Projet personnel */}
+                    <ProjectCard
+                        title="Remake de l'interface de Netflix"
+                        date="2023"
+                        projectName="Projet personnel"
+                        tagsList={[
+                            'html',
+                            'sass',
+                            'react',
+                            'javascript',
+                            'responsive',
+                        ]}
+                        previewImages={[netflixPreview1, netflixPreview2]}
+                        projectLink={'https://netflix.elandaloussi.fr'}
+                        repoLink={'https://github.com/haiku-san/netflix-remake'}
+                    />
+                </div>
 
                 <div className="project-card-container">
                     {/* Création d'un site web intéractif avec React

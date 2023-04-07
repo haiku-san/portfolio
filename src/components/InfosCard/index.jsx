@@ -99,7 +99,7 @@ function InfosCard({ id }) {
                 classNames="content-is-active"
             >
                 <div className="infos-card__content who-am-i">
-                    <h2>Hey there!</h2>
+                    <h2>Hello!</h2>
                     <p>
                         Je suis <strong>Brahim</strong>, un{' '}
                         <strong>développeur frontend</strong> passionné,
@@ -110,24 +110,11 @@ function InfosCard({ id }) {
                         <strong>créativité</strong>.
                     </p>
                     <p>
-                        En plus d'être compétent en{' '}
-                        <strong>
-                            HTML, CSS, JavaScript, React, Node.js et Express
-                        </strong>
-                        , j'ai une <strong>formation en droit</strong> et de
-                        solides aptitudes rédactionnelles et relationnelles.
-                        J'ai acquis ces compétences en étudiant à l'université,
-                        mais aussi en travaillant en restauration en parallèle
-                        de ma <strong>formation en développement web</strong>.
-                    </p>{' '}
-                    <p>
-                        Je suis convaincu que la{' '}
-                        <strong>formation continue</strong> est essentielle pour
-                        rester à jour avec les{' '}
-                        <strong>dernières tendances</strong> et les{' '}
-                        <strong>nouvelles technologies</strong> dans le domaine
-                        du web. C'est pourquoi je suis toujours en train d'
-                        apprendre et de me perfectionner.
+                        Je développe principalement en{' '}
+                        <strong>Javascript</strong>. Mes frameworks de
+                        prédilection sont <strong>React.js</strong> pour le
+                        front et <strong>Node.js</strong> pour le back. Vous
+                        pouvez trouver une sélection de mes projets ci-dessous.
                     </p>{' '}
                     <p>
                         Si vous voulez en savoir plus sur moi et mes
@@ -145,7 +132,7 @@ function InfosCard({ id }) {
                 classNames="content-is-active"
             >
                 <div className="infos-card__content degrees">
-                    <h3>2022 - Développeur web - Openclassrooms</h3>
+                    <h3>2022 - Développeur integrateur web - Openclassrooms</h3>
                     <h4>Titre RNCP de niveau 5 (Bac + 2)</h4>
                     <p></p>
                     <h3>2021 - Licence de droit - Université de Rennes</h3>

@@ -1,6 +1,7 @@
 :root {
     strong {
-        color: $colorAccent;
+        color: $colorPrimary500;
+        @extend %medium;
     }
     // Light mode colors
     color: $colorPrimary700;

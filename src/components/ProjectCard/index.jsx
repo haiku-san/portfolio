@@ -44,7 +44,7 @@ function ProjectCard({
                             target="_blank"
                             rel="noreferrer noopener"
                         >
-                            <button className="cta-primary gradient">
+                            <button className="cta-primary">
                                 Voir le projet
                             </button>
                         </a>

@@ -12,7 +12,6 @@
     li {
         @extend %menuTexts;
         font-size: 1.1rem;
-        text-transform: uppercase;
         white-space: nowrap;
     }
     &__left-section {

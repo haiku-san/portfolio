@@ -69,7 +69,9 @@ function Header() {
                     target="__blank"
                     rel="noreferrer noopener"
                 >
-                    <h2 className="cta-tertiary">Contact</h2>
+                    <h2 className="cta-tertiary">
+                        elandaloussi.contact@gmail.com
+                    </h2>
                 </a>
                 <img
                     onClick={() => onSelectMode(!isDarkMode)}
