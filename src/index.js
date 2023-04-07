@@ -8,6 +8,7 @@ import {
     Outlet,
 } from 'react-router-dom'
 import './assets/sass/index.scss'
+import LoadingSpinner from './components/LoadingSpinner/index'
 
 const Home = lazy(() => import('./pages/Home'))
 const Header = lazy(() => import('./components/Header/index'))
@@ -24,7 +25,7 @@ const PageLayout = () => (
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
-        <Suspense fallback="loading...">
+        <Suspense fallback={<LoadingSpinner fullPage />}>
             <BrowserRouter>
                 <Routes>
                     <Route element={<PageLayout />}>

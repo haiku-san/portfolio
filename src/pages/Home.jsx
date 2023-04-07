@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import InfosCard from '../components/InfosCard/index'
-import ProjectCard from '../components/ProjectCard/index'
+import React, { lazy, Suspense } from 'react'
+// import InfosCard from '../components/InfosCard/index'
+// import ProjectCard from '../components/ProjectCard/index'
 
 // Import des previews des projets
 
@@ -27,6 +27,11 @@ import bestActivitiesPreview2 from '../assets/images/projects_previews/optimized
 
 import netflixPreview1 from '../assets/images/projects_previews/optimized/netflixPreview1.webp'
 import netflixPreview2 from '../assets/images/projects_previews/optimized/netflixPreview2.webp'
+
+import LoadingSpinner from '../components/LoadingSpinner/index'
+
+const InfosCard = lazy(() => import('../components/InfosCard/index'))
+const ProjectCard = lazy(() => import('../components/ProjectCard/index'))
 
 function Home() {
     // const [mode, setMode] = useState('light')
@@ -90,139 +95,163 @@ function Home() {
                 <div className="project-card-container">
                     {/* Remake du frontend de Netflix
                                   Projet personnel */}
-                    <ProjectCard
-                        title="Remake de l'interface de Netflix"
-                        date="2023"
-                        projectName="Projet personnel"
-                        tagsList={[
-                            'html',
-                            'sass',
-                            'react',
-                            'javascript',
-                            'responsive',
-                        ]}
-                        previewImages={[netflixPreview1, netflixPreview2]}
-                        projectLink={'https://netflix.elandaloussi.fr'}
-                        repoLink={'https://github.com/haiku-san/netflix-remake'}
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <ProjectCard
+                            title="Remake de l'interface de Netflix"
+                            date="2023"
+                            projectName="Projet personnel"
+                            tagsList={[
+                                'html',
+                                'sass',
+                                'react',
+                                'javascript',
+                                'responsive',
+                            ]}
+                            previewImages={[netflixPreview1, netflixPreview2]}
+                            projectLink={'https://netflix.elandaloussi.fr'}
+                            repoLink={
+                                'https://github.com/haiku-san/netflix-remake'
+                            }
+                        />
+                    </Suspense>
                 </div>
 
                 <div className="project-card-container">
                     {/* Création d'un site web intéractif avec React
                                   Best Activities */}
-                    <ProjectCard
-                        title="Création d'un site web intéractif avec React"
-                        date="2023"
-                        projectName="Best Activities"
-                        tagsList={[
-                            'html',
-                            'sass',
-                            'react',
-                            'javascript',
-                            'node.js',
-                        ]}
-                        previewImages={[
-                            bestActivitiesPreview1,
-                            bestActivitiesPreview2,
-                        ]}
-                        projectLink={
-                            'https://best-activities.netsmartsites.com'
-                        }
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <ProjectCard
+                            title="Création d'un site web intéractif avec React"
+                            date="2023"
+                            projectName="Best Activities"
+                            tagsList={[
+                                'html',
+                                'sass',
+                                'react',
+                                'javascript',
+                                'node.js',
+                            ]}
+                            previewImages={[
+                                bestActivitiesPreview1,
+                                bestActivitiesPreview2,
+                            ]}
+                            projectLink={
+                                'https://best-activities.netsmartsites.com'
+                            }
+                        />
+                    </Suspense>
                 </div>
 
                 <div className="project-card-container">
                     {/* Création d’une application web dynamique avec React
                     2022
                                   Kasa */}
-                    <ProjectCard
-                        title="Création d'une application web dynamique avec React"
-                        date="2022"
-                        projectName="Kasa"
-                        tagsList={[
-                            'html',
-                            'sass',
-                            'react',
-                            'javascript',
-                            'react router',
-                        ]}
-                        previewImages={[kasaPreview1, kasaPreview2]}
-                        projectLink={'https://kasa.elandaloussi.fr'}
-                        repoLink="https://github.com/haiku-san/OC-P7"
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <ProjectCard
+                            title="Création d'une application web dynamique avec React"
+                            date="2022"
+                            projectName="Kasa"
+                            tagsList={[
+                                'html',
+                                'sass',
+                                'react',
+                                'javascript',
+                                'react router',
+                            ]}
+                            previewImages={[kasaPreview1, kasaPreview2]}
+                            projectLink={'https://kasa.elandaloussi.fr'}
+                            repoLink="https://github.com/haiku-san/OC-P7"
+                        />
+                    </Suspense>
                 </div>
 
                 <div className="project-card-container">
                     {/* Construction d’une API sécurisée
                     2022
                                   Piiquante */}
-                    <ProjectCard
-                        title="Construction d'une API sécurisée"
-                        date="2022"
-                        projectName="Piiquante"
-                        tagsList={['node.js', 'mongodb']}
-                        previewImages={[piiquantePreview1, piiquantePreview2]}
-                        repoLink="https://github.com/haiku-san/OC-P6"
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <ProjectCard
+                            title="Construction d'une API sécurisée"
+                            date="2022"
+                            projectName="Piiquante"
+                            tagsList={['node.js', 'mongodb']}
+                            previewImages={[
+                                piiquantePreview1,
+                                piiquantePreview2,
+                            ]}
+                            repoLink="https://github.com/haiku-san/OC-P6"
+                        />
+                    </Suspense>
                 </div>
 
                 <div className="project-card-container">
                     {/* Construction d’un site de e-commerce en javascript
                     2022
                                   Kanap */}
-                    <ProjectCard
-                        title="Construction d'un site de e-commerce en javascript"
-                        date="2022"
-                        projectName="Kanap"
-                        tagsList={['html', 'css', 'javascript']}
-                        previewImages={[kanapPreview1, kanapPreview2]}
-                        projectLink={'https://kanap.elandaloussi.fr/'}
-                        repoLink="https://github.com/haiku-san/OC-P5"
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <ProjectCard
+                            title="Construction d'un site de e-commerce en javascript"
+                            date="2022"
+                            projectName="Kanap"
+                            tagsList={['html', 'css', 'javascript']}
+                            previewImages={[kanapPreview1, kanapPreview2]}
+                            projectLink={'https://kanap.elandaloussi.fr/'}
+                            repoLink="https://github.com/haiku-san/OC-P5"
+                        />
+                    </Suspense>
                 </div>
 
                 <div className="project-card-container">
                     {/* Optimisation du SEO et de l'accessibilité d'un site
                     2022
                                   La Panthère */}
-                    <ProjectCard
-                        title="Optimisation du SEO et de l'accessibilité d'un site"
-                        date="2022"
-                        projectName="La Panthère"
-                        tagsList={['accessibility', 'SEO', 'optimization']}
-                        previewImages={[laPantherePreview1, laPantherePreview2]}
-                        projectLink={'https://lapanthere.elandaloussi.fr'}
-                        repoLink="https://github.com/haiku-san/OC-P4"
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <ProjectCard
+                            title="Optimisation du SEO et de l'accessibilité d'un site"
+                            date="2022"
+                            projectName="La Panthère"
+                            tagsList={['accessibility', 'SEO', 'optimization']}
+                            previewImages={[
+                                laPantherePreview1,
+                                laPantherePreview2,
+                            ]}
+                            projectLink={'https://lapanthere.elandaloussi.fr'}
+                            repoLink="https://github.com/haiku-san/OC-P4"
+                        />
+                    </Suspense>
                 </div>
                 <div className="project-card-container">
                     {/* Intégration & animation d'une maquette en HTML & CSS
                     2022
                     Ohmyfood */}
-                    <ProjectCard
-                        title="Intégration & animation d'une maquette en HTML & CSS"
-                        date="2022"
-                        projectName="Ohmyfood"
-                        tagsList={['html', 'css', 'sass', 'reponsive']}
-                        previewImages={[ohmyfoodPreview2, ohmyfoodPreview1]}
-                        projectLink={'https://ohmyfood.elandaloussi.fr'}
-                        repoLink="https://github.com/haiku-san/OC-P3"
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <ProjectCard
+                            title="Intégration & animation d'une maquette en HTML & CSS"
+                            date="2022"
+                            projectName="Ohmyfood"
+                            tagsList={['html', 'css', 'sass', 'reponsive']}
+                            previewImages={[ohmyfoodPreview2, ohmyfoodPreview1]}
+                            projectLink={'https://ohmyfood.elandaloussi.fr'}
+                            repoLink="https://github.com/haiku-san/OC-P3"
+                        />
+                    </Suspense>
                 </div>
 
                 <div className="project-card-container">
                     {/* Intégration d'une maquette en HTML & CSS
                     2022
                     Booki */}
-                    <ProjectCard
-                        title="Intégration d'une maquette en HTML & CSS"
-                        date="2022"
-                        projectName="Booki"
-                        tagsList={['html', 'css', 'responsive']}
-                        previewImages={[bookiPreview1, bookiPreview2]}
-                        projectLink={'https://booki.elandaloussi.fr'}
-                        repoLink="https://github.com/haiku-san/OC-P2"
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <ProjectCard
+                            title="Intégration d'une maquette en HTML & CSS"
+                            date="2022"
+                            projectName="Booki"
+                            tagsList={['html', 'css', 'responsive']}
+                            previewImages={[bookiPreview1, bookiPreview2]}
+                            projectLink={'https://booki.elandaloussi.fr'}
+                            repoLink="https://github.com/haiku-san/OC-P2"
+                        />
+                    </Suspense>
                 </div>
             </section>
         </div>

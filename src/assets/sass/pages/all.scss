@@ -1,4 +1,5 @@
 :root {
+    background-color: var(--colorBackground);
     strong {
         color: $colorPrimary500;
         @extend %medium;
