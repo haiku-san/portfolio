@@ -112,7 +112,7 @@ function InfosCard({ id }) {
                         type="p"
                         cursorSize="S"
                         minDelay={15}
-                        maxDelay={20}
+                        maxDelay={28}
                         initialDelay={4000}
                     />
                     <TypewritedText
@@ -124,7 +124,7 @@ function InfosCard({ id }) {
                         type="p"
                         cursorSize="S"
                         minDelay={15}
-                        maxDelay={20}
+                        maxDelay={28}
                         initialDelay={10000}
                     />
                     <TypewritedText
@@ -132,7 +132,7 @@ function InfosCard({ id }) {
                         type="p"
                         cursorSize="S"
                         minDelay={15}
-                        maxDelay={20}
+                        maxDelay={28}
                         initialDelay={16000}
                     />
                     {/* <p>
@@ -167,11 +167,36 @@ function InfosCard({ id }) {
                 classNames="content-is-active"
             >
                 <div className="infos-card__content degrees">
-                    <h3>2022 - Développeur integrateur web - Openclassrooms</h3>
-                    <h4>Titre RNCP de niveau 5 (Bac + 2)</h4>
+                    <TypewritedText
+                        text="2022 - Développeur integrateur web - Openclassrooms"
+                        type="h3"
+                        initialDelay={300}
+                        minDelay={30}
+                        maxDelay={50}
+                    />
+                    <TypewritedText
+                        text="Titre RNCP de niveau 5 (Bac + 2)"
+                        type="h4"
+                        initialDelay={4000}
+                        minDelay={40}
+                        maxDelay={70}
+                    />
                     <p></p>
-                    <h3>2021 - Licence de droit - Université de Rennes</h3>
-                    <h4>Licence (Bac + 3)</h4>
+
+                    <TypewritedText
+                        text="2021 - Licence de droit - Université de Rennes"
+                        type="h3"
+                        initialDelay={7000}
+                        minDelay={40}
+                        maxDelay={70}
+                    />
+                    <TypewritedText
+                        text="Licence (Bac + 3)"
+                        type="h4"
+                        initialDelay={10000}
+                        minDelay={40}
+                        maxDelay={70}
+                    />
                     <p></p>
                 </div>
             </CSSTransition>

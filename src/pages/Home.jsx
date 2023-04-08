@@ -70,10 +70,18 @@ function Home() {
             <section className="hero-section">
                 <div className="hero-section__titles">
                     <TypewritedText
-                        text="Développeur web frontend"
+                        text="Développeur web frontend."
                         type="h1"
                         initialDelay={1000}
+                        maxDelay={100}
                     />
+                    {/* <TypewritedText
+                        text="Basé en Haute-Savoie, France"
+                        type="h2"
+                        initialDelay={1000}
+                        minDelay={50}
+                        maxDelay={150}
+                    /> */}
                     <h2>Basé en Haute-Savoie, France</h2>
                 </div>
 

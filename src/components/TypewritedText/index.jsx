@@ -22,10 +22,10 @@ function TypewritedText({
                     setCountTime((prevCountTime) => prevCountTime + 1)
                 }
             }, initialDelay)
+            return () => clearTimeout(intervalId)
         }, randomDelay)
+        console.log(randomDelay)
         return () => clearInterval(intervalId)
-
-        return () => clearTimeout(intervalId)
     }, [text, countTime])
 
     useEffect(() => {
