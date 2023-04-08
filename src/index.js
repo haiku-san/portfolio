@@ -24,15 +24,17 @@ const PageLayout = () => (
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-    <Suspense fallback={<LoadingSpinner fullPage />}>
-        <BrowserRouter>
-            <Routes>
-                <Route element={<PageLayout />}>
-                    <Route element={<Home />} path="/" />
-                </Route>
+    <React.StrictMode>
+        <Suspense fallback={<LoadingSpinner fullPage />}>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<PageLayout />}>
+                        <Route element={<Home />} path="/" />
+                    </Route>
 
-                <Route element={<Navigate to="/" />} path="*" />
-            </Routes>
-        </BrowserRouter>
-    </Suspense>
+                    <Route element={<Navigate to="/" />} path="*" />
+                </Routes>
+            </BrowserRouter>
+        </Suspense>
+    </React.StrictMode>
 )

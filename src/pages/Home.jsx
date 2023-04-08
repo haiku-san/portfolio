@@ -74,6 +74,7 @@ function Home() {
                         type="h1"
                         initialDelay={1000}
                         maxDelay={100}
+                        cursorAlwaysBlinking
                     />
                     {/* <TypewritedText
                         text="Basé en Haute-Savoie, France"

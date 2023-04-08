@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function TypewritedText({
     text = '',
@@ -8,42 +8,28 @@ function TypewritedText({
     minDelay = 50,
     maxDelay = 300,
     initialDelay = 0,
+    cursorAlwaysBlinking = false,
 }) {
     const [newString, setNewString] = useState('')
     const [countTime, setCountTime] = useState(0)
-    const [countIteration, setCountIteration] = useState(-1)
+    const [typingDelay, setTypingDelay] = useState(initialDelay)
 
     useEffect(() => {
-        const randomDelay =
-            Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay
-        const intervalId = setInterval(() => {
-            const intervalId = setTimeout(() => {
-                if (countTime < text.length) {
-                    setCountTime((prevCountTime) => prevCountTime + 1)
-                }
-            }, initialDelay)
-            return () => clearTimeout(intervalId)
-        }, randomDelay)
-        console.log(randomDelay)
-        return () => clearInterval(intervalId)
-    }, [text, countTime])
+        const typeCharacter = () => {
+            if (countTime < text.length) {
+                setNewString((prevNewString) => prevNewString + text[countTime])
+                setCountTime((prevCountTime) => prevCountTime + 1)
 
-    useEffect(() => {
-        function typewriteText() {
-            const splitCharacters = text.split('')
-
-            if (countIteration < text.length) {
-                if (splitCharacters[countIteration]) {
-                    setNewString((newString) =>
-                        newString.concat(splitCharacters[countIteration])
-                    )
-                }
-
-                setCountIteration(countIteration + 1)
+                // Set the random delay for the next character
+                const randomDelay =
+                    Math.floor(Math.random() * (maxDelay - minDelay + 1)) +
+                    minDelay
+                setTypingDelay(randomDelay)
             }
         }
-        typewriteText()
-    }, [countTime])
+        const timeoutId = setTimeout(typeCharacter, typingDelay)
+        return () => clearTimeout(timeoutId)
+    }, [text, countTime, typingDelay, minDelay, maxDelay])
 
     return (
         <div className="typewrited-text">
@@ -52,7 +38,12 @@ function TypewritedText({
                     {newString}
                     {cursor && (
                         <span
-                            className={`typewrited-text__cursor ${cursorSize}`}
+                            className={`typewrited-text__cursor ${cursorSize} ${
+                                cursorAlwaysBlinking ||
+                                (countTime > 0 && countTime < text.length)
+                                    ? 'on'
+                                    : 'off'
+                            } `}
                         >
                             &#9144;
                         </span>
@@ -64,7 +55,12 @@ function TypewritedText({
                     {newString}
                     {cursor && (
                         <span
-                            className={`typewrited-text__cursor ${cursorSize}`}
+                            className={`typewrited-text__cursor ${cursorSize} ${
+                                cursorAlwaysBlinking ||
+                                (countTime > 0 && countTime < text.length)
+                                    ? 'on'
+                                    : 'off'
+                            }`}
                         >
                             &#9144;
                         </span>
@@ -76,7 +72,12 @@ function TypewritedText({
                     {newString}
                     {cursor && (
                         <span
-                            className={`typewrited-text__cursor ${cursorSize}`}
+                            className={`typewrited-text__cursor ${cursorSize} ${
+                                cursorAlwaysBlinking ||
+                                (countTime > 0 && countTime < text.length)
+                                    ? 'on'
+                                    : 'off'
+                            }`}
                         >
                             &#9144;
                         </span>
@@ -88,7 +89,12 @@ function TypewritedText({
                     {newString}
                     {cursor && (
                         <span
-                            className={`typewrited-text__cursor ${cursorSize}`}
+                            className={`typewrited-text__cursor ${cursorSize} ${
+                                cursorAlwaysBlinking ||
+                                (countTime > 0 && countTime < text.length)
+                                    ? 'on'
+                                    : 'off'
+                            }`}
                         >
                             &#9144;
                         </span>
@@ -100,7 +106,12 @@ function TypewritedText({
                     {newString}
                     {cursor && (
                         <span
-                            className={`typewrited-text__cursor ${cursorSize}`}
+                            className={`typewrited-text__cursor ${cursorSize} ${
+                                cursorAlwaysBlinking ||
+                                (countTime > 0 && countTime < text.length)
+                                    ? 'on'
+                                    : 'off'
+                            }`}
                         >
                             &#9144;
                         </span>
@@ -112,7 +123,12 @@ function TypewritedText({
                     {newString}
                     {cursor && (
                         <span
-                            className={`typewrited-text__cursor ${cursorSize}`}
+                            className={`typewrited-text__cursor ${cursorSize} ${
+                                cursorAlwaysBlinking ||
+                                (countTime > 0 && countTime < text.length)
+                                    ? 'on'
+                                    : 'off'
+                            }`}
                         >
                             &#9144;
                         </span>
@@ -125,7 +141,12 @@ function TypewritedText({
                         {newString}
                         {cursor && (
                             <span
-                                className={`typewrited-text__cursor ${cursorSize}`}
+                                className={`typewrited-text__cursor ${cursorSize} ${
+                                    cursorAlwaysBlinking ||
+                                    (countTime > 0 && countTime < text.length)
+                                        ? 'on'
+                                        : 'off'
+                                }`}
                             >
                                 {/* &#9144;
                                  */}
@@ -136,7 +157,7 @@ function TypewritedText({
                 </>
             )}
             {/* {cursor && (
-                <div className={`typewrited-text__cursor ${cursorSize}`}></div>
+                <div className={`typewrited-text__cursor ${cursorSize} ${cursorAlwaysBlinking || (countTime > 0 || countTime < text.length) ? "on" : "off"}`}></div>
             )} */}
         </div>
     )

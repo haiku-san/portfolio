@@ -101,10 +101,11 @@
         }
     }
     &__content {
+        display: block;
         padding: 2rem 2.2rem;
         background-color: $white;
         border-radius: 0 0 $borderRadius2 $borderRadius2;
-
+        min-height: 12rem;
         @include mobile-and-tablette {
             border-radius: 0;
             padding: 1.8rem;
@@ -114,6 +115,7 @@
         }
         p {
             @extend %paragraph1;
+            margin: 0.8rem 0;
         }
         h3 {
             @extend %title4;
@@ -121,8 +123,13 @@
         h4 {
             @extend %title5;
         }
-        &.degrees {
+        &-degrees {
             line-height: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-top: 3rem;
+            padding-bottom: 0;
         }
         &-skills {
             display: flex;

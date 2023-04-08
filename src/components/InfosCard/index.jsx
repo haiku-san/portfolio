@@ -125,7 +125,7 @@ function InfosCard({ id }) {
                         cursorSize="S"
                         minDelay={15}
                         maxDelay={28}
-                        initialDelay={10000}
+                        initialDelay={11000}
                     />
                     <TypewritedText
                         text="Si vous voulez en savoir plus sur moi et mes réalisations, n'hésitez pas à explorer mon portfolio ou à me contacter directement."
@@ -133,30 +133,8 @@ function InfosCard({ id }) {
                         cursorSize="S"
                         minDelay={15}
                         maxDelay={28}
-                        initialDelay={16000}
+                        initialDelay={17000}
                     />
-                    {/* <p>
-                        Je suis <strong>Brahim</strong>, un{' '}
-                        <strong>développeur frontend</strong> passionné,
-                        toujours à l'affût de nouvelles tendances et idées pour
-                        améliorer mes compétences et mes projets. J'aime créer
-                        des projets <strong>innovants</strong> et laisser libre
-                        cours à ma <strong>curiosité</strong> et ma{' '}
-                        <strong>créativité</strong>.
-                    </p>
-                    <p>
-                        Je développe principalement en{' '}
-                        <strong>Javascript</strong>. Mes frameworks de
-                        prédilection sont <strong>React.js</strong> pour le
-                        front et <strong>Node.js</strong> pour le back. Vous
-                        pouvez trouver une sélection de mes projets ci-dessous.
-                    </p>{' '}
-                    <p>
-                        Si vous voulez en savoir plus sur moi et mes
-                        réalisations, n'hésitez pas à{' '}
-                        <strong>explorer mon portfolio</strong> ou à{' '}
-                        <strong>me contacter</strong> directement.
-                    </p> */}
                 </div>
             </CSSTransition>
             <CSSTransition
@@ -166,38 +144,40 @@ function InfosCard({ id }) {
                 timeout={0}
                 classNames="content-is-active"
             >
-                <div className="infos-card__content degrees">
-                    <TypewritedText
-                        text="2022 - Développeur integrateur web - Openclassrooms"
-                        type="h3"
-                        initialDelay={300}
-                        minDelay={30}
-                        maxDelay={50}
-                    />
-                    <TypewritedText
-                        text="Titre RNCP de niveau 5 (Bac + 2)"
-                        type="h4"
-                        initialDelay={4000}
-                        minDelay={40}
-                        maxDelay={70}
-                    />
-                    <p></p>
+                <div className="infos-card__content infos-card__content-degrees">
+                    <section>
+                        <TypewritedText
+                            text="2022 - Développeur integrateur web - Openclassrooms"
+                            type="h3"
+                            initialDelay={300}
+                            minDelay={30}
+                            maxDelay={50}
+                        />
+                        <TypewritedText
+                            text="Titre RNCP de niveau 5 (Bac + 2)"
+                            type="h4"
+                            initialDelay={4000}
+                            minDelay={40}
+                            maxDelay={70}
+                        />
+                    </section>
 
-                    <TypewritedText
-                        text="2021 - Licence de droit - Université de Rennes"
-                        type="h3"
-                        initialDelay={7000}
-                        minDelay={40}
-                        maxDelay={70}
-                    />
-                    <TypewritedText
-                        text="Licence (Bac + 3)"
-                        type="h4"
-                        initialDelay={10000}
-                        minDelay={40}
-                        maxDelay={70}
-                    />
-                    <p></p>
+                    <section>
+                        <TypewritedText
+                            text="2021 - Licence de droit - Université de Rennes 1"
+                            type="h3"
+                            initialDelay={7000}
+                            minDelay={40}
+                            maxDelay={70}
+                        />
+                        <TypewritedText
+                            text="Licence (Bac + 3)"
+                            type="h4"
+                            initialDelay={10000}
+                            minDelay={40}
+                            maxDelay={70}
+                        />
+                    </section>
                 </div>
             </CSSTransition>
             <CSSTransition
