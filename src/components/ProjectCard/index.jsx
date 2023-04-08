@@ -74,6 +74,7 @@ function ProjectCard({
                             alt={`preview ${i}`}
                             key={i}
                             className="preview-image"
+                            loading="lazy"
                         />
                     ))}
                 </div>

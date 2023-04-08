@@ -28,7 +28,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={htmlIcon} alt="icone html" />
+                        <img loading="lazy" src={htmlIcon} alt="icone html" />
                         <p>HTML</p>
                     </li>
                 </a>
@@ -40,7 +40,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={cssIcon} alt="icone css" />
+                        <img loading="lazy" src={cssIcon} alt="icone css" />
                         <p>CSS</p>
                     </li>
                 </a>
@@ -52,7 +52,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={sassIcon} alt="icone sass" />
+                        <img loading="lazy" src={sassIcon} alt="icone sass" />
                         <p>Sass</p>
                     </li>
                 </a>
@@ -64,7 +64,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={SEOIcon} alt="icone SEO" />
+                        <img loading="lazy" src={SEOIcon} alt="icone SEO" />
                         <p>SEO</p>
                     </li>
                 </a>
@@ -76,7 +76,11 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={responsiveIcon} alt="icone responsive" />
+                        <img
+                            loading="lazy"
+                            src={responsiveIcon}
+                            alt="icone responsive"
+                        />
                         <p>Responsive</p>
                     </li>
                 </a>
@@ -89,6 +93,7 @@ function Tag({ value = 'html' }) {
                 >
                     <li>
                         <img
+                            loading="lazy"
                             src={accessibilityIcon}
                             alt="icone accessibility"
                         />
@@ -103,7 +108,11 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={optimizationIcon} alt="icone optimisation" />
+                        <img
+                            loading="lazy"
+                            src={optimizationIcon}
+                            alt="icone optimisation"
+                        />
                         <p>Optimisation</p>
                     </li>
                 </a>
@@ -115,7 +124,11 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={javascriptIcon} alt="icone javascript" />
+                        <img
+                            loading="lazy"
+                            src={javascriptIcon}
+                            alt="icone javascript"
+                        />
                         <p>Javascript</p>
                     </li>
                 </a>
@@ -127,7 +140,11 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={nodejsIcon} alt="icone nodejs" />
+                        <img
+                            loading="lazy"
+                            src={nodejsIcon}
+                            alt="icone nodejs"
+                        />
                         <p>Node.js</p>
                     </li>
                 </a>
@@ -139,7 +156,11 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={mongoDBIcon} alt="icone mongoDB" />
+                        <img
+                            loading="lazy"
+                            src={mongoDBIcon}
+                            alt="icone mongoDB"
+                        />
                         <p>MongoDB</p>
                     </li>
                 </a>
@@ -151,7 +172,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={reactIcon} alt="icone react" />
+                        <img loading="lazy" src={reactIcon} alt="icone react" />
                         <p>React</p>
                     </li>
                 </a>
@@ -163,7 +184,11 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img src={reactRouterIcon} alt="icone react router" />
+                        <img
+                            loading="lazy"
+                            src={reactRouterIcon}
+                            alt="icone react router"
+                        />
                         <p>React router</p>
                     </li>
                 </a>

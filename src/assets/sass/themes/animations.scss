@@ -147,3 +147,39 @@
 //         animation: shaking-right 6s ease-in-out infinite;
 //     }
 // }
+
+// ***** Typewriter effect *****
+
+@keyframes blinking-cursor {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.typewrited-text {
+    &__cursor {
+        color: var(--colorSecondary);
+        position: static;
+        animation: blinking-cursor 1000ms infinite;
+        margin: 0;
+        padding: 0;
+        &.L {
+            width: 5px;
+        }
+        &.M {
+            width: 3px;
+        }
+        &.S {
+            width: 1px;
+        }
+    }
+}

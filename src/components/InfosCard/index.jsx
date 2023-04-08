@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group'
 import Tag from '../Tag/index'
 
 import arrowDown from '../../assets/images/icons/arrow-down.png'
+import TypewritedText from '../TypewritedText/index'
 
 function InfosCard({ id }) {
     const [activeTab, setActiveTab] = useState('whoAmI')
@@ -100,7 +101,41 @@ function InfosCard({ id }) {
             >
                 <div className="infos-card__content who-am-i">
                     <h2>Hello!</h2>
-                    <p>
+                    <TypewritedText
+                        text="Je suis Brahim, un
+                        développeur frontend passionné,
+                        toujours à l'affût de nouvelles tendances et idées pour
+                        améliorer mes compétences et mes projets. J'aime créer
+                        des projets innovants et laisser libre
+                        cours à ma curiosité et ma
+                        créativité."
+                        type="p"
+                        cursorSize="S"
+                        minDelay={15}
+                        maxDelay={20}
+                        initialDelay={4000}
+                    />
+                    <TypewritedText
+                        text="Je développe principalement en
+                        Javascript. Mes frameworks de
+                        prédilection sont React.js pour le
+                        front et Node.js pour le back. Vous
+                        pouvez trouver une sélection de mes projets ci-dessous."
+                        type="p"
+                        cursorSize="S"
+                        minDelay={15}
+                        maxDelay={20}
+                        initialDelay={10000}
+                    />
+                    <TypewritedText
+                        text="Si vous voulez en savoir plus sur moi et mes réalisations, n'hésitez pas à explorer mon portfolio ou à me contacter directement."
+                        type="p"
+                        cursorSize="S"
+                        minDelay={15}
+                        maxDelay={20}
+                        initialDelay={16000}
+                    />
+                    {/* <p>
                         Je suis <strong>Brahim</strong>, un{' '}
                         <strong>développeur frontend</strong> passionné,
                         toujours à l'affût de nouvelles tendances et idées pour
@@ -121,7 +156,7 @@ function InfosCard({ id }) {
                         réalisations, n'hésitez pas à{' '}
                         <strong>explorer mon portfolio</strong> ou à{' '}
                         <strong>me contacter</strong> directement.
-                    </p>
+                    </p> */}
                 </div>
             </CSSTransition>
             <CSSTransition

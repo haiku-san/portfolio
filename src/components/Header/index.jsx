@@ -47,6 +47,7 @@ function Header() {
                     alt="Logo"
                     className="logo"
                     onClick={() => window.location.reload()}
+                    loading="lazy"
                 />
             </section>
             {/* <section className="header__middle-section">
@@ -78,6 +79,7 @@ function Header() {
                     src={isDarkMode ? sunIcon : moonIcon}
                     alt="Dark mode switch button"
                     className="dark-mode-button"
+                    loading="lazy"
                 />
             </section>
         </header>

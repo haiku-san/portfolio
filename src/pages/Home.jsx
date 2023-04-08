@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 // import InfosCard from '../components/InfosCard/index'
 // import ProjectCard from '../components/ProjectCard/index'
+import TypewritedText from '../components/TypewritedText/index'
 
 // Import des previews des projets
 
@@ -68,7 +69,11 @@ function Home() {
         <div className="home-page" id="home-anchor">
             <section className="hero-section">
                 <div className="hero-section__titles">
-                    <h1>Développeur web frontend</h1>
+                    <TypewritedText
+                        text="Développeur web frontend"
+                        type="h1"
+                        initialDelay={1000}
+                    />
                     <h2>Basé en Haute-Savoie, France</h2>
                 </div>
 
