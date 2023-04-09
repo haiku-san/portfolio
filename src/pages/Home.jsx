@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 // import InfosCard from '../components/InfosCard/index'
 // import ProjectCard from '../components/ProjectCard/index'
 import TypewritedText from '../components/TypewritedText/index'
@@ -30,6 +30,8 @@ import netflixPreview1 from '../assets/images/projects_previews/optimized/netfli
 import netflixPreview2 from '../assets/images/projects_previews/optimized/netflixPreview2.webp'
 
 import LoadingSpinner from '../components/LoadingSpinner/index'
+
+import ColorTransition from '../components/ColorTransition/index'
 
 const InfosCard = lazy(() => import('../components/InfosCard/index'))
 const ProjectCard = lazy(() => import('../components/ProjectCard/index'))
@@ -65,8 +67,32 @@ function Home() {
     //             .removeEventListener('change', () => {})
     //     }
     // }, [])
+    const [isColorTransition, setColorTransition] = useState(false)
+
+    useEffect(() => {
+        const observer = new MutationObserver(() => {
+            if (document.body.classList.contains('color-transition')) {
+                console.log('color-transition')
+                setColorTransition(true)
+                setTimeout(() => {
+                    setColorTransition(false)
+                }, 2000)
+            }
+        })
+
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ['class'],
+        })
+
+        return () => {
+            observer.disconnect()
+        }
+    }, [])
+
     return (
         <div className="home-page" id="home-anchor">
+            {isColorTransition && <ColorTransition />}
             <section className="hero-section">
                 <div className="hero-section__titles">
                     <TypewritedText

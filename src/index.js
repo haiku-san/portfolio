@@ -18,6 +18,7 @@ const PageLayout = () => (
     <>
         <Header />
         <Outlet />
+
         <Footer />
     </>
 )

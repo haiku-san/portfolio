@@ -10,11 +10,25 @@ import moonIcon from '../../assets/images/icons/moon.png'
 
 function Header() {
     const [isDarkMode, setIsDarkMode] = useState(false)
+    const [isColorSwitch, setIsColorSwitch] = useState(false)
 
     const onSelectMode = (mode) => {
-        setIsDarkMode(mode)
-        if (mode === true) document.body.classList.add('dark-mode')
-        else document.body.classList.remove('dark-mode')
+        setTimeout(() => {
+            setIsDarkMode(mode)
+            if (mode === true) document.body.classList.add('dark-mode')
+            else document.body.classList.remove('dark-mode')
+        }, 1400)
+    }
+
+    const onColorSwitch = () => {
+        if (!document.body.classList.contains('color-transition')) {
+            document.body.classList.add('color-transition')
+            setIsColorSwitch(true)
+            setTimeout(() => {
+                document.body.classList.remove('color-transition')
+                setIsColorSwitch(false)
+            }, 5000)
+        }
     }
 
     useEffect(() => {
@@ -63,7 +77,6 @@ function Header() {
                     </a>
                 </ul>
             </section> */}
-
             <section className="header__right-section">
                 <a
                     href="mailto:elandaloussi.contact@gmail.com"
@@ -75,10 +88,15 @@ function Header() {
                     </h2>
                 </a>
                 <img
-                    onClick={() => onSelectMode(!isDarkMode)}
+                    onClick={() => {
+                        onColorSwitch()
+                        onSelectMode(!isDarkMode)
+                    }}
                     src={isDarkMode ? sunIcon : moonIcon}
                     alt="Dark mode switch button"
-                    className="dark-mode-button"
+                    className={`dark-mode-button ${
+                        isColorSwitch && 'disabled'
+                    }`}
                     loading="lazy"
                 />
             </section>

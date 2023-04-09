@@ -96,4 +96,9 @@ footer .cta-tertiary {
     @include mobile-and-tablette {
         display: none;
     }
+    &.disabled {
+        cursor: default;
+        opacity: 0.5;
+        pointer-events: none;
+    }
 }
