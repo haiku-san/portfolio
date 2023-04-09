@@ -225,3 +225,24 @@
         transform: translateY(-2000px);
     }
 }
+
+// ***** Buttons *****
+
+@keyframes underline {
+    0%,
+    10% {
+        width: 0%;
+    }
+    40%,
+    60% {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+    90%,
+    100% {
+        width: 0%;
+        right: 0;
+        left: 100%;
+    }
+}
