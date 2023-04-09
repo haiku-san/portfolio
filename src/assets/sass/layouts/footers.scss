@@ -9,6 +9,17 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        > div {
+            flex: 0 0 33%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                width: auto;
+            }
+        }
+
         @include mobile-and-tablette {
             flex-direction: column;
             gap: 2rem;
