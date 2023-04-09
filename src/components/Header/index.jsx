@@ -13,11 +13,19 @@ function Header() {
     const [isColorSwitch, setIsColorSwitch] = useState(false)
 
     const onSelectMode = (mode) => {
-        setTimeout(() => {
+        if(document.body.classList.contains('color-transition')) {
+            setTimeout(() => {
+                setIsDarkMode(mode)
+                if (mode === true) document.body.classList.add('dark-mode')
+                else document.body.classList.remove('dark-mode')
+            }, 1400)
+        }
+        else {
             setIsDarkMode(mode)
             if (mode === true) document.body.classList.add('dark-mode')
             else document.body.classList.remove('dark-mode')
-        }, 1400)
+        }
+        
     }
 
     const onColorSwitch = () => {
