@@ -40,9 +40,51 @@
 }
 
 .cta-tertiary {
+    --underline-top-margin: 3px;
+    --underline-size: 2.5px;
+    --underline-color: #{$colorPrimary700};
+    --underline-opacity: 0.7;
+    position: relative;
+
     &:hover,
     &:active {
-        text-decoration: underline;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: var(--underline-size);
+            background: var(--underline-color);
+            top: calc(100% + var(--underline-top-margin));
+            left: 0;
+            border-radius: 0.2px;
+            opacity: var(--underline-opacity);
+            animation: underline 1200ms cubic-bezier(0.6, 0.24, 0.41, 0.69)
+                infinite;
+        }
+    }
+}
+
+.dark-mode .cta-tertiary {
+    --underline-color: #{$colorTertiary};
+    --underline-opacity: 0.9;
+}
+
+@keyframes underline {
+    0%,
+    10% {
+        width: 0%;
+    }
+    40%,
+    60% {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+    90%,
+    100% {
+        width: 0%;
+        right: 0;
+        left: 100%;
     }
 }
 
