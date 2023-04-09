@@ -10,6 +10,7 @@
         flex-direction: column;
         align-items: center;
         gap: 2rem;
+        max-width: 100vw;
         @include mobile-and-tablette {
             padding: 1rem var(--home-page-horizontal-padding);
         }
