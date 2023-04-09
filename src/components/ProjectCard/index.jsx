@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 // Importation des icones
 
@@ -18,8 +19,24 @@ function ProjectCard({
     projectLink = null,
     repoLink = null,
 }) {
+    const [isVisible, setIsVisible] = useState(false)
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+    })
+
+    useEffect(() => {
+        const handleVisibility = () => {
+            if (inView) {
+                setIsVisible(true)
+            }
+        }
+        handleVisibility()
+    })
     return (
-        <article className="project-card">
+        <article
+            className={`project-card ${isVisible ? 'visible' : 'invisible'}`}
+            ref={ref}
+        >
             {contentIsOnLeft && (
                 <ProjectCardContent
                     title={title}

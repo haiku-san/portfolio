@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 function LoadingSpinner({ fullPage = false }) {
-    const [className, setClassName] = useState('loader')
-
-    useEffect(() => {
-        if (fullPage) {
-            setClassName(() => 'loader full-page')
-        }
-    }, [fullPage])
-
-    return <div className={className}></div>
+    return <div className={`loader ${fullPage && 'full-page'}`}></div>
 }
 
 export default LoadingSpinner

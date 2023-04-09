@@ -200,13 +200,29 @@
 }
 
 // ***** Project card *****
-
+.project-card-container {
+    &:nth-of-type(odd) {
+        .project-card.visible {
+            animation: appear-from-right 600ms
+                cubic-bezier(0.16, 0.77, 0.55, 0.92) forwards;
+        }
+    }
+    &:nth-of-type(even) {
+        .project-card.visible {
+            animation: appear-from-left 600ms
+                cubic-bezier(0.16, 0.77, 0.55, 0.92) forwards;
+        }
+    }
+}
 .project-card {
     display: flex;
     box-shadow: $shadow2;
     border-radius: $borderRadius1;
     width: 100%;
     min-height: 18rem;
+    &.invisible {
+        opacity: 0;
+    }
 
     aside:nth-child(1) {
         border-radius: $borderRadius1 0 0 $borderRadius1;
@@ -214,7 +230,6 @@
     aside:nth-child(2) {
         border-radius: 0 $borderRadius1 $borderRadius1 0;
     }
-
     main:nth-child(1) {
         .project-card__background {
             border-radius: $borderRadius1 0 0 $borderRadius1;
@@ -251,6 +266,7 @@
         gap: 1rem;
         @include mobile-and-tablette {
             width: 100%;
+            padding: 1.5rem;
         }
         &-text {
             display: flex;
