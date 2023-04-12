@@ -63,6 +63,7 @@
         box-shadow: $shadow3;
         gap: 4rem;
         padding: 4rem var(--home-page-horizontal-padding);
+        overflow: hidden;
         @include mobile-and-tablette {
             gap: 3rem;
         }
