@@ -6,6 +6,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+%font__retro {
+    font-family: 'Source Code Pro', sans-serif;
+}
+
 %extraLight {
     font-weight: 200;
 }
@@ -92,4 +96,16 @@
 %menuTexts {
     @extend %font__content;
     @extend %regular;
+}
+
+%retro-interface__title {
+    @extend %font__retro;
+    @extend %light;
+    font-size: 0.9rem;
+}
+
+%retro-interface__content {
+    @extend %font__retro;
+    @extend %regular;
+    font-size: 1.1rem;
 }

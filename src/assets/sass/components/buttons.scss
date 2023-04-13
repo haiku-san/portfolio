@@ -128,3 +128,14 @@ footer .cta-tertiary {
         pointer-events: none;
     }
 }
+
+%retro-close-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px;
+    img {
+        height: 0.8rem;
+        width: 0.8rem;
+    }
+}

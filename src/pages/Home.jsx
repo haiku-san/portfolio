@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from 'react'
 // import InfosCard from '../components/InfosCard/index'
 // import ProjectCard from '../components/ProjectCard/index'
 import TypewritedText from '../components/TypewritedText/index'
+import RetroInterface from '../components/RetroInterface/index'
 
 // Import des previews des projets
 
@@ -37,36 +38,6 @@ const InfosCard = lazy(() => import('../components/InfosCard/index'))
 const ProjectCard = lazy(() => import('../components/ProjectCard/index'))
 
 function Home() {
-    // const [mode, setMode] = useState('light')
-
-    // const onSelectMode = (mode) => {
-    //     setMode(mode)
-    //     if (mode === 'dark') document.body.classList.add('dark-mode')
-    //     else document.body.classList.remove('dark-mode')
-    // }
-
-    // useEffect(() => {
-    //     // Add listener to update styles
-    //     window
-    //         .matchMedia('(prefers-color-scheme: dark)')
-    //         .addEventListener('change', (e) =>
-    //             onSelectMode(e.matches ? 'dark' : 'light')
-    //         )
-
-    //     // Setup dark/light mode for the first time
-    //     onSelectMode(
-    //         window.matchMedia('(prefers-color-scheme: dark)').matches
-    //             ? 'dark'
-    //             : 'light'
-    //     )
-
-    //     // Remove listener
-    //     return () => {
-    //         window
-    //             .matchMedia('(prefers-color-scheme: dark)')
-    //             .removeEventListener('change', () => {})
-    //     }
-    // }, [])
     const [isColorTransition, setColorTransition] = useState(false)
 
     useEffect(() => {
@@ -102,15 +73,10 @@ function Home() {
                         maxDelay={100}
                         cursorAlwaysBlinking
                     />
-                    {/* <TypewritedText
-                        text="Basé en Haute-Savoie, France"
-                        type="h2"
-                        initialDelay={1000}
-                        minDelay={50}
-                        maxDelay={150}
-                    /> */}
                     <h2>Basé en Haute-Savoie, France</h2>
                 </div>
+
+                <RetroInterface />
 
                 <InfosCard id="about-anchor" />
                 <div className="cta-section">
