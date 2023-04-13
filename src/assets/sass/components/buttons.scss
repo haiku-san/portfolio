@@ -41,7 +41,7 @@
 
 .cta-tertiary {
     --underline-top-margin: 3px;
-    --underline-size: 2.5px;
+    --underline-size: 1.5px;
     --underline-color: #{$colorPrimary700};
     --underline-opacity: 0.7;
     position: relative;
@@ -59,10 +59,25 @@
             border-radius: 0.2px;
             opacity: var(--underline-opacity);
             animation: underline 1200ms cubic-bezier(0.6, 0.24, 0.41, 0.69)
-                infinite;
+                forwards;
             @include mobile-and-tablette {
                 display: none;
             }
+        }
+    }
+    &.visible::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: var(--underline-size);
+        background: var(--underline-color);
+        top: calc(100% + var(--underline-top-margin));
+        left: 0;
+        border-radius: 0.2px;
+        opacity: var(--underline-opacity);
+        animation: underline 1200ms cubic-bezier(0.6, 0.24, 0.41, 0.69) forwards;
+        @include mobile-and-tablette {
+            display: none;
         }
     }
 }
@@ -137,5 +152,37 @@ footer .cta-tertiary {
     img {
         height: 0.8rem;
         width: 0.8rem;
+    }
+}
+
+// ***** Scroll to top *****
+
+.scroll-to-top {
+    position: fixed;
+    right: 2rem;
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 50%;
+    border: none;
+    padding: 1rem;
+    transition: opacity 50ms cubic-bezier(0.5, 0.15, 0.45, 0.97);
+    transition: bottom 800ms cubic-bezier(0.5, 0.15, 0.45, 0.97);
+    z-index: 150;
+    @include mobile-and-tablette {
+        opacity: 0.9;
+    }
+    img {
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    &.invisible {
+        bottom: -4rem;
+    }
+    &.visible {
+        bottom: 2rem;
     }
 }

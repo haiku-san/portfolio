@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 // Import du logo
 
@@ -11,21 +12,32 @@ import moonIcon from '../../assets/images/icons/moon.png'
 function Header() {
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [isColorSwitch, setIsColorSwitch] = useState(false)
+    const [isVisible, setIsVisible] = useState(false)
+    const { ref, inView } = useInView({
+        threshold: 0,
+    })
+
+    useEffect(() => {
+        const handleVisibility = () => {
+            if (inView) {
+                setIsVisible(true)
+            }
+        }
+        handleVisibility()
+    })
 
     const onSelectMode = (mode) => {
-        if(document.body.classList.contains('color-transition')) {
+        if (document.body.classList.contains('color-transition')) {
             setTimeout(() => {
                 setIsDarkMode(mode)
                 if (mode === true) document.body.classList.add('dark-mode')
                 else document.body.classList.remove('dark-mode')
             }, 1400)
-        }
-        else {
+        } else {
             setIsDarkMode(mode)
             if (mode === true) document.body.classList.add('dark-mode')
             else document.body.classList.remove('dark-mode')
         }
-        
     }
 
     const onColorSwitch = () => {
@@ -91,7 +103,12 @@ function Header() {
                     target="__blank"
                     rel="noreferrer noopener"
                 >
-                    <h2 className="cta-tertiary">
+                    <h2
+                        ref={ref}
+                        className={`cta-tertiary ${
+                            isVisible ? 'visible' : 'invisible'
+                        }`}
+                    >
                         elandaloussi.contact@gmail.com
                     </h2>
                 </a>

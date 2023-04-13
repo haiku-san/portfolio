@@ -458,31 +458,37 @@
 // ***** Retro interface *****
 
 .retro-interface {
-    --retro-interface-primary-color: #ae8baa;
-    --retro-interface-background-color-500: #fefeff;
-    --retro-interface-background-color-600: #f4f4f4;
-    --retro-interface-accent-color: #775562;
-    --retro-interface-border-size: 2px;
+    --retro-interface-border-size: 1.5px;
 
     display: flex;
     flex-direction: column;
-    width: 17rem;
+    width: 19rem;
     height: 12rem;
     position: fixed;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: $shadow-retro-interface;
-    border: var(--retro-interface-border-size) solid #775562;
+    border: var(--retro-interface-border-size) solid
+        var(--retro-interface-accent-color);
     z-index: 100;
+    @include mobile-and-tablette {
+        display: none;
+    }
     &:not(.dragging) {
         transition: all 600ms cubic-bezier(0.5, 0.15, 0.45, 0.97);
     }
     &.collapsed {
         position: fixed;
         bottom: 0;
-        right: 0;
+        left: 2rem;
         height: 2.4rem;
         border-radius: 10px 10px 0 0;
+
+        header {
+            .collapse-button {
+                display: none;
+            }
+        }
     }
     header {
         position: relative;
@@ -491,7 +497,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 0.5rem 1rem;
-        color: var(--retro-interface-background-color-500);
+        color: var(--retro-interface-text-color);
         z-index: 110;
         cursor: pointer;
         &::after {
@@ -507,6 +513,17 @@
         * {
             @extend %retro-interface__title;
         }
+        .retro-interface__image-icon {
+            display: block;
+            height: 0.8rem;
+            width: 0.8rem;
+            padding: 5px 0;
+        }
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
     &__controls {
         display: flex;
@@ -527,7 +544,7 @@
             height: calc(100% - var(--profile-picture-padding));
             top: calc(var(--profile-picture-padding) / 2);
             left: calc(var(--profile-picture-padding) / 2);
-            background-image: url('../../images/profile_picture.jpg');
+            background-image: url('../../images/profile_picture.webp');
             background-position: center;
             background-size: cover;
             border-radius: 10px;

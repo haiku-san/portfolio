@@ -2,8 +2,14 @@ import React, { useRef, useEffect, useState } from 'react'
 
 import closeIcon from '../../assets/images/icons/close.png'
 import collapseIcon from '../../assets/images/icons/collapse.png'
+import imageIcon from '../../assets/images/icons/image.png'
 
-function RetroInterface() {
+function RetroInterface({
+    minLowestDelay = 200,
+    maxLowestDelay = 600,
+    minHighestDelay = 1500,
+    maxHighestDelay = 3000,
+}) {
     const interfaceRef = useRef()
     const collapseButtonRef = useRef()
     const [isOpen, setIsOpen] = useState(true)
@@ -62,6 +68,7 @@ function RetroInterface() {
     }
 
     const handleCollapse = (element) => {
+        const interfaceLeftPadding = '2rem'
         if (element.classList.contains('collapse-button')) {
             if (
                 element.parentElement.parentElement.parentElement.classList.contains(
@@ -71,10 +78,10 @@ function RetroInterface() {
                 setIsCollapsed(false)
                 element.parentElement.parentElement.parentElement.style.bottom =
                     '40%'
-                element.parentElement.parentElement.parentElement.style.right =
-                    '10%'
-                element.parentElement.parentElement.parentElement.style.top = ''
                 element.parentElement.parentElement.parentElement.style.left =
+                    '60%'
+                element.parentElement.parentElement.parentElement.style.top = ''
+                element.parentElement.parentElement.parentElement.style.right =
                     ''
             } else {
                 setIsCollapsed(true)
@@ -83,57 +90,68 @@ function RetroInterface() {
 
                 element.parentElement.parentElement.parentElement.style.bottom =
                     '0px'
-                element.parentElement.parentElement.parentElement.style.right =
-                    '0px'
+                element.parentElement.parentElement.parentElement.style.left = {
+                    interfaceLeftPadding,
+                }
                 element.parentElement.parentElement.parentElement.style.top = ''
-                element.parentElement.parentElement.parentElement.style.left =
+                element.parentElement.parentElement.parentElement.style.right =
                     ''
 
-                element.parentElement.parentElement.parentElement.style.inset = `calc(100% - ${interfaceHeight}px - 2px) 0 0 calc(100% - ${interfaceWidth}px - 4px)`
+                element.parentElement.parentElement.parentElement.style.inset = `calc(100% - ${interfaceHeight}px - 2px) calc(100% - ${interfaceWidth}px - 4px) 0 ${interfaceLeftPadding} `
             }
         } else if (element.parentElement.classList.contains('collapsed')) {
             setIsCollapsed(false)
 
             element.parentElement.style.bottom = '40%'
-            element.parentElement.style.right = '10%'
+            element.parentElement.style.left = '60%'
             element.parentElement.style.top = ''
-            element.parentElement.style.left = ''
+            element.parentElement.style.right = ''
         }
     }
 
     useEffect(() => {
-        console.log(isCollapsed)
         if (numberOfBars < 8) {
             if (!isCollapsed) {
                 let randomDelay = 0
                 if (numberOfBars > 5) {
-                    console.log('A')
                     randomDelay =
-                        Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000
+                        Math.floor(
+                            Math.random() *
+                                (maxHighestDelay - minHighestDelay + 1)
+                        ) + minHighestDelay
                 } else {
-                    console.log('B')
-
                     randomDelay =
-                        Math.floor(Math.random() * (1000 - 300 + 1)) + 300
+                        Math.floor(
+                            Math.random() *
+                                (maxLowestDelay - minLowestDelay + 1)
+                        ) + minLowestDelay
                 }
 
-                const interval = setInterval(() => {
+                const loadingBarsInterval = setInterval(() => {
                     setLoadingBars((prevBars) => [
                         ...prevBars,
                         <div key={prevBars.length}></div>,
                     ])
                     setNumberOfBars(numberOfBars + 1)
                 }, randomDelay)
+
                 return () => {
-                    // clearTimeout(timeoutId)
-                    clearInterval(interval)
+                    clearInterval(loadingBarsInterval)
                     setOpeningCount(openingCount + 1)
                 }
             }
         } else {
             setIsLoading(false)
         }
-    }, [isCollapsed, openingCount, numberOfBars])
+    }, [
+        isCollapsed,
+        openingCount,
+        numberOfBars,
+        maxHighestDelay,
+        maxLowestDelay,
+        minHighestDelay,
+        minLowestDelay,
+    ])
 
     useEffect(() => {
         dragElement(interfaceRef.current)
@@ -151,7 +169,14 @@ function RetroInterface() {
                         ref={interfaceRef}
                         onClick={() => handleCollapse(interfaceRef.current)}
                     >
-                        <h2>profile_picture.png</h2>
+                        <div className="retro-interface__title">
+                            <img
+                                src={imageIcon}
+                                alt="Photography icon"
+                                className="retro-interface__image-icon image-icon"
+                            />
+                            <h2>profile_picture.png</h2>
+                        </div>
                         <div className="retro-interface__controls">
                             <button
                                 className="retro-interface__collapse-button collapse-button"
@@ -163,7 +188,7 @@ function RetroInterface() {
                                 <img src={collapseIcon} alt="Line icon" />
                             </button>
                             <button
-                                className="retro-interface__close-button"
+                                className="retro-interface__close-button close-button"
                                 onClick={() => setIsOpen(false)}
                             >
                                 <img src={closeIcon} alt="Cross icon" />
@@ -176,7 +201,7 @@ function RetroInterface() {
                                 <div className="retro-interface__loading-bar">
                                     {loadingBars}
                                 </div>
-                                <h3>LOADING</h3>
+                                <h3>LOADING...</h3>
                             </section>
                         )}
                     </main>

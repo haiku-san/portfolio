@@ -3,6 +3,7 @@ import React, { lazy, Suspense, useEffect, useState } from 'react'
 // import ProjectCard from '../components/ProjectCard/index'
 import TypewritedText from '../components/TypewritedText/index'
 import RetroInterface from '../components/RetroInterface/index'
+import ScrollToTop from '../components/ScrollToTop/index'
 
 // Import des previews des projets
 
@@ -114,7 +115,6 @@ function Home() {
                                 'responsive',
                             ]}
                             previewImages={[netflixPreview1, netflixPreview2]}
-                            projectLink={'https://netflix.elandaloussi.fr'}
                             repoLink={
                                 'https://github.com/haiku-san/netflix-remake'
                             }
@@ -260,6 +260,7 @@ function Home() {
                     </Suspense>
                 </div>
             </section>
+            <ScrollToTop />
         </div>
     )
 }

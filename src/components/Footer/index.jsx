@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 function Footer() {
+    const [isVisible, setIsVisible] = useState(false)
+    const { ref, inView } = useInView({
+        threshold: 0,
+    })
+
+    useEffect(() => {
+        const handleVisibility = () => {
+            if (inView) {
+                setIsVisible(true)
+            }
+        }
+        handleVisibility()
+    })
     return (
         <footer className="footer">
             <ul>
@@ -10,7 +24,14 @@ function Footer() {
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                        <li className="cta-tertiary">Github</li>
+                        <li
+                            ref={ref}
+                            className={`cta-tertiary ${
+                                isVisible ? 'visible' : 'invisible'
+                            }`}
+                        >
+                            Github
+                        </li>
                     </a>
                 </div>
                 <div>
@@ -19,7 +40,14 @@ function Footer() {
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                        <li className="cta-tertiary">Linkedin</li>
+                        <li
+                            ref={ref}
+                            className={`cta-tertiary ${
+                                isVisible ? 'visible' : 'invisible'
+                            }`}
+                        >
+                            Linkedin
+                        </li>
                     </a>
                 </div>
                 <div>
@@ -28,7 +56,12 @@ function Footer() {
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                        <li className="cta-tertiary">
+                        <li
+                            ref={ref}
+                            className={`cta-tertiary ${
+                                isVisible ? 'visible' : 'invisible'
+                            }`}
+                        >
                             elandaloussi.contact@gmail.com
                         </li>
                     </a>
