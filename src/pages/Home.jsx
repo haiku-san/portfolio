@@ -1,6 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react'
-// import InfosCard from '../components/InfosCard/index'
-// import ProjectCard from '../components/ProjectCard/index'
+import React, { lazy, Suspense, useEffect, useState, useRef } from 'react'
 import TypewritedText from '../components/TypewritedText/index'
 import RetroInterface from '../components/RetroInterface/index'
 import ScrollToTop from '../components/ScrollToTop/index'
@@ -40,15 +38,21 @@ const ProjectCard = lazy(() => import('../components/ProjectCard/index'))
 
 function Home() {
     const [isColorTransition, setColorTransition] = useState(false)
+    const homeRef = useRef(null)
 
     useEffect(() => {
+        const colorTransitionDelayInMs = getComputedStyle(
+            document.body
+        ).getPropertyValue('--color-transition-delay')
+        console.log(colorTransitionDelayInMs)
+        const colorTransitionDelay = parseInt(colorTransitionDelayInMs, 10)
+
         const observer = new MutationObserver(() => {
             if (document.body.classList.contains('color-transition')) {
-                console.log('color-transition')
                 setColorTransition(true)
                 setTimeout(() => {
                     setColorTransition(false)
-                }, 2000)
+                }, colorTransitionDelay)
             }
         })
 
@@ -63,7 +67,7 @@ function Home() {
     }, [])
 
     return (
-        <div className="home-page" id="home-anchor">
+        <div className="home-page" id="home-anchor" ref={homeRef}>
             {isColorTransition && <ColorTransition />}
             <section className="hero-section">
                 <div className="hero-section__titles">

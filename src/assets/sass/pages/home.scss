@@ -1,5 +1,6 @@
 .home-page {
     --home-page-horizontal-padding: 7rem;
+
     background: var(--colorBackground);
     @include mobile-and-tablette {
         --home-page-horizontal-padding: 1rem;
@@ -31,7 +32,6 @@
         }
     }
     .hero-section {
-        box-shadow: $shadow3;
         > &__titles {
             display: flex;
             flex-direction: column;
@@ -60,7 +60,6 @@
         }
     }
     .projects-section {
-        box-shadow: $shadow3;
         gap: 4rem;
         padding: 4rem var(--home-page-horizontal-padding);
         overflow: hidden;

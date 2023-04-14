@@ -26,19 +26,10 @@ function Header() {
         handleVisibility()
     })
 
-    const onSelectMode = (mode) => {
-        if (document.body.classList.contains('color-transition')) {
-            setTimeout(() => {
-                setIsDarkMode(mode)
-                if (mode === true) document.body.classList.add('dark-mode')
-                else document.body.classList.remove('dark-mode')
-            }, 1400)
-        } else {
-            setIsDarkMode(mode)
-            if (mode === true) document.body.classList.add('dark-mode')
-            else document.body.classList.remove('dark-mode')
-        }
-    }
+    const colorTransitionDelayInMs = getComputedStyle(
+        document.body
+    ).getPropertyValue('--color-transition-delay')
+    const colorTransitionDelay = parseInt(colorTransitionDelayInMs, 10)
 
     const onColorSwitch = () => {
         if (!document.body.classList.contains('color-transition')) {
@@ -47,10 +38,23 @@ function Header() {
             setTimeout(() => {
                 document.body.classList.remove('color-transition')
                 setIsColorSwitch(false)
-            }, 5000)
+            }, colorTransitionDelay * 2.5)
         }
     }
 
+    const onSelectMode = (mode) => {
+        if (document.body.classList.contains('color-transition')) {
+            setTimeout(() => {
+                setIsDarkMode(mode)
+                if (mode === true) document.body.classList.add('dark-mode')
+                else document.body.classList.remove('dark-mode')
+            }, colorTransitionDelay * 0.75)
+        } else {
+            setIsDarkMode(mode)
+            if (mode === true) document.body.classList.add('dark-mode')
+            else document.body.classList.remove('dark-mode')
+        }
+    }
     useEffect(() => {
         // Add listener to update styles
         window
@@ -73,6 +77,7 @@ function Header() {
                 .removeEventListener('change', () => {})
         }
     }, [])
+
     return (
         <header className="header">
             <section className="header__left-section">
@@ -84,19 +89,6 @@ function Header() {
                     loading="lazy"
                 />
             </section>
-            {/* <section className="header__middle-section">
-                <ul>
-                    <a href="#home-anchor">
-                        <li>Accueil</li>
-                    </a>
-                    <a href="#about-anchor">
-                        <li>A propos</li>
-                    </a>
-                    <a href="#projects-anchor">
-                        <li>Mes projets</li>
-                    </a>
-                </ul>
-            </section> */}
             <section className="header__right-section">
                 <a
                     href="mailto:elandaloussi.contact@gmail.com"
