@@ -71,18 +71,25 @@ $colorBackground: #eaeef0;
 
 // Dark mode
 
-$colorPrimary500DarkMode: #344a53;
-$colorPrimary600DarkMode: #1c2b32;
-$colorPrimary700DarkMode: #0d0d0d;
+$colorPrimary500DarkMode: #4c2e91;
+$colorPrimary600DarkMode: #1e0261;
+$colorPrimary700DarkMode: #0d0a10;
 
 $colorSecondaryDarkMode: #efc8cb;
 
-$colorTertiaryDarkMode: #333c45;
+$colorTertiaryDarkMode: #161226;
 
 $colorAccentDarkMode: #775562;
 
-$colorBackgroundDarkMode: #191f24;
+$colorBackgroundDarkMode: #121212;
+
 // Gradients
+
+// $colorBackgroundDarkMode: linear-gradient(
+//     70deg,
+//     rgba(18, 18, 18, 1) 0%,
+//     rgba(31, 24, 43, 1) 100%
+// );
 
 $colorGradient1: linear-gradient(
     87.59deg,
@@ -110,7 +117,7 @@ $shadow2: 0px 4px 4px rgba(22, 22, 22, 0.1);
 $shadow3: 0px 4px 4px rgba(22, 22, 22, 0.05);
 $shadow4: 4px 8px 16px rgba(22, 22, 22, 0.2);
 
-$shadow-retro-interface: 3px 2px 0.5px 0px #485c6e99;
+$shadow-retro-interface: 3px 2px 0.5px 0px var(--retro-interface-shadow-color);
 
 // *****Border radius*****
 

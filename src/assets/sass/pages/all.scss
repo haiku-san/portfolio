@@ -25,10 +25,27 @@
     --retro-interface-background-color-600: #f4f4f4;
     --retro-interface-accent-color: #775562;
     --retro-interface-text-color: #fefeff;
+    --retro-interface-shadow-color: #485c6e99;
 
     .dark-mode {
+        #root {
+            background: $colorBackgroundDarkMode;
+            > header,
+            > footer {
+                background: transparent;
+            }
+        }
+        .home-page {
+            > section {
+                background: transparent;
+            }
+        }
         strong {
             color: $colorTertiary;
+        }
+        .logo,
+        .dark-mode-button {
+            filter: grayscale(1);
         }
         color: $colorTertiary;
 
@@ -45,11 +62,33 @@
         --colorBackground: #{$colorBackgroundDarkMode};
         // Retro interface colors
 
-        --retro-interface-primary-color: #{$colorAccentDarkMode};
+        --retro-interface-primary-color: #{$colorPrimary500DarkMode};
         --retro-interface-background-color-500: #{$colorBackgroundDarkMode};
         --retro-interface-background-color-600: #{$colorTertiaryDarkMode};
         --retro-interface-accent-color: #{$colorPrimary700DarkMode};
         --retro-interface-text-color: #{$colorTertiary};
+        --retro-interface-shadow-color: #{$colorPrimary700DarkMode};
+
+        %colorGradientDarkMode {
+            background-color: #4062bb;
+            background-image: linear-gradient(316deg, #4062bb 0%, #5200ae 74%);
+        }
+
+        %colorGradientDarkMode2 {
+            background-color: #f8ceec;
+            background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+        }
+
+        .cta-primary {
+            background-color: $colorPrimary500DarkMode;
+        }
+
+        .cta-tertiary {
+            &:before,
+            &:after {
+                @extend %colorGradientDarkMode2;
+            }
+        }
 
         .image-icon,
         .close-button,
@@ -61,7 +100,8 @@
             color: $colorTertiary;
         }
         .infos-card {
-            background: var(--colorPrimary600);
+            @extend %colorGradientDarkMode;
+
             &__content {
                 background-color: $colorPrimary700DarkMode;
             }
