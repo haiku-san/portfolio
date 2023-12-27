@@ -1,0 +1,104 @@
+@import "./main.scss";
+
+
+/***********************************/
+/***********************************/
+/***********************************/
+body{}
+
+
+
+body{
+  >header{
+    
+  }
+  >nav{
+
+  }
+  >main{
+    >section{
+    }
+    >article{
+    }
+    .carte{
+    }
+  }
+  >footer{
+    >h4{
+    }
+    >h5,>a{}
+    >h5{
+    }
+    >a{
+    }
+  }
+}
+
+
+@media all and (max-width:$mobile){
+  body{
+    >header{
+      height:75px;
+      text-align: center;
+      >a{>i{}}
+      >img{}
+    }
+    >nav{
+      >form{
+        >input{}
+        >label{>i{}}
+      }
+      >section{
+        >h1{}
+        >p{}
+        >a{}
+      }
+    }
+    >main{
+      >section{}
+      >article{}
+    }
+    >footer{
+      >ul{}
+    }
+  }
+}
+@media all and (min-width:$mobile) and (max-width:$tablette){
+  body{
+    &>header{}
+    &>nav{}
+    &>main{
+      &>section{}
+      &>article{}
+    }
+    &>footer{
+      &>ul{}
+    }
+  }
+}
+@media all and (min-width:$desktop) and (max-width:$tv){
+  body{
+    &>header{}
+    &>nav{}
+    &>main{
+      &>section{}
+      &>article{}
+    }
+    &>footer{
+      &>ul{}
+    }
+  }
+}
+@media all and (min-width:$tv){
+  body{
+    &>header{}
+    &>nav{}
+    &>main{
+      &>section{}
+      &>article{}
+    }
+    &>footer{
+      &>ul{}
+    }
+  }
+}

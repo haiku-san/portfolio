@@ -1,0 +1,34 @@
+/**/
+.footer {
+    padding: 4rem 4rem;
+    @include mobile-and-tablette {
+        padding: 2rem 1rem;
+    }
+    > ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        > div {
+            flex: 0 0 33%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                width: auto;
+            }
+            @include mobile-and-tablette {
+                width: 100%;
+            }
+        }
+
+        @include mobile-and-tablette {
+            flex-direction: column;
+            gap: 2rem;
+            a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

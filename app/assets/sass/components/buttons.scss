@@ -1,0 +1,188 @@
+/**/
+
+// *****Buttons sizes*****
+
+%buttonSizeS {
+    font-size: 1.1rem;
+    @include mobile-only {
+        font-size: 0.8rem;
+    }
+}
+
+// *****Buttons CSS*****
+
+%cta-on-hover {
+    opacity: 1;
+
+    // transform: scale(1.05);
+}
+
+.cta-primary,
+.cta-secondary {
+    @include cta-base;
+}
+
+.cta-primary {
+    background: $colorPrimary500;
+    color: $colorTertiary;
+    &.gradient {
+        background: $colorGradient1;
+    }
+}
+
+.cta-secondary {
+    background: $white;
+    color: $colorAccent;
+    &.accent {
+        background: $colorPrimary600;
+        color: $colorTertiary;
+    }
+}
+
+.cta-tertiary {
+    --underline-top-margin: 3px;
+    --underline-size: 1.5px;
+    --underline-color: #{$colorPrimary700};
+    --underline-opacity: 0.7;
+    position: relative;
+
+    &:hover,
+    &:active {
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: var(--underline-size);
+            background: var(--underline-color);
+            top: calc(100% + var(--underline-top-margin));
+            left: 0;
+            border-radius: 0.2px;
+            opacity: var(--underline-opacity);
+            animation: underline 1200ms cubic-bezier(0.6, 0.24, 0.41, 0.69)
+                forwards;
+            @include mobile-and-tablette {
+                display: none;
+            }
+        }
+    }
+    &.visible::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: var(--underline-size);
+        background: var(--underline-color);
+        top: calc(100% + var(--underline-top-margin));
+        left: 0;
+        border-radius: 0.2px;
+        opacity: var(--underline-opacity);
+        animation: underline 1200ms cubic-bezier(0.6, 0.24, 0.41, 0.69) forwards;
+        @include mobile-and-tablette {
+            display: none;
+        }
+    }
+}
+
+.dark-mode .cta-tertiary {
+    --underline-color: #{$colorTertiary};
+    --underline-opacity: 0.9;
+}
+
+footer .cta-tertiary {
+    @include mobile-and-tablette {
+        background: $colorPrimary500;
+        color: $colorTertiary;
+        padding: 1rem 1.5rem;
+        box-shadow: $shadow1;
+        font-size: 1.1rem;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 500;
+        border: none;
+        opacity: 0.95;
+        transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
+        cursor: pointer;
+        &:hover,
+        &:active {
+            box-shadow: $shadow2;
+            opacity: 1;
+        }
+    }
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $white;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
+    filter: opacity(0.8);
+    &:hover {
+        filter: opacity(1);
+    }
+}
+
+.dark-mode-button {
+    height: 1.2rem;
+    cursor: pointer;
+    filter: opacity(0.8) saturate(0.8);
+    transition: all 50ms ease-out;
+    &:hover,
+    &:active {
+        filter: opacity(1) saturate(1);
+    }
+    @include mobile-and-tablette {
+        display: none;
+    }
+    &.disabled {
+        cursor: default;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+%retro-close-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px;
+    img {
+        height: 0.8rem;
+        width: 0.8rem;
+    }
+}
+
+// ***** Scroll to top *****
+
+.scroll-to-top {
+    position: fixed;
+    right: 2rem;
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 50%;
+    border: none;
+    padding: 1rem;
+    transition: opacity 50ms cubic-bezier(0.5, 0.15, 0.45, 0.97);
+    transition: bottom 800ms cubic-bezier(0.5, 0.15, 0.45, 0.97);
+    z-index: 150;
+    @include mobile-and-tablette {
+        opacity: 0.9;
+    }
+    img {
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    &.invisible {
+        bottom: -4rem;
+    }
+    &.visible {
+        bottom: 2rem;
+    }
+}

@@ -1,0 +1,40 @@
+/**/
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    align-items: center;
+    @include mobile-and-tablette {
+        padding: 1rem 2rem;
+    }
+    h2,
+    li {
+        @extend %menuTexts;
+        font-size: 1.1rem;
+        white-space: nowrap;
+        @include mobile-only {
+            font-size: 0.7rem;
+        }
+    }
+    &__left-section {
+        display: flex;
+
+        .logo {
+            width: 30px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+    }
+    &__middle-section {
+        > ul {
+            display: flex;
+            gap: 4rem;
+        }
+    }
+    &__right-section {
+        text-align: right;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+}
