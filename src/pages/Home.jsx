@@ -101,9 +101,9 @@ function Home() {
                                 'react',
                                 'tailwind',
                                 'javascript',
-                                'responsive',
                             ]}
                             previewImages={[rayzArtPreview1, rayzArtPreview2]}
+                            projectLink={'https://rayz-art.com'}
                         />
                     </Suspense>
                 </div>
@@ -116,13 +116,7 @@ function Home() {
                             title="Remake de l'interface de Netflix"
                             date="2023"
                             projectName="Projet personnel"
-                            tagsList={[
-                                'html',
-                                'sass',
-                                'react',
-                                'javascript',
-                                'responsive',
-                            ]}
+                            tagsList={['react', 'javascript', 'sass', 'html']}
                             previewImages={[netflixPreview1, netflixPreview2]}
                             repoLink={
                                 'https://github.com/haiku-san/netflix-remake'
@@ -140,11 +134,11 @@ function Home() {
                             date="2023"
                             projectName="Best Activities"
                             tagsList={[
-                                'html',
-                                'sass',
                                 'react',
-                                'javascript',
                                 'node.js',
+                                'javascript',
+                                'sass',
+                                'html',
                             ]}
                             previewImages={[
                                 bestActivitiesPreview1,

@@ -187,40 +187,23 @@ function InfosCard({ id }) {
                 <div className="infos-card__content skills">
                     <div className="infos-card__content-skills">
                         <div className="skills-section">
-                            <h3>Hard skills</h3>
+                            <h3>Frontend</h3>
                             <div className="skills-section__list">
+                                <Tag value="next" />
+                                <Tag value="react" />
+                                <Tag value="javascript" />
+                                <Tag value="tailwind" />
+                                <Tag value="sass" />
                                 <Tag value="html" />
                                 <Tag value="css" />
-                                <Tag value="sass" />
-                                <Tag value="SEO" />
-                                <Tag value="responsive" />
-                                <Tag value="accessibility" />
-                                <Tag value="optimization" />
-                                <Tag value="javascript" />
-                                <Tag value="node.js" />
-                                <Tag value="mongodb" />
-                                <Tag value="react" />
-                                <Tag value="react router" />
                             </div>
                         </div>
                         <div className="skills-section">
-                            <h3>Soft skills</h3>
+                            <h3>Backend</h3>
                             <div className="skills-section__list">
-                                <ul>
-                                    <li className="soft-skill-tag">
-                                        Curiosité
-                                    </li>
-                                    <li className="soft-skill-tag">
-                                        Créativité
-                                    </li>
-                                    <li className="soft-skill-tag">
-                                        Travail d'équipe
-                                    </li>
-                                    <li className="soft-skill-tag">Rigueur</li>
-                                    <li className="soft-skill-tag">
-                                        Adaptabilité
-                                    </li>
-                                </ul>
+                                <Tag value="next" />
+                                <Tag value="node.js" />
+                                <Tag value="mongodb" />
                             </div>
                         </div>
                     </div>
