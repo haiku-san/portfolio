@@ -1,22 +1,27 @@
+// Import necessary libraries and components
 import React, { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-// Import du logo
-
+// Import logo images for light and dark mode
 import logoLightMode from '../../assets/images/logo/brahim_elandaloussi_logo.png'
 import logoDarkMode from '../../assets/images/logo/brahim_elandaloussi_logo_dark_mode.png'
 
+// Import sun and moon icons for light and dark mode toggle
 import sunIcon from '../../assets/images/icons/sun.png'
 import moonIcon from '../../assets/images/icons/moon.png'
 
+// Header component
 function Header() {
+    // State variables for dark mode, color switch, and visibility
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [isColorSwitch, setIsColorSwitch] = useState(false)
     const [isVisible, setIsVisible] = useState(false)
+    // Intersection observer for visibility
     const { ref, inView } = useInView({
         threshold: 0,
     })
 
+    // Set visibility based on intersection observer's inView
     useEffect(() => {
         const handleVisibility = () => {
             if (inView) {
@@ -26,11 +31,13 @@ function Header() {
         handleVisibility()
     })
 
+    // Get color transition delay value from CSS
     const colorTransitionDelayInMs = getComputedStyle(
         document.body
     ).getPropertyValue('--color-transition-delay')
     const colorTransitionDelay = parseInt(colorTransitionDelayInMs, 10)
 
+    // Handle color switch animation
     const onColorSwitch = () => {
         if (!document.body.classList.contains('color-transition')) {
             document.body.classList.add('color-transition')
@@ -42,6 +49,7 @@ function Header() {
         }
     }
 
+    // Change between dark and light mode
     const onSelectMode = (mode) => {
         if (document.body.classList.contains('color-transition')) {
             setTimeout(() => {
@@ -55,6 +63,8 @@ function Header() {
             else document.body.classList.remove('dark-mode')
         }
     }
+
+    // Setup dark/light mode based on user's preferences
     useEffect(() => {
         // Add listener to update styles
         window
@@ -78,6 +88,7 @@ function Header() {
         }
     }, [])
 
+    // Render header component
     return (
         <header className="header">
             <section className="header__left-section">

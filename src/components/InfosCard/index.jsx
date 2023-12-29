@@ -105,10 +105,7 @@ function InfosCard({ id }) {
                         text="Je suis Brahim, un
                         développeur frontend passionné,
                         toujours à l'affût de nouvelles tendances et idées pour
-                        améliorer mes compétences et mes projets. J'aime créer
-                        des projets innovants et laisser libre
-                        cours à ma curiosité et ma
-                        créativité."
+                        améliorer mes compétences et mes projets."
                         type="p"
                         cursorSize="S"
                         minDelay={15}
@@ -125,7 +122,7 @@ function InfosCard({ id }) {
                         cursorSize="S"
                         minDelay={15}
                         maxDelay={28}
-                        initialDelay={11000}
+                        initialDelay={8000}
                     />
                     <TypewritedText
                         text="Si vous voulez en savoir plus sur moi et mes réalisations, n'hésitez pas à explorer mon portfolio ou à me contacter directement."
@@ -133,7 +130,7 @@ function InfosCard({ id }) {
                         cursorSize="S"
                         minDelay={15}
                         maxDelay={28}
-                        initialDelay={17000}
+                        initialDelay={14000}
                     />
                 </div>
             </CSSTransition>

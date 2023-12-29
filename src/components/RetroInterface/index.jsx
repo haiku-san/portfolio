@@ -1,15 +1,19 @@
+// Import necessary libraries and components
 import React, { useRef, useEffect, useState } from 'react'
 
+// Import icons
 import closeIcon from '../../assets/images/icons/close.png'
 import collapseIcon from '../../assets/images/icons/collapse.png'
 import imageIcon from '../../assets/images/icons/image.png'
 
+// RetroInterface component
 function RetroInterface({
     minLowestDelay = 200,
-    maxLowestDelay = 600,
-    minHighestDelay = 1500,
-    maxHighestDelay = 3000,
+    maxLowestDelay = 400,
+    minHighestDelay = 1000,
+    maxHighestDelay = 2000,
 }) {
+    // Declare state variables and refs
     const interfaceRef = useRef()
     const collapseButtonRef = useRef()
     const [isOpen, setIsOpen] = useState(true)
@@ -20,6 +24,7 @@ function RetroInterface({
     const [isLoading, setIsLoading] = useState(true)
     const [loadingBars, setLoadingBars] = useState([])
 
+    // Function for making the interface draggable
     const dragElement = (element) => {
         if (!element.classList.contains('collapse-button')) {
             let pos1 = 0,
@@ -67,6 +72,7 @@ function RetroInterface({
         }
     }
 
+    // Function for collapsing and expanding the interface
     const handleCollapse = (element) => {
         const interfaceLeftPadding = '2rem'
         if (element.classList.contains('collapse-button')) {
@@ -109,6 +115,7 @@ function RetroInterface({
         }
     }
 
+    // Loading bar animation effect
     useEffect(() => {
         if (numberOfBars < 8) {
             if (!isCollapsed) {
@@ -153,10 +160,12 @@ function RetroInterface({
         minLowestDelay,
     ])
 
+    // Initialize drag functionality
     useEffect(() => {
         dragElement(interfaceRef.current)
     }, [])
 
+    // Render RetroInterface component
     return (
         <>
             {isOpen && (

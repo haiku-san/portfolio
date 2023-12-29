@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-// Importation des icones
-
+// Import icons
 import githubIcon from '../../assets/images/icons/github_icon.png'
 
-// Importation des previews des projets
-
+// Import project preview component
 import ProjectCardContent from './ProjectCardContent/index'
 
 function ProjectCard({
