@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { sourceCodePro } from '@/app/layout'
 
 function TypewritedText({
     text = '',
@@ -34,7 +35,9 @@ function TypewritedText({
     return (
         <div className="typewrited-text">
             {type === 'h1' && (
-                <h1>
+                <h1
+                    className={`${sourceCodePro.className} text-4xl font-medium leading-tight`}
+                >
                     {newString}
                     {cursor && (
                         <span
@@ -51,7 +54,7 @@ function TypewritedText({
                 </h1>
             )}
             {type === 'h2' && (
-                <h2>
+                <h2 className="">
                     {newString}
                     {cursor && (
                         <span
@@ -156,9 +159,6 @@ function TypewritedText({
                     </p>
                 </>
             )}
-            {/* {cursor && (
-                <div className={`typewrited-text__cursor ${cursorSize} ${cursorAlwaysBlinking || (countTime > 0 || countTime < text.length) ? "on" : "off"}`}></div>
-            )} */}
         </div>
     )
 }

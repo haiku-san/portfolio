@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 import arrowUpIcon from '../../assets/images/icons/arrow-up.png'
 
@@ -27,7 +28,7 @@ function ScrollToTop() {
                 window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
         >
-            <img src={arrowUpIcon} alt="Arrow up icon" />{' '}
+            <Image src={arrowUpIcon} alt="Arrow up icon" />
         </button>
     )
 }

@@ -4,6 +4,7 @@ import React, { lazy, Suspense, useEffect, useState, useRef } from 'react'
 import TypewritedText from './components/TypewritedText/index'
 import RetroInterface from './components/RetroInterface/index'
 import ScrollToTop from './components/ScrollToTop/index'
+import { sourceCodePro } from './layout'
 
 // Import des previews des projets
 
@@ -68,10 +69,10 @@ function Home() {
     }, [])
 
     return (
-        <div className="home-page" id="home-anchor" ref={homeRef}>
+        <div className="w-full flex flex-col " id="home-anchor" ref={homeRef}>
             {isColorTransition && <ColorTransition />}
-            <section className="hero-section">
-                <div className="hero-section__titles">
+            <section className="hero-section p-4 flex flex-col gap-8">
+                <div className="hero-section__titles flex flex-col gap-4">
                     <TypewritedText
                         text="Développeur web frontend."
                         type="h1"
@@ -79,7 +80,11 @@ function Home() {
                         maxDelay={100}
                         cursorAlwaysBlinking
                     />
-                    <h2>Basé en Haute-Savoie, France</h2>
+                    <h2
+                        className={`${sourceCodePro.className} text-xl font-light`}
+                    >
+                        Basé à Genève, Suisse
+                    </h2>
                 </div>
 
                 <RetroInterface />

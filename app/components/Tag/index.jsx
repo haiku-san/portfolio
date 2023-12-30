@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 // Importation des icones
 
@@ -28,7 +29,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img loading="lazy" src={htmlIcon} alt="icone html" />
+                        <Image loading="lazy" src={htmlIcon} alt="icone html" />
                         <p>HTML</p>
                     </li>
                 </a>
@@ -40,7 +41,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img loading="lazy" src={cssIcon} alt="icone css" />
+                        <Image loading="lazy" src={cssIcon} alt="icone css" />
                         <p>CSS</p>
                     </li>
                 </a>
@@ -52,7 +53,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img loading="lazy" src={sassIcon} alt="icone sass" />
+                        <Image loading="lazy" src={sassIcon} alt="icone sass" />
                         <p>Sass</p>
                     </li>
                 </a>
@@ -64,7 +65,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img loading="lazy" src={SEOIcon} alt="icone SEO" />
+                        <Image loading="lazy" src={SEOIcon} alt="icone SEO" />
                         <p>SEO</p>
                     </li>
                 </a>
@@ -76,7 +77,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img
+                        <Image
                             loading="lazy"
                             src={responsiveIcon}
                             alt="icone responsive"
@@ -92,7 +93,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img
+                        <Image
                             loading="lazy"
                             src={accessibilityIcon}
                             alt="icone accessibility"
@@ -108,7 +109,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img
+                        <Image
                             loading="lazy"
                             src={optimizationIcon}
                             alt="icone optimisation"
@@ -124,7 +125,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img
+                        <Image
                             loading="lazy"
                             src={javascriptIcon}
                             alt="icone javascript"
@@ -140,7 +141,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img
+                        <Image
                             loading="lazy"
                             src={nodejsIcon}
                             alt="icone nodejs"
@@ -156,7 +157,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img
+                        <Image
                             loading="lazy"
                             src={mongoDBIcon}
                             alt="icone mongoDB"
@@ -172,7 +173,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img loading="lazy" src={reactIcon} alt="icone react" />
+                        <Image loading="lazy" src={reactIcon} alt="icone react" />
                         <p>React</p>
                     </li>
                 </a>
@@ -184,7 +185,7 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <img
+                        <Image
                             loading="lazy"
                             src={reactRouterIcon}
                             alt="icone react router"

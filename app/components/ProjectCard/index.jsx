@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 
 // Import icons
@@ -77,14 +78,14 @@ function ProjectCard({
                                     window.open(`${repoLink}`, '_blank')
                                 }
                             >
-                                <img src={githubIcon} alt="github icon" />
+                                <Image src={githubIcon} alt="github icon" />
                             </button>
                         </a>
                     )}
                 </div>
                 <div className="project-card__background">
                     {previewImages.map((image, i) => (
-                        <img
+                        <Image
                             src={image}
                             alt={`preview ${i}`}
                             key={i}

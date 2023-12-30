@@ -1,6 +1,7 @@
 'use client'
 // Import necessary libraries and components
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 
 // Import logo images for light and dark mode
@@ -91,17 +92,17 @@ function Header() {
 
     // Render header component
     return (
-        <header className="header">
-            <section className="header__left-section">
-                <img
+        <header className="flex w-full justify-between items-center px-8 py-4 md:px-14 md:py-5 bg-transparent">
+            <section className="">
+                <Image
                     src={isDarkMode ? logoDarkMode : logoLightMode}
                     alt="Logo"
-                    className="logo"
+                    className="w-7 h-7 object-contain cursor-pointer dark:grayscale"
                     onClick={() => window.location.reload()}
                     loading="lazy"
                 />
             </section>
-            <section className="header__right-section">
+            <section className="flex items-center gap-8">
                 <a
                     href="mailto:elandaloussi.contact@gmail.com"
                     target="__blank"
@@ -109,14 +110,14 @@ function Header() {
                 >
                     <h2
                         ref={ref}
-                        className={`cta-tertiary ${
+                        className={`cta-tertiary text-2xs md:text-l cursor-pointer ${
                             isVisible ? 'visible' : 'invisible'
                         }`}
                     >
                         elandaloussi.contact@gmail.com
                     </h2>
                 </a>
-                <img
+                <Image
                     onClick={() => {
                         onColorSwitch()
                         onSelectMode(!isDarkMode)
@@ -125,7 +126,7 @@ function Header() {
                     alt="Dark mode switch button"
                     className={`dark-mode-button ${
                         isColorSwitch && 'disabled'
-                    }`}
+                    } w-5 h-5 object-contain max-md:hidden cursor-pointer dark:grayscale`}
                     loading="lazy"
                 />
             </section>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { CSSTransition } from 'react-transition-group'
 import Tag from '../Tag/index'
 
@@ -217,7 +218,7 @@ function InfosCard({ id }) {
                                         Créativité
                                     </li>
                                     <li className="soft-skill-tag">
-                                        Travail d'équipe
+                                        Travail d&apos;équipe
                                     </li>
                                     <li className="soft-skill-tag">Rigueur</li>
                                     <li className="soft-skill-tag">
@@ -230,11 +231,15 @@ function InfosCard({ id }) {
                 </div>
             </CSSTransition>
             <footer className="infos-card__mobile-controls">
-                <img src={arrowDown} alt="" onClick={() => handleLeftArrow()} />{' '}
+                <Image
+                    src={arrowDown}
+                    alt=""
+                    onClick={() => handleLeftArrow()}
+                />
                 {activeTab === 'whoAmI' && <p>1/3</p>}
                 {activeTab === 'degrees' && <p>2/3</p>}
                 {activeTab === 'skills' && <p>3/3</p>}
-                <img
+                <Image
                     src={arrowDown}
                     alt=""
                     onClick={() => handleRightArrow()}

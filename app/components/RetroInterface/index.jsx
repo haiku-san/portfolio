@@ -1,5 +1,6 @@
 // Import necessary libraries and components
 import React, { useRef, useEffect, useState } from 'react'
+import Image from 'next/image'
 
 // Import icons
 import closeIcon from '../../assets/images/icons/close.png'
@@ -179,7 +180,7 @@ function RetroInterface({
                         onClick={() => handleCollapse(interfaceRef.current)}
                     >
                         <div className="retro-interface__title">
-                            <img
+                            <Image
                                 src={imageIcon}
                                 alt="Photography icon"
                                 className="retro-interface__image-icon image-icon"
@@ -194,13 +195,13 @@ function RetroInterface({
                                     handleCollapse(collapseButtonRef.current)
                                 }
                             >
-                                <img src={collapseIcon} alt="Line icon" />
+                                <Image src={collapseIcon} alt="Line icon" />
                             </button>
                             <button
                                 className="retro-interface__close-button close-button"
                                 onClick={() => setIsOpen(false)}
                             >
-                                <img src={closeIcon} alt="Cross icon" />
+                                <Image src={closeIcon} alt="Cross icon" />
                             </button>
                         </div>
                     </header>
