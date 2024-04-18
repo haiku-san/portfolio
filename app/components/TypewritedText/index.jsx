@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { sourceCodePro } from '@/app/layout'
+import { sourceSans3 } from '@/app/layout'
 
 function TypewritedText({
     text = '',
@@ -35,13 +35,11 @@ function TypewritedText({
     return (
         <div className="typewrited-text">
             {type === 'h1' && (
-                <h1
-                    className={`${sourceCodePro.className} text-4xl font-medium leading-tight`}
-                >
+                <h1 className={`${sourceSans3.className}`}>
                     {newString}
                     {cursor && (
                         <span
-                            className={`typewrited-text__cursor ${cursorSize} ${
+                            className={` typewrited-text__cursor ${cursorSize} ${
                                 cursorAlwaysBlinking ||
                                 (countTime > 0 && countTime < text.length)
                                     ? 'on'
@@ -54,11 +52,11 @@ function TypewritedText({
                 </h1>
             )}
             {type === 'h2' && (
-                <h2 className="">
+                <h2 className={`${sourceSans3.className}`}>
                     {newString}
                     {cursor && (
                         <span
-                            className={`typewrited-text__cursor ${cursorSize} ${
+                            className={` typewrited-text__cursor ${cursorSize} ${
                                 cursorAlwaysBlinking ||
                                 (countTime > 0 && countTime < text.length)
                                     ? 'on'
@@ -159,6 +157,9 @@ function TypewritedText({
                     </p>
                 </>
             )}
+            {/* {cursor && (
+                <div className={`typewrited-text__cursor ${cursorSize} ${cursorAlwaysBlinking || (countTime > 0 || countTime < text.length) ? "on" : "off"}`}></div>
+            )} */}
         </div>
     )
 }

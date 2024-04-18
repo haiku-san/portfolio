@@ -89,8 +89,9 @@
 
 footer .cta-tertiary {
     @include mobile-and-tablette {
-        background: $colorPrimary500;
-        color: $colorTertiary;
+        background: $white;
+        color: $colorAccent;
+
         padding: 1rem 1.5rem;
         box-shadow: $shadow1;
         font-size: 1.1rem;

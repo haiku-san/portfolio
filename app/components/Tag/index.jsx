@@ -15,6 +15,8 @@ import nodejsIcon from '../../assets/images/icons/nodejs_icon.png'
 import mongoDBIcon from '../../assets/images/icons/mongodb_icon.png'
 import reactIcon from '../../assets/images/icons/react_icon.png'
 import reactRouterIcon from '../../assets/images/icons/react_router_icon.png'
+import nextIcon from '../../assets/images/icons/next_icon.png'
+import tailwindIcon from '../../assets/images/icons/tailwind_icon.png'
 
 // value peut prendre comme valeur les strings suivantes :
 // html, css, sass, SEO, responsive, accessibility, optimization, javascript, node.js, mongodb, react, react router
@@ -173,7 +175,11 @@ function Tag({ value = 'html' }) {
                     rel="noreferrer noopener"
                 >
                     <li>
-                        <Image loading="lazy" src={reactIcon} alt="icone react" />
+                        <Image
+                            loading="lazy"
+                            src={reactIcon}
+                            alt="icone react"
+                        />
                         <p>React</p>
                     </li>
                 </a>
@@ -191,6 +197,38 @@ function Tag({ value = 'html' }) {
                             alt="icone react router"
                         />
                         <p>React router</p>
+                    </li>
+                </a>
+            )}
+            {value === 'next' && (
+                <a
+                    href="https://fr.wikipedia.org/wiki/Next.js"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <Image
+                            loading="lazy"
+                            src={nextIcon}
+                            alt="icone next.js"
+                        />
+                        <p>Next.js</p>
+                    </li>
+                </a>
+            )}
+            {value === 'tailwind' && (
+                <a
+                    href="https://fr.wikipedia.org/wiki/Tailwind_CSS"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <Image
+                            loading="lazy"
+                            src={tailwindIcon}
+                            alt="icone Tailwind CSS"
+                        />
+                        <p>Tailwind CSS</p>
                     </li>
                 </a>
             )}

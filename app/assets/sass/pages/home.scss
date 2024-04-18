@@ -32,7 +32,7 @@
         }
     }
     .hero-section {
-        > &__titles {
+        &__titles {
             display: flex;
             flex-direction: column;
             gap: 1rem;

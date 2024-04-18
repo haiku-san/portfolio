@@ -18,7 +18,9 @@ module.exports = {
                 m: '1rem',
                 l: '1.1rem',
                 xl: '1.2rem',
+                '3xl': '2rem',
                 '4xl': '2.5rem',
+                '7xl': '5rem',
             },
             colors: {
                 white: '#fff',

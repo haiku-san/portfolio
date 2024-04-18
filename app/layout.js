@@ -1,11 +1,11 @@
-import { Source_Code_Pro, Poppins } from 'next/font/google'
+import { Source_Sans_3, Poppins } from 'next/font/google'
 import './globals.css'
-// import './assets/sass/index.scss'
-import LoadingSpinner from './components/LoadingSpinner/index'
+import './assets/sass/index.scss'
+import LoadingSpinner from './components/LoadingSpinner'
 import Header from './components/Header'
-import Footer from './components/Footer/index'
+import Footer from './components/Footer'
 
-export const sourceCodePro = Source_Code_Pro({
+export const sourceSans3 = Source_Sans_3({
     subsets: ['latin'],
     weight: ['200', '300', '400', '500', '600', '700', '800'],
 })
@@ -25,9 +25,7 @@ export default function RootLayout({ children }) {
                 />
                 <meta name="theme-color" content={'black'} />
             </head>
-            <body
-                className={`${poppins.className} bg-lightMode-background dark:bg-darkMode-background`}
-            >
+            <body className={`${poppins.className} `}>
                 <div id="root">
                     <Header />
                     {children}

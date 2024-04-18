@@ -28,7 +28,7 @@ function ScrollToTop() {
                 window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
         >
-            <Image src={arrowUpIcon} alt="Arrow up icon" />
+            <Image src={arrowUpIcon} alt="Arrow up icon" />{' '}
         </button>
     )
 }

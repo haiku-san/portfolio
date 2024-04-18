@@ -1,4 +1,5 @@
 'use client'
+
 // Import necessary libraries and components
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
@@ -92,17 +93,17 @@ function Header() {
 
     // Render header component
     return (
-        <header className="flex w-full justify-between items-center px-8 py-4 md:px-14 md:py-5 bg-transparent">
-            <section className="">
+        <header className="header">
+            <section className="header__left-section">
                 <Image
                     src={isDarkMode ? logoDarkMode : logoLightMode}
                     alt="Logo"
-                    className="w-7 h-7 object-contain cursor-pointer dark:grayscale"
+                    className="logo"
                     onClick={() => window.location.reload()}
                     loading="lazy"
                 />
             </section>
-            <section className="flex items-center gap-8">
+            <section className="header__right-section">
                 <a
                     href="mailto:elandaloussi.contact@gmail.com"
                     target="__blank"
@@ -110,7 +111,7 @@ function Header() {
                 >
                     <h2
                         ref={ref}
-                        className={`cta-tertiary text-2xs md:text-l cursor-pointer ${
+                        className={`cta-tertiary ${
                             isVisible ? 'visible' : 'invisible'
                         }`}
                     >
@@ -126,7 +127,7 @@ function Header() {
                     alt="Dark mode switch button"
                     className={`dark-mode-button ${
                         isColorSwitch && 'disabled'
-                    } w-5 h-5 object-contain max-md:hidden cursor-pointer dark:grayscale`}
+                    }`}
                     loading="lazy"
                 />
             </section>
