@@ -19,6 +19,7 @@ function Header() {
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [isColorSwitch, setIsColorSwitch] = useState(false)
     const [isVisible, setIsVisible] = useState(false)
+    const [colorTransitionDelay, setColorTransitionDelay] = useState(0)
     // Intersection observer for visibility
     const { ref, inView } = useInView({
         threshold: 0,
@@ -34,11 +35,13 @@ function Header() {
         handleVisibility()
     })
 
-    // Get color transition delay value from CSS
-    const colorTransitionDelayInMs = getComputedStyle(
-        document.body
-    ).getPropertyValue('--color-transition-delay')
-    const colorTransitionDelay = parseInt(colorTransitionDelayInMs, 10)
+    useEffect(() => {
+        // Get color transition delay value from CSS
+        const colorTransitionDelayInMs = getComputedStyle(
+            document.body
+        ).getPropertyValue('--color-transition-delay')
+        setColorTransitionDelay(parseInt(colorTransitionDelayInMs, 10))
+    }, [])
 
     // Handle color switch animation
     const onColorSwitch = () => {
