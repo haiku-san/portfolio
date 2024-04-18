@@ -1,0 +1,91 @@
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/******************MEDIA-QUERIES**************************************************************************/
+
+@mixin mobile-only($max: map-get($breakpoints, mobile) + 'px') {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin tablette-only(
+    $min: map-get($breakpoints, mobile) + 1 + 'px',
+    $max: map-get($breakpoints, tablette) + 'px'
+) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin desktop-only(
+    $min: map-get($breakpoints, tablette) + 1 + 'px',
+    $max: map-get($breakpoints, desktop) + 'px'
+) {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin tv-only($min: map-get($breakpoints, desktop) + 1 + 'px') {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin mobile-and-tablette($max: map-get($breakpoints, tablette) + 'px') {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin tablette-and-desktop(
+    $min: map-get($breakpoints, mobile) + 1 + 'px',
+    $max: map-get($breakpoint, desktop) + 'px'
+) {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin desktop-and-tv($min: map-get($breakpoints, tablette) + 1 + 'px') {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin from-desktop($min: map-get($breakpoints, tablette) + 1 + 'px') {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin from-tablette($min: map-get($breakpoints, mobile) + 1 + 'px') {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin until-desktop($max: map-get($breakpoints, desktop) + 'px') {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}
+
+// *****Buttons*****
+
+@mixin cta-base {
+    @extend %title4;
+    @extend %buttonSizeS;
+    padding: 1rem 1.5rem;
+    box-shadow: $shadow1;
+
+    border: none;
+    opacity: 0.95;
+    transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
+    cursor: pointer;
+    &:hover,
+    &:active {
+        @extend %cta-on-hover;
+        box-shadow: $shadow2;
+    }
+}

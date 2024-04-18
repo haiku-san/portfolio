@@ -1,0 +1,158 @@
+:root {
+    --color-transition-delay: 3000ms;
+    background-color: var(--colorBackground);
+    strong {
+        color: $colorPrimary500;
+        @extend %medium;
+    }
+    // Light mode colors
+    color: $colorPrimary700;
+    --colorPrimary500: #{$colorPrimary500};
+    --colorPrimary600: #{$colorPrimary600};
+    --colorPrimary700: #{$colorPrimary700};
+
+    --colorSecondary: #{$colorSecondary};
+
+    --colorTertiary: #{$colorTertiary};
+
+    --colorAccent: #{$colorAccent};
+
+    --colorBackground: #{$colorBackground};
+
+    // Retro interface colors
+
+    --retro-interface-primary-color: #ae8baa;
+    --retro-interface-background-color-500: #fefeff;
+    --retro-interface-background-color-600: #f4f4f4;
+    --retro-interface-accent-color: #775562;
+    --retro-interface-text-color: #fefeff;
+    --retro-interface-shadow-color: #485c6e99;
+
+    .dark-mode {
+        #root {
+            background: $colorBackgroundDarkMode;
+            > header,
+            > footer {
+                background: transparent;
+            }
+        }
+        .home-page {
+            > section {
+                background: transparent;
+            }
+        }
+        strong {
+            color: $colorTertiary;
+        }
+        .logo,
+        .dark-mode-button {
+            filter: grayscale(1);
+        }
+        color: $colorTertiary;
+
+        --colorPrimary500: #{$colorPrimary500DarkMode};
+        --colorPrimary600: #{$colorPrimary600DarkMode};
+        --colorPrimary700: #{$colorPrimary700DarkMode};
+
+        --colorSecondary: #{$colorSecondaryDarkMode};
+
+        --colorTertiary: #{$colorTertiaryDarkMode};
+
+        --colorAccent: #{$colorAccentDarkMode};
+
+        --colorBackground: #{$colorBackgroundDarkMode};
+        // Retro interface colors
+
+        --retro-interface-primary-color: #{$colorPrimary500DarkMode};
+        --retro-interface-background-color-500: #{$colorBackgroundDarkMode};
+        --retro-interface-background-color-600: #{$colorTertiaryDarkMode};
+        --retro-interface-accent-color: #{$colorPrimary700DarkMode};
+        --retro-interface-text-color: #{$colorTertiary};
+        --retro-interface-shadow-color: #{$colorPrimary700DarkMode};
+
+        %colorGradientDarkMode {
+            background-color: #4062bb;
+            background-image: linear-gradient(316deg, #4062bb 0%, #5200ae 74%);
+        }
+
+        %colorGradientDarkMode2 {
+            background-color: #f8ceec;
+            background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+        }
+
+        .cta-primary {
+            background-color: $colorPrimary500DarkMode;
+        }
+
+        .cta-tertiary {
+            &:before,
+            &:after {
+                @extend %colorGradientDarkMode2;
+            }
+        }
+
+        .image-icon,
+        .close-button,
+        .collapse-button {
+            filter: invert(0.2);
+        }
+
+        .home-page .hero-section__titles h1 {
+            color: $colorTertiary;
+        }
+        .infos-card {
+            @extend %colorGradientDarkMode;
+
+            &__content {
+                background-color: $colorPrimary700DarkMode;
+            }
+            &__mobile-controls {
+                background-color: $colorPrimary700DarkMode;
+                img {
+                    opacity: 0.9;
+                }
+            }
+            &__menu > ul > .infos-card__menu-tab {
+                color: $colorTertiary;
+                &.active p {
+                    color: $colorTertiary;
+                }
+                &::before {
+                    background-color: $colorPrimary700DarkMode;
+                }
+            }
+        }
+        .skill-tag li {
+            background-color: $colorTertiary;
+        }
+        .project-card__content-text {
+            h2,
+            h3,
+            p {
+                color: $colorTertiary;
+            }
+        }
+    }
+    .color-transition__slider {
+        &:nth-of-type(1) {
+            position: fixed;
+            width: 100%;
+            height: 150vh;
+            background: $colorPrimary600;
+            z-index: 200;
+            animation: color-transition
+                calc(var(--color-transition-delay) - 300ms)
+                cubic-bezier(0.45, 0.1, 0.85, 0.63) forwards;
+        }
+        &:nth-of-type(2) {
+            position: fixed;
+            width: 100%;
+            height: 150vh;
+            background: $colorPrimary500DarkMode;
+            z-index: 199;
+            transform: translateY(2000px);
+            animation: color-transition var(--color-transition-delay)
+                cubic-bezier(0.45, 0.1, 0.85, 0.63) forwards;
+        }
+    }
+}
