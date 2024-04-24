@@ -104,7 +104,7 @@ function InfosCard({ id }) {
                 <div className="infos-card__content who-am-i">
                     <h2 className="text-2xl">Hello!</h2>
                     <TypewritedText
-                        text="Je suis Brahim, un développeur frontend passionné, toujours à l'affût de nouvelles tendances et idées pour améliorer mes compétences et mes projets."
+                        text="Bienvenue sur mon portfolio. Je m'appelle Brahim et je suis un développeur web passionné. Vous pourrez trouver ci-dessous un aperçu des projets récents sur lesquels j'ai eu l'occasion de travailler."
                         type="p"
                         cursorSize="S"
                         minDelay={1}
@@ -112,15 +112,15 @@ function InfosCard({ id }) {
                         initialDelay={2000}
                     />
                     <TypewritedText
-                        text="Je développe principalement en Javascript. Mes frameworks de prédilection sont React.js pour le front et Node.js pour le back. Vous pouvez trouver une sélection de mes projets ci-dessous."
+                        text={`Je développe principalement en Javascript. Vous pouvez trouver une liste complète de mes technos préférées en cliquant sur l'onglet "Compétences".`}
                         type="p"
                         cursorSize="S"
                         minDelay={1}
                         maxDelay={15}
-                        initialDelay={4000}
+                        initialDelay={5000}
                     />
                     <TypewritedText
-                        text="Si vous voulez en savoir plus sur moi et mes réalisations, n'hésitez pas à explorer mon portfolio ou à me contacter directement."
+                        text="Si vous avez la moindre question, n'hésitez pas à explorer mon portfolio ou à me contacter directement."
                         type="p"
                         cursorSize="S"
                         minDelay={1}
