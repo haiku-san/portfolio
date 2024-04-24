@@ -16,6 +16,33 @@ function ProjectCardContent({
                 <h3>{date}</h3>
                 <p>{projectName}</p>
             </div>
+            <div className="flex w-full justify-between gap-2">
+                {projectLink && (
+                    <a
+                        href={projectLink}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="w-full"
+                    >
+                        <button className="cta-secondary whitespace-nowrap w-full">
+                            Visiter le site
+                        </button>
+                    </a>
+                )}
+                {repoLink && (
+                    <a
+                        href={repoLink}
+                        title="Voir le repository Github"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="w-full"
+                    >
+                        <button className="cta-secondary accent whitespace-nowrap w-full">
+                            Github
+                        </button>
+                    </a>
+                )}
+            </div>
             <ul className="project-card__tags-list">
                 {tagsList.map((tag, i) => (
                     <Tag value={tag} key={i} />

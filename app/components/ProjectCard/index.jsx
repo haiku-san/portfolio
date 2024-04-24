@@ -3,11 +3,9 @@ import Image from 'next/image'
 
 import { useInView } from 'react-intersection-observer'
 
-// Import icons
-import githubIcon from '../../assets/images/icons/github_icon.png'
-
 // Import project preview component
 import ProjectCardContent from './ProjectCardContent/index'
+import TypewritedText from '../TypewritedText'
 
 function ProjectCard({
     contentIsOnLeft = true,
@@ -18,11 +16,18 @@ function ProjectCard({
     previewImages = [],
     projectLink = null,
     repoLink = null,
+    aboutTexts = [],
 }) {
     const [isVisible, setIsVisible] = useState(false)
     const { ref, inView } = useInView({
         threshold: 0,
     })
+    const [isHovered, setIsHovered] = useState(false)
+    const [isFirstHover, setIsFirstHover] = useState(true)
+
+    useEffect(() => {
+        if (isHovered) setIsFirstHover(false)
+    }, [isHovered])
 
     useEffect(() => {
         const handleVisibility = () => {
@@ -36,6 +41,8 @@ function ProjectCard({
         <article
             className={`project-card ${isVisible ? 'visible' : 'invisible'}`}
             ref={ref}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
         >
             {contentIsOnLeft && (
                 <ProjectCardContent
@@ -48,42 +55,34 @@ function ProjectCard({
                 />
             )}
             <main
-                className="project-card__preview"
+                className="relative project-card__preview"
                 onClick={() =>
                     projectLink && window.open(`${projectLink}`, '_blank')
                 }
             >
-                <div className="project-card__buttons">
-                    {projectLink && (
-                        <a
-                            href={projectLink}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
-                            <button className="cta-primary">
-                                Voir le projet
-                            </button>
-                        </a>
-                    )}
-
-                    {repoLink && (
-                        <a
-                            href={repoLink}
-                            title="Voir le repository Github"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
-                            <button
-                                className="icon-button"
-                                onClick={() =>
-                                    window.open(`${repoLink}`, '_blank')
-                                }
-                            >
-                                <Image src={githubIcon} alt="github icon" />
-                            </button>
-                        </a>
-                    )}
-                </div>
+                {console.log(isFirstHover)}
+                {!isFirstHover && (
+                    <div
+                        className={`absolute ${
+                            isHovered ? 'visible' : 'invisible'
+                        } top-0 left-0 w-full h-full px-12 py-10 flex flex-col gap-2 bg-darkMode-primary-700`}
+                    >
+                        {aboutTexts.map((aboutText, i) => (
+                            <TypewritedText
+                                text={aboutText.text}
+                                minDelay={aboutText.minDelay}
+                                maxDelay={aboutText.maxDelay}
+                                initialDelay={aboutText.initialDelay}
+                                key={i}
+                            />
+                        ))}
+                    </div>
+                )}
+                {!isHovered && (
+                    <div className="project-card__buttons">
+                        <button className="cta-primary">En savoir plus</button>
+                    </div>
+                )}
                 <div className="project-card__background">
                     {previewImages.map((image, i) => (
                         <Image
