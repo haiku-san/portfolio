@@ -239,6 +239,17 @@
             border-radius: 0 $borderRadius1 $borderRadius1 0;
         }
     }
+    &:hover,
+    &:active {
+        .project-card__background {
+            // filter: contrast(0.9) brightness(0.99) blur(1px);
+            filter: blur(2px) opacity(0.05);
+        }
+        .project-card__buttons {
+            @extend %cta-on-hover;
+            transform: scale(1.05);
+        }
+    }
     &__mobile-controls {
         display: flex;
         gap: 1rem;
@@ -298,31 +309,6 @@
         li {
             background-color: var(--colorTertiary);
         }
-        // li {
-        //     display: flex;
-        //     align-items: center;
-        //     gap: 0.75rem;
-        //     background-color: var(--colorBg4);
-        //     padding: 0.5rem 0.8rem 0.5rem 0.6rem;
-        //     border-radius: 0.3rem;
-        //     filter: opacity(0.8);
-        //     transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
-        //     user-select: none;
-        //     cursor: pointer;
-        //     &:hover {
-        //         filter: opacity(1);
-        //     }
-        //     img {
-        //         height: 1.1rem;
-        //         object-fit: fill;
-        //         width: auto;
-        //     }
-        //     p {
-        //         color: var(--colorBtn1);
-        //         @extend %title5Tags;
-        //         margin: 0;
-        //     }
-        // }
     }
 
     &__preview {
@@ -330,26 +316,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
         width: 100%;
         @include mobile-and-tablette {
             display: none;
-        }
-        &:hover,
-        &:active {
-            .project-card__background {
-                // filter: contrast(0.9) brightness(0.99) blur(1px);
-                filter: blur(0.5px) opacity(0.4);
-            }
-            .project-card__buttons {
-                @extend %cta-on-hover;
-                transform: scale(1.05);
-            }
-            // img:nth-child(1).preview-image {
-            //     animation: shaking-left 3s ease-in-out infinite;
-            // }
-            // img:nth-child(2).preview-image {
-            //     animation: shaking-right 3s ease-in-out infinite;
-            // }
         }
     }
     &__buttons {
@@ -389,18 +359,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            // background: var(--colorPrimary600);
             opacity: 0.05;
         }
         z-index: 0;
         position: absolute;
         overflow: hidden;
-        cursor: pointer;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 40ms;
+        transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 60ms;
 
         img {
             position: absolute;
