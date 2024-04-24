@@ -243,12 +243,15 @@
     &:active {
         .project-card__background {
             // filter: contrast(0.9) brightness(0.99) blur(1px);
-            filter: blur(2px) opacity(0.05);
+            filter: blur(2px) opacity(0);
         }
         .project-card__buttons {
             @extend %cta-on-hover;
             transform: scale(1.05);
         }
+    }
+    &__description {
+        background-color: var(--retro-interface-background-color-600);
     }
     &__mobile-controls {
         display: flex;

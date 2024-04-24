@@ -63,9 +63,9 @@ function ProjectCard({
                 {console.log(isFirstHover)}
                 {!isFirstHover && (
                     <div
-                        className={`absolute ${
+                        className={`project-card__description absolute ${
                             isHovered ? 'visible' : 'invisible'
-                        } top-0 left-0 w-full h-full px-12 py-10 flex flex-col gap-2 bg-darkMode-primary-700`}
+                        } top-0 left-0 w-full h-full px-12 py-10 flex flex-col gap-2`}
                     >
                         {aboutTexts.map((aboutText, i) => (
                             <TypewritedText
