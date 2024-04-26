@@ -16,7 +16,7 @@ function ProjectCardContent({
                 <h3>{date}</h3>
                 <p>{projectName}</p>
             </div>
-            <div className="flex w-full justify-between gap-2">
+            <div className="flex w-full justify-between gap-2 max-lg:hidden">
                 {projectLink && (
                     <a
                         href={projectLink}
