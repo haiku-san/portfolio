@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
                 <title>{`Brahim Elandaloussi - Portfolio`}</title>
                 <meta
                     name="description"
-                    content={`Développeur frontend junior, j'ai de solides bases en HTML, CSS, Javascript ainsi que React.js.`}
+                    content={`Fullstack Developer & Student in Computer Science at the University of Geneva`}
                 />
                 <meta name="theme-color" content={'black'} />
             </head>

@@ -25,7 +25,7 @@ function ProjectCardContent({
                         className="w-full"
                     >
                         <button className="cta-secondary whitespace-nowrap w-full">
-                            Visiter le site
+                            Visit website
                         </button>
                     </a>
                 )}
@@ -55,9 +55,7 @@ function ProjectCardContent({
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                        <button className="cta-secondary">
-                            Voir le projet
-                        </button>
+                        <button className="cta-secondary">Visit website</button>
                     </a>
                 )}
                 {repoLink && (

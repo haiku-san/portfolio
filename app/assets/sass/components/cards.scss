@@ -321,6 +321,7 @@
         align-items: center;
         overflow: hidden;
         width: 100%;
+        cursor: pointer;
         @include mobile-and-tablette {
             display: none;
         }

@@ -17,9 +17,11 @@ import reactIcon from '../../assets/images/icons/react_icon.png'
 import reactRouterIcon from '../../assets/images/icons/react_router_icon.png'
 import nextIcon from '../../assets/images/icons/next_icon.png'
 import tailwindIcon from '../../assets/images/icons/tailwind_icon.png'
+import cIcon from '../../assets/images/icons/c_icon.png'
+import pythonIcon from '../../assets/images/icons/python_icon.webp'
 
 // value peut prendre comme valeur les strings suivantes :
-// html, css, sass, SEO, responsive, accessibility, optimization, javascript, node.js, mongodb, react, react router
+// html, css, sass, SEO, responsive, accessibility, optimization, javascript, node.js, mongodb, react, react router, uiux, python, c
 
 function Tag({ value = 'html' }) {
     return (
@@ -229,6 +231,34 @@ function Tag({ value = 'html' }) {
                             alt="icone Tailwind CSS"
                         />
                         <p>Tailwind CSS</p>
+                    </li>
+                </a>
+            )}
+            {value === 'c' && (
+                <a
+                    href="https://en.wikipedia.org/wiki/C_(programming_language)"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <Image loading="lazy" src={cIcon} alt="icone C" />
+                        <p>C</p>
+                    </li>
+                </a>
+            )}
+            {value === 'python' && (
+                <a
+                    href="https://en.wikipedia.org/wiki/Python_(programming_language)"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <li>
+                        <Image
+                            loading="lazy"
+                            src={pythonIcon}
+                            alt="icone Python"
+                        />
+                        <p>Python</p>
                     </li>
                 </a>
             )}

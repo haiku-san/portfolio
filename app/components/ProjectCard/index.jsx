@@ -57,7 +57,9 @@ function ProjectCard({
             <main
                 className="relative project-card__preview"
                 onClick={() =>
-                    projectLink && window.open(`${projectLink}`, '_blank')
+                    projectLink
+                        ? window.open(`${projectLink}`, '_blank')
+                        : repoLink && window.open(`${repoLink}`, '_blank')
                 }
             >
                 {console.log(isFirstHover)}
@@ -76,11 +78,6 @@ function ProjectCard({
                                 key={i}
                             />
                         ))}
-                    </div>
-                )}
-                {!isHovered && (
-                    <div className="project-card__buttons">
-                        <button className="cta-primary">En savoir plus</button>
                     </div>
                 )}
                 <div className="project-card__background">
