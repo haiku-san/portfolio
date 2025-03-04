@@ -12,9 +12,17 @@
 // *****Buttons CSS*****
 
 %cta-on-hover {
-    opacity: 1;
-
-    // transform: scale(1.05);
+    p {
+        animation: cta-text-appear 1s ease-in-out forwards;
+        transition: all ease-in-out 2s;
+    }
+    .icon {
+        animation: cta-icon-fade 1s ease-in-out forwards;
+    }
+    .cta-icon {
+        animation: cta-icon-appear 1s ease-out forwards;
+        translate: 0px;
+    }
 }
 
 .cta-primary,
@@ -32,7 +40,7 @@
 
 .cta-secondary {
     background: $white;
-    color: $colorAccent;
+    color: $colorPrimary600;
     &.accent {
         background: $colorPrimary600;
         color: $colorTertiary;

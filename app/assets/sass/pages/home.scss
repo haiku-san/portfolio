@@ -3,7 +3,7 @@
 
     background: var(--colorBackground);
     @include mobile-and-tablette {
-        --home-page-horizontal-padding: 1rem;
+        --home-page-horizontal-padding: 0.5rem;
     }
     > section {
         padding: 1.5rem var(--home-page-horizontal-padding);
@@ -31,6 +31,12 @@
             }
         }
     }
+    @include desktop-only {
+        .hero-section {
+            padding: 1.5rem 20%;
+        }
+    }
+
     .hero-section {
         &__titles {
             display: flex;

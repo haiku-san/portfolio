@@ -76,10 +76,15 @@
 @mixin cta-base {
     @extend %title4;
     @extend %buttonSizeS;
-    padding: 1rem 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem 1rem 1.5rem;
+    gap: 3rem;
     box-shadow: $shadow1;
-
     border: none;
+    border-radius: 1000px;
     opacity: 0.95;
     transition: all cubic-bezier(0.13, 0.44, 0.9, 0.61) 90ms;
     cursor: pointer;
@@ -87,5 +92,35 @@
     &:active {
         @extend %cta-on-hover;
         box-shadow: $shadow2;
+    }
+    @include mobile-and-tablette {
+        p {
+            animation: cta-text-appear 1s ease-in-out forwards;
+            transition: all ease-in-out 2s;
+        }
+        .icon {
+            display: none;
+        }
+        .cta-icon {
+            animation: cta-icon-appear 1s ease-out forwards;
+            translate: 0px;
+        }
+    }
+    .icon,
+    .cta-icon {
+        width: 32px;
+    }
+    .icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        animation: cta-icon-smooth-appear 0.4s ease-in-out forwards;
+    }
+    .cta-icon {
+        opacity: 0;
+    }
+    p {
+        opacity: 0;
     }
 }

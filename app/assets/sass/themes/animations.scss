@@ -184,6 +184,64 @@
 
 // ***** Projects cards *****
 
+@keyframes cta-icon-fade {
+    0% {
+        opacity: 1;
+        scale: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    20% {
+        opacity: 1;
+        scale: 1;
+        clip-path: inset(0% 30% 0% 30%);
+    }
+    50%,
+    100% {
+        scale: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes cta-icon-appear {
+    0%,
+    50% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+        translate: -30px;
+    }
+    100% {
+        opacity: 1;
+        translate: 0;
+    }
+}
+
+@keyframes cta-icon-smooth-appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes cta-text-appear {
+    0%,
+    50% {
+        opacity: 0;
+        translate: 20px;
+    }
+    80% {
+        opacity: 1;
+        translate: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes appear-from-left {
     0% {
         opacity: 0;

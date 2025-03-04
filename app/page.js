@@ -1,6 +1,7 @@
 'use client'
 
 import React, { lazy, Suspense, useEffect, useState, useRef } from 'react'
+import Image from 'next/image'
 import TypewritedText from './components/TypewritedText/index.jsx'
 import RetroInterface from './components/RetroInterface'
 import ScrollToTop from './components/ScrollToTop'
@@ -16,6 +17,9 @@ import bestActivitiesPreview2 from './assets/images/projects_previews/optimized/
 
 import netflixPreview1 from './assets/images/projects_previews/optimized/netflixPreview1.webp'
 import netflixPreview2 from './assets/images/projects_previews/optimized/netflixPreview2.webp'
+
+import sourceCodeIcon from './assets/images/icons/source_code_icon.png'
+import chevronIcon from './assets/images/icons/chevron_right_icon.png'
 
 import LoadingSpinner from './components/LoadingSpinner'
 
@@ -121,7 +125,23 @@ function Home() {
                 <InfosCard id="about-anchor" />
                 <div className="cta-section">
                     <a href="#projects-anchor">
-                        <button className="cta-primary">See my projects</button>
+                        <button className="cta-primary">
+                            <p>Visit site</p>
+                            <Image
+                                src={sourceCodeIcon}
+                                alt="Icon"
+                                className="icon"
+                                onClick={() => window.location.reload()}
+                                loading="lazy"
+                            />
+                            <Image
+                                src={chevronIcon}
+                                alt="Icon"
+                                className="cta-icon"
+                                onClick={() => window.location.reload()}
+                                loading="lazy"
+                            />
+                        </button>
                     </a>
 
                     <a
