@@ -5,6 +5,7 @@ import Image from 'next/image'
 import TypewritedText from './components/TypewritedText/index.jsx'
 import RetroInterface from './components/RetroInterface'
 import ScrollToTop from './components/ScrollToTop'
+import CTA from './components/CTA/index.jsx'
 import { sourceCodePro } from './layout'
 
 // Import des previews des projets
@@ -20,6 +21,7 @@ import netflixPreview2 from './assets/images/projects_previews/optimized/netflix
 
 import sourceCodeIcon from './assets/images/icons/source_code_icon.png'
 import chevronIcon from './assets/images/icons/chevron_right_icon.png'
+import externalLinkIcon from './assets/images/icons/external_link_icon.png'
 
 import LoadingSpinner from './components/LoadingSpinner'
 
@@ -124,33 +126,21 @@ function Home() {
 
                 <InfosCard id="about-anchor" />
                 <div className="cta-section">
-                    <a href="#projects-anchor">
-                        <button className="cta-primary">
-                            <p>Visit site</p>
-                            <Image
-                                src={sourceCodeIcon}
-                                alt="Icon"
-                                className="icon"
-                                onClick={() => window.location.reload()}
-                                loading="lazy"
-                            />
-                            <Image
-                                src={chevronIcon}
-                                alt="Icon"
-                                className="cta-icon"
-                                onClick={() => window.location.reload()}
-                                loading="lazy"
-                            />
-                        </button>
-                    </a>
-
-                    <a
-                        href="mailto:elandaloussi.contact@gmail.com"
-                        target="__blank"
-                        rel="noreferrer noopener"
-                    >
-                        <button className="cta-secondary">Contact me</button>
-                    </a>
+                    <CTA
+                        title="View my projects"
+                        link="#projects-anchor"
+                        idleIcon={sourceCodeIcon}
+                        hoverIcon={chevronIcon}
+                        classNames="cta-primary"
+                    />
+                    <CTA
+                        title="Contact me"
+                        link="mailto:elandaloussi.contact@gmail.com"
+                        idleIcon={externalLinkIcon}
+                        hoverIcon={chevronIcon}
+                        classNames="cta-secondary"
+                        openInNewTab
+                    />
                 </div>
             </section>
             <section className="projects-section">

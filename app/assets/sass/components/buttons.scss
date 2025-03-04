@@ -44,7 +44,19 @@
     &.accent {
         background: $colorPrimary600;
         color: $colorTertiary;
+        .icon,
+        .cta-icon {
+            filter: invert(0);
+        }
     }
+    .icon,
+    .cta-icon {
+        filter: invert(0.8);
+    }
+}
+
+.cta-secondary,
+.cta-secondary.accent {
 }
 
 .cta-tertiary {
